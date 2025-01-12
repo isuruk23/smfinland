@@ -22,8 +22,8 @@
     <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#3cb371" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#3cb371" media="(prefers-color-scheme: dark)">
-<link href="assets/img/favicon.png" rel="apple-touch-icon">
-<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+<link href="{{ asset('public/storage/images/favicon.png') }}" rel="apple-touch-icon">
+<link rel="icon" type="image/x-icon" href="{{ asset('public/storage/images/favicon.png') }}">
 <link href="{{ asset('public/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 <link href="{{ asset('public/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
@@ -141,7 +141,7 @@
         </div>
         <div class="col-md-4">
             <div class="payment">
-                <img src="assets/img/bank_payment.png" alt="Payment" class="img-fluid w-75 ">
+                <img src="{{ asset('public/storage/images/bank_payment.png') }}" alt="Payment" class="img-fluid w-75 ">
             </div>
         </div>
         <div class="col-md-4">

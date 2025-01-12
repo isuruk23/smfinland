@@ -43,6 +43,11 @@ Route::get('/day-tour/{slug}/{id}/quote', [App\Http\Controllers\PageController::
 //Route::get('/city/{title}', [App\Http\Controllers\PageController::class, 'citydestination']);
 Route::get('/day-tours', [PageController::class, 'daytour']);
 Route::get('/multiday-tours', [PageController::class, 'multidaytour']);
+Route::get('/resorts', [PageController::class, 'resorts']);
+Route::get('/honeymoon-resorts', [PageController::class, 'honeymoonresorts']);
+Route::get('/family-resorts', [PageController::class, 'familyresorts']);
+Route::get('/couple-resorts', [PageController::class, 'coupleresorts']);
+Route::get('/all-inclusive-resort', [PageController::class, 'allinclusiveresort']);
 Route::get('/blog', [PageController::class, 'blogs']);
 Route::get('/blog-page/{id}/{slug}', [App\Http\Controllers\PageController::class, 'blogpage']);
 Route::get('/quote', [App\Http\Controllers\PageController::class, 'quote']);
