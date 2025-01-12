@@ -57,8 +57,8 @@
                         <a href="/" class="scrollto">
 
                             <!-- <img class="logo-white" src="assets/img/simplifly_maldives logo_white.png" alt=""> -->
-                            <img class="logo-blue d-none" src="assets/img/logofinland.png" alt="">
-                            <img class="logo-white d-none" src="assets/img/logowhitefinland.png" alt="">
+                            <img class="logo-blue d-none" src="{{ asset('public/storage/images/logofinland.png') }}" alt="">
+                            <img class="logo-white d-none" src="{{ asset('public/storage/images/logowhitefinland.png') }}" alt="">
 
                         </a>
 
@@ -80,11 +80,11 @@
                             <li class="dropdown has-dropdown"><a href="#"><span>MALDIVES RESORT</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul class="dd-box-shadow">
-                                    <li><a href="honeymoon-resort">Honeymoon Resort
+                                    <li><a href="/honeymoon-resorts">Honeymoon Resort
                                     </a></li>
-                                    <li><a href="family-resort">Family Resort</a></li>
-                                    <li><a href="couple-resort">Couple Resort</a></li>
-                                    <li><a href="all-inclusive-resort">All Inclusive Resort
+                                    <li><a href="/family-resorts">Family Resort</a></li>
+                                    <li><a href="/couple-resorts">Couple Resort</a></li>
+                                    <li><a href="/all-inclusive-resort">All Inclusive Resort
                                     </a></li>
 
                                 </ul>
@@ -115,20 +115,29 @@
         <ul class="d-flex flex-column list-unstyled">
 
             <li class="nav-link item1"><i class="nav-link"></i> <a href="/">Home</a></li>
-            <li class="dropdown has-dropdown"><a href="#"><span>Destinations</span> <i
+            <li class="dropdown has-dropdown"><a href="#"><span>SRI LANKAN TOUR PACKAGES</span> <i
                         class="bi bi-chevron-down"></i></a>
                 <ul class="dd-box-shadow">
-                    <li><a href="srilankan_packages">Sri Lanka</a></li>
-                    <li><a href="maldives_packages">Maldives</a></li>
+                <li><a href="/multiday-tours">Multiday Tour Packages</a></li>
+                <li><a href="/day-tours">Day Tour Packages</a></li>
+
+                </ul>
+            </li>
+            <li class="dropdown has-dropdown"><a href="#"><span>MALDIVES RESORT</span> <i
+                        class="bi bi-chevron-down"></i></a>
+                <ul class="dd-box-shadow">
+                <li><a href="/honeymoon-resorts">Honeymoon Resort</a></li>
+                <li><a href="/family-resorts">Family Resort</a></li>
+                <li><a href="/couple-resorts">Couple Resort</a></li>
+                <li><a href="/all-inclusive-resort">All Inclusive Resort
+                </a></li>
 
                 </ul>
             </li>
 
-            <li><a href="placetovisit">Places to Visit</a></li>
-            <li><a href="thingstodo">Things to do</a></li>
          
-            <li><a href="about">Who we are</a></li>
-            <li><a href="contact">Contact Us</a></li>
+            <li><a href="/about">Who we are</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
 
         </ul>
 
