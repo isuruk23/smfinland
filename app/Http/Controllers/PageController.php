@@ -22,6 +22,7 @@ use Rinvex\Country\CountryLoader;
 use App\Models\Blog;
 use App\Models\Review;
 
+
 use App\Models\Thingstodo;
 
 use Illuminate\Support\Facades\DB;
@@ -35,13 +36,13 @@ class PageController extends Controller
             'meta_description' => 'Sri Lanka is a country with a diverse population of people of many nationalities. Be mesmerized by the infinite miles of beautiful white sandy beaches and gorgeous blue waters.',
             'meta_keywords' => 'simplifly, simpliflysrilanka, sri lanka tours, family vacations, solo travellers, tropical getaway, island holidays, holiday planning, srilanka',
         ];
-    
+        $resorts = Resort::where('status',1)->get();
         $blogs = Blog::where('is_active',1)->limit(3)->get();
         $multitours = MultiDayTour::all();
         $tours = DayTour::all();
         $cities = City::all();
         $reviews=Review::all();
-        return view('welcome', compact('multitours','tours','cities','reviews','meta','blogs'));
+        return view('welcome', compact('multitours','tours','cities','reviews','meta','blogs','resorts'));
     }
     public function daytour()
     {
