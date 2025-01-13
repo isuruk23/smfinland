@@ -38,21 +38,22 @@ class WineDineController extends Controller
 
         
 
+       
+
+        $winedine = new WineDine();
+        $winedine->title = $request->title;
+        $winedine->description = $request->description;
+        $winedine->resort_id = $request->resortid;
+        $winedine->status =1;
+
         // Handle the file upload if exists
         if ($request->hasFile('file')) {
-            $imagePath = $request->file('file')->store('images/resort/dinein', 'public');
-           
-          
+            $winedine->image= $request->file('file')->store('images/resort/dinein', 'public');
         }
+        $winedine->save();
         // Store the villa
    
-        $WineDine = WineDine::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'image'=>$imagePath,
-            'resort_id' => $request->resortid,
-            'status' => 1,
-        ]);
+       
         $winedinelists=WineDine::where('resort_id',$request->resortid)->get();
         $resortid=$request->resortid;
 

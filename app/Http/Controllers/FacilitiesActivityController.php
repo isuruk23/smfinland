@@ -38,21 +38,21 @@ class FacilitiesActivityController extends Controller
 
         
 
+        
+        // Store the villa
+        $facility = new FacilitiesActivity();
+        $facility->facilities_activities = $request->facilities_activities;
+        $facility->description = $request->description;
+        $facility->resort_id = $request->resortid;
+        $facility->status =1;
+
         // Handle the file upload if exists
         if ($request->hasFile('file')) {
-            $imagePath = $request->file('file')->store('images/resort/facility', 'public');
-           
-          
-        }
-        // Store the villa
-   
-        $facility = FacilitiesActivity::create([
-            'facilities_activities' => $request->facilities_activities,
-            'description' => $request->description,
-            'image'=>$imagePath,
-            'resort_id' => $request->resortid,
-            'status' => 1,
-        ]);
+            $facility->image = $request->file('file')->store('images/resort/facility', 'public');          
+        } 
+        $facility->save();
+
+        
         $facilities=FacilitiesActivity::where('resort_id',$request->resortid)->get();
         $resortid=$request->resortid;
 
@@ -98,9 +98,7 @@ class FacilitiesActivityController extends Controller
 
         // Handle the file upload if exists
         if ($request->hasFile('file')) {
-            $imagePath = $request->file('file')->store('images/resort/facility', 'public');
-           
-            $facility->image = $imagePath;
+            $facility->image = $request->file('file')->store('images/resort/facility', 'public');
         }
         // Store the villa
    
