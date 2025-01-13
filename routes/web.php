@@ -54,7 +54,7 @@ Route::get('/honeymoon-resorts', [PageController::class, 'honeymoonresorts']);
 Route::get('/family-resorts', [PageController::class, 'familyresorts']);
 Route::get('/couple-resorts', [PageController::class, 'coupleresorts']);
 Route::get('/all-inclusive-resort', [PageController::class, 'allinclusiveresort']);
-Route::get('/resort-details/{id}/{slug}', [App\Http\Controllers\PageController::class, 'resortdetails']);
+Route::get('/resort-details/{slug}/{id}', [App\Http\Controllers\PageController::class, 'resortdetails']);
 
 Route::get('/blog', [PageController::class, 'blogs']);
 Route::get('/blog-page/{id}/{slug}', [App\Http\Controllers\PageController::class, 'blogpage']);
