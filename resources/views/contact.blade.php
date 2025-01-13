@@ -3,7 +3,7 @@
 @section('content')
 
  <!-- ================ start banner area ================= -->	
- <section class="contact-banner-area" id="contact" style="background: url({{ asset('public/storage/images/contact_banner.avif') }}) center center no-repeat;background-size: auto; background-size: cover;">
+ <section class="contact-banner-area" id="contact" style="background: url({{ asset('public/storage/images/maldives_holiday.avif') }}) center center no-repeat;background-size: auto; background-size: cover;">
 		<div class="container h-100">
 			<div class="contact-banner">
 				<div class="text-center">
