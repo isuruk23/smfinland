@@ -11,24 +11,14 @@
 
             <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner vh-100">
-                    <div class="carousel-item vh-100 active">
-                        <img src="{{ asset('public/storage/images/slider/slider1.avif') }}" class="d-block w-100" alt="Simplifly Finland">
+                <div class="carousel-item vh-100 active">
+                        <img src="{{ asset('public/storage/images/slider/best_hotels_in_maldives.avif') }}" class="d-block w-100" alt="Simplifly Finland">
                     </div>
+                    
                     <div class="carousel-item vh-100">
-                        <img src="{{ asset('public/storage/images/slider/slider2.avif') }}" class="d-block w-100" alt="Simplifly Finland">
+                        <img src="{{ asset('public/storage/images/slider/sri_lankan_holiday.avif') }}" class="d-block w-100" alt="Simplifly Finland">
                     </div>
-                    <div class="carousel-item vh-100">
-                        <img src="{{ asset('public/storage/images/slider/slider3.avif') }}" class="d-block w-100" alt="Simplifly Finland">
-                    </div>
-                    <div class="carousel-item vh-100">
-                        <img src="{{ asset('public/storage/images/slider/slider4.avif') }}" class="d-block w-100" alt="Simplifly Finland">
-                    </div>
-                    <div class="carousel-item vh-100">
-                        <img src="{{ asset('public/storage/images/slider/slider5.avif') }}" class="d-block w-100" alt="Simplifly Finland">
-                    </div>
-                     <div class="carousel-item vh-100">
-                        <img src="{{ asset('public/storage/images/slider/slider6.avif') }}" class="d-block w-100" alt="Simplifly Finland">
-                    </div>
+                    
                 </div>
                 <!--button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">

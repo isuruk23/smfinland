@@ -5,7 +5,7 @@
 
 
 <!-- ================ start banner area ================= -->	
-<section class="contact-banner-area" id="contact" style="background: url({{ asset('public/storage/images/about_banner.avif') }}) center center no-repeat;background-size: auto; background-size: cover;">
+<section class="contact-banner-area" id="contact" style="background: url({{ asset('public/storage/images/winter_holiday_in_sri_lanka.avif') }}) center center no-repeat;background-size: auto; background-size: cover;">
 		<div class="container h-100">
 			<div class="contact-banner">
 				<div class="text-center">
