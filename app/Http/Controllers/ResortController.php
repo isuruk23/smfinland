@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Resort;
+use App\Models\Country;
+use App\Models\Offer;
+use App\Models\ResortCategory;
+use App\Models\ResortType;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ResortController extends Controller
 {
@@ -13,7 +20,8 @@ class ResortController extends Controller
     public function index()
     {
         $resorts = Resort::all();
-        return response()->json($resorts);
+       
+        return view('resorts.index', compact('resorts'));
     }
 
     /**
@@ -21,7 +29,12 @@ class ResortController extends Controller
      */
     public function create()
     {
-        //
+        $countries=Country::all();
+        $categories=ResortCategory::all();
+        $offers=Offer::all();
+        $resortTypes=ResortType::all();
+   
+        return view('resorts.create', compact('countries','categories','offers','resortTypes'));
     }
 
     /**
@@ -29,8 +42,55 @@ class ResortController extends Controller
      */
     public function store(Request $request)
     {
-        $resort = Resort::create($request->all());
-        return response()->json($resort, 201);
+        $validated = $request->validate([
+            'country' => 'required',
+            'category' => 'required',
+            'resort' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'offer' => 'nullable',
+            'resorttype' => 'required',
+            'rates' => 'required|numeric',
+            'keyword' => 'required|string|max:255',
+            'summery' => 'required|string|max:255',
+            'description' => 'required|string',
+            'imap' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'file2' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $resort = new Resort();
+        $resort->country = $validated['country'];
+        $resort->category = $validated['category'];
+        $resort->resort = $validated['resort'];
+        $slugreplace = str_replace(' ', '-', $request->resort);
+        $slug=Str::lower($slugreplace);
+        $resort->resort_alias=$slug;
+        $resort->price = $validated['price'];
+        $resort->offer = $validated['offer'];
+      //  $resort->offertype = $validated['offertype'];
+        $resort->resorttype = $validated['resorttype'];
+        $resort->rates = $validated['rates'];
+        $resort->keyword = $validated['keyword'];
+        $resort->summery = $validated['summery'];
+        $resort->description = $validated['description'];
+        $resort->imap = $validated['imap'];
+        $resort->address = $validated['address'];
+        $resort->status = 1;
+        
+        // Handle image uploads
+        if ($request->hasFile('file')) {
+            $resort->image = $request->file('file')->store('images/resort', 'public');
+        }
+       
+        if ($request->hasFile('file2')) {
+            
+            $resort->bannerimage = $request->file('file2')->store('images/resort/banner', 'public');
+        }
+
+        $resort->save();
+
+        return redirect()->route('resort.index')->with('success', 'Resort created successfully!');
     }
 
     /**
@@ -46,16 +106,79 @@ class ResortController extends Controller
      */
     public function edit(Resort $resort)
     {
-        //
+        
+        $countries=Country::all();
+        $categories=ResortCategory::all();
+        $offers=Offer::all();
+        $resortTypes=ResortType::all();
+   
+        return view('resorts.edit', compact('countries','categories','offers','resortTypes','resort'));
+     
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Resort $resort)
-    {
-        $resort->update($request->all());
-        return response()->json($resort);
+  
+    public function update(Request $request, $id)
+        {
+            $validated = $request->validate([
+                'country' => 'required',
+                'category' => 'required',
+                'resort' => 'required|string|max:255',
+                'price' => 'required|numeric',
+                'offer' => 'nullable',
+                'resorttype' => 'required',
+                'rates' => 'required|numeric',
+                'keyword' => 'required|string|max:255',
+                'summery' => 'required|string|max:255',
+                'description' => 'required|string',
+                'imap' => 'required|string|max:255',
+                'address' => 'required|string|max:255',
+                'file' => 'nullable|file|mimes:jpeg,png,jpg,gif,avif|max:2048',
+                'file2' => 'nullable|file|mimes:jpeg,png,jpg,gif,avif|max:2048',
+            ]);
+          
+            $resort = Resort::findOrFail($id);
+            $resort->country = $validated['country'];
+            $resort->category = $validated['category'];
+            $resort->resort = $validated['resort'];
+            $slugreplace = str_replace(' ', '-', $request->resort);
+            $slug=Str::lower($slugreplace);
+            $resort->resort_alias=$slug;
+            $resort->price = $validated['price'];
+            $resort->offer = $validated['offer'];
+           // $resort->offertype = $validated['offertype'];
+            $resort->resorttype = $validated['resorttype'];
+            $resort->rates = $validated['rates'];
+            $resort->keyword = $validated['keyword'];
+            $resort->summery = $validated['summery'];
+            $resort->description = $validated['description'];
+            $resort->imap = $validated['imap'];
+            $resort->address = $validated['address'];
+           
+            // Handle image uploads
+            if ($request->hasFile('file')) {
+                // Delete the old image if exists
+                if ($resort->image) {
+                //    Storage::disk('public/images/resort/banner/')->delete($resort->image);
+                }
+              
+                $resort->image = $request->file('file')->store('images/resort', 'public');
+            }
+
+            if ($request->hasFile('file2')) {
+                // Delete the old banner image if exists
+                if ($resort->bannerimage) {
+                   // Storage::disk('public/images/resort/banner/')->delete($resort->banner_image);
+                }
+                $resort->bannerimage = $request->file('file2')->store('images/resort/banner', 'public');
+            }
+            
+            $resort->save();
+
+            return redirect()->route('resort.index')->with('success', 'Resort updated successfully!');
+        
     }
     /**
      * Remove the specified resource from storage.

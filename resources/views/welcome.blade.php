@@ -2076,29 +2076,88 @@ D</div> -->
 
    
     @endsection
-    @section('script')
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.read-more').forEach(function (link) {
-            link.addEventListener('click', function () {
-                const $this = this; // Reference to the clicked element
-                const shortReview = $this.previousElementSibling.previousElementSibling; // Short review span
-                const fullReview = $this.previousElementSibling; // Full review span
+  
+@section('script')
 
-                if (shortReview.classList.contains('d-none')) {
-                    // Show short review, hide full review
-                    shortReview.classList.remove('d-none');
-                    fullReview.classList.add('d-none');
-                    $this.textContent = 'Read more';
-                } else {
-                    // Show full review, hide short review
-                    shortReview.classList.add('d-none');
-                    fullReview.classList.remove('d-none');
-                    $this.textContent = 'Read less';
-                }
-            });
-        });
+<script>
+$(document).ready(function() {
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll > 100) {
+            $(".header").addClass('header-scrolled');
+
+
+            $(".logo-blue").css('display', 'block');
+            $(".logo-white").css('display', 'none');
+
+
+        } else {
+            $(".header").removeClass('header-scrolled');
+            $(".logo-white").css('display', 'block');
+            $(".logo-blue").css('display', 'none');
+        }
     });
+});
 </script>
+<script>
+var swiper = new Swiper('.swiper1', {
+    speed: 600,
+    slidesPerView: 3,
+    slidesPerColumn: 1,
+    spaceBetween: 30,
+    parallax: true,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 15
+        },
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 30
+        },
+        // when window width is >= 640px
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 30
+        },
 
+        // when window width is >= 768px
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        },
+
+        // when window width is >= 992px
+        1100: {
+            slidesPerView: 4,
+            spaceBetween: 30
+        }
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    // navigation: {
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
+    // },
+});
+
+// JS file of swiper-2
+
+var swiper = new Swiper('.swiper2', {
+    speed: 600,
+    parallax: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    // navigation: {
+    //   nextEl: '.swiper-button-next',
+    //   prevEl: '.swiper-button-prev',
+    // },
+});
+</script>
 @endsection
