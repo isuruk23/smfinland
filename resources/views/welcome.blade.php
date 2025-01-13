@@ -349,10 +349,8 @@ D</div> -->
 					  <!-- Slider main container -->
                             
                       <div class="row">
-                        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer>
-                        </script>
-                        <div class="elfsight-app-9f18fa42-ba3d-4dac-85a7-be242db040f2">
-                        </div>
+                      <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                      <div class="elfsight-app-14a26058-f8b6-4071-b316-96f7ce3bd49b" data-elfsight-app-lazy></div>
                     </div>
 					
 					
