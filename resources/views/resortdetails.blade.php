@@ -95,7 +95,7 @@
                                             @foreach ($villas as $villa)
                                                         <div class="row villa g-0 p-0">
                                                             <div class="col-lg-3 villa-img">
-                                                                <img src="{{  asset('public/storage/images/resort/villa/'.$villa->image) }}"
+                                                                <img src="{{  asset('public/storage/'.$villa->image) }}"
                                                                     alt="" class="img-fluid">
                                                             </div>
                                                             <div class="col-lg-6">
