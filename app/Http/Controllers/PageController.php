@@ -456,7 +456,7 @@ public function allinclusiveresort(){
 }
 
 
-public function resortdetails($id,$slug){
+public function resortdetails($slug,$id){
 
     $resort=Resort::where('id',$id)->first();
 
