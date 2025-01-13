@@ -46,6 +46,8 @@
                                             <a href="{{ route('resort.show', $resort->id) }}" class="btn btn-info btn-sm">View</a>
                                             <a href="{{ route('resort.edit', $resort->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                             <a href="{{ route('villas.show', $resort->id) }}" class="btn btn-warning btn-sm">Villa</a>
+                                            <a href="{{ route('winedine.show', $resort->id) }}" class="btn btn-warning btn-sm">winedine</a>
+                                            <a href="{{ route('facility.show', $resort->id) }}" class="btn btn-warning btn-sm">facility</a>
                                             <form action="{{ route('resort.destroy', $resort->id) }}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
