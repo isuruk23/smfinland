@@ -14,6 +14,9 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ThingstodoController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\OfferController;
+use App\Http\Controllers\VillaRoomController;
+use App\Http\Controllers\DocumentController;
 
 
 
@@ -27,6 +30,9 @@ Route::resource('quotes', QuoteController::class);
 Route::resource('blogs', BlogController::class);
 Route::resource('reviews', ReviewController::class);
 Route::resource('thingstodo', ThingstodoController::class);
+Route::resource('offers', OfferController::class);
+Route::resource('villa-rooms', VillaRoomController::class);
+Route::resource('documents', DocumentController::class);
 
 Route::delete('/multiday-tours-details/{id}', [MultiDayTourDetailsController::class, 'destroy'])->name('multiday_tours_details.delete');
 
@@ -48,6 +54,8 @@ Route::get('/honeymoon-resorts', [PageController::class, 'honeymoonresorts']);
 Route::get('/family-resorts', [PageController::class, 'familyresorts']);
 Route::get('/couple-resorts', [PageController::class, 'coupleresorts']);
 Route::get('/all-inclusive-resort', [PageController::class, 'allinclusiveresort']);
+Route::get('/resort-details/{id}/{slug}', [App\Http\Controllers\PageController::class, 'resortdetails']);
+
 Route::get('/blog', [PageController::class, 'blogs']);
 Route::get('/blog-page/{id}/{slug}', [App\Http\Controllers\PageController::class, 'blogpage']);
 Route::get('/quote', [App\Http\Controllers\PageController::class, 'quote']);

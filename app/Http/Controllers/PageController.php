@@ -13,6 +13,11 @@ use App\Models\Experience;
 use App\Models\City;
 use App\Models\Destinations;
 use App\Models\Resort;
+use App\Models\Offer;
+use App\Models\VillaRoom;
+use App\Models\FacilitiesActivity;
+use App\Models\Document;
+use App\Models\WineDine;
 use Rinvex\Country\CountryLoader;
 use App\Models\Blog;
 use App\Models\Review;
@@ -391,7 +396,7 @@ public function honeymoonresorts(){
     ->where('resorts.category',2)
     ->get();
 
-    return view('honeymoonresorts', compact('resorts'));
+    return view('honeymoonresorts', compact('resorts','meta'));
 }
 
 public function familyresorts(){
@@ -410,7 +415,7 @@ public function familyresorts(){
 
 
 
-    return view('familyresorts', compact('resorts'));
+    return view('familyresorts', compact('resorts','meta'));
 }
 
 public function coupleresorts(){
@@ -429,7 +434,7 @@ public function coupleresorts(){
 
 
 
-    return view('coupleresorts', compact('resorts'));
+    return view('coupleresorts', compact('resorts','meta'));
 }
 public function allinclusiveresort(){
     $meta = [
@@ -447,10 +452,30 @@ public function allinclusiveresort(){
 
 
 
-    return view('allinclusiveresorts', compact('resorts'));
+    return view('allinclusiveresorts', compact('resorts','meta'));
 }
 
 
+public function resortdetails($id,$slug){
+
+    $resort=Resort::where('id',$id)->first();
+
+    $meta = [
+        'title' => 'Simplifly Finland - '. $resort->resort,
+        'meta_description' => $resort->description,
+        'meta_keywords' => $resort->keywords,
+    ];
+   
+    
+    $offers = Offer::where('resort',$id)->get();
+    $villas = VillaRoom::where('resort_id',$id)->get();
+    $documents = Document::where('resort_id',$id)->get();
+    $restaurants = WineDine::where('resort_id',$id)->get();
+    $experiences = FacilitiesActivity::where('resort_id',$id)->get();
+
+
+    return view('resortdetails', compact('meta','resort','offers','villas','documents','restaurants','experiences'));
+}
 }
 
 

@@ -63,7 +63,7 @@
                                                     <div class="col-6 text-end"><a href="quote.php" class="btn btn-primary">Get a
                                                             Quote</a>
                                                     </div>
-                                                    <div class="col-6 text-start"><a class="btn btn-outline-primary" href="resort-details.php?r=villa_haven_maldives">Explore
+                                                    <div class="col-6 text-start"><a class="btn btn-outline-primary" href="/resort-details/{{ $resort->id }}/{{ $resort->resort_alias }}">Explore
                                                             More</a></div>
                                                 </div>
                                             </div>
