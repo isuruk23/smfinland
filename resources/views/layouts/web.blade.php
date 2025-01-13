@@ -33,6 +33,11 @@
 <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('public/css/main.css') }}">
   <link rel="stylesheet" href="{{ asset('public/css/styles.min.css') }}">
+  <style>
+    .es-widget-title-container{
+        display:none !important;
+    }
+  </style>
 </head>
 
 <body class="home-page">

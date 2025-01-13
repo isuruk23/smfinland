@@ -36,7 +36,12 @@ class PageController extends Controller
             'meta_description' => 'Sri Lanka is a country with a diverse population of people of many nationalities. Be mesmerized by the infinite miles of beautiful white sandy beaches and gorgeous blue waters.',
             'meta_keywords' => 'simplifly, simpliflysrilanka, sri lanka tours, family vacations, solo travellers, tropical getaway, island holidays, holiday planning, srilanka',
         ];
-        $resorts = Resort::where('status',1)->get();
+       // $resorts = Resort::where('status',1)->get();
+        $resorts =DB::table('resorts')
+        ->join('resort_categories', 'resorts.category', '=', 'resort_categories.id')
+        ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
+        ->select('resorts.*', 'resort_types.type AS category', 'resort_types.type')
+        ->get();
         $blogs = Blog::where('is_active',1)->limit(3)->get();
         $multitours = MultiDayTour::all();
         $tours = DayTour::all();
