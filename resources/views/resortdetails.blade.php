@@ -96,7 +96,7 @@
                                                         <div class="row villa g-0 p-0">
                                                             <div class="col-lg-3 villa-img">
                                                                 <img src="{{  asset('public/storage/'.$villa->image) }}"
-                                                                    alt="" class="img-fluid">
+                                                                    alt="{{ $villa->name }}" class="img-fluid">
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="p-4 d-flex h-100 align-items-center">
@@ -213,7 +213,7 @@
                                     @foreach ($restaurants as $restaurant)
                                                 <div class="col-lg-3 mb-4 offer-card dine">
                                                     <div class="img-div">
-                                                        <img src="{{ asset('public/storage/images/resort/dinein/' . $restaurant->image) }}" alt="{{$restaurant->title}}"
+                                                        <img src="{{ asset('public/storage/' . $restaurant->image) }}" alt="{{$restaurant->title}}"
                                                             class="img-fluid">
                                                     </div>
                                                     <div class="description_content p-3 position-relative">
