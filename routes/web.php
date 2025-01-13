@@ -17,6 +17,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\VillaRoomController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\ResortController;
 
 
 
@@ -31,9 +32,12 @@ Route::resource('blogs', BlogController::class);
 Route::resource('reviews', ReviewController::class);
 Route::resource('thingstodo', ThingstodoController::class);
 Route::resource('offers', OfferController::class);
-Route::resource('villa-rooms', VillaRoomController::class);
+Route::resource('villas', VillaRoomController::class);
 Route::resource('documents', DocumentController::class);
+Route::resource('resort', ResortController::class);
 
+
+Route::get('/villaedit/{id}/{resortid}', [VillaRoomController::class, 'edit'])->name('villaedit');
 Route::delete('/multiday-tours-details/{id}', [MultiDayTourDetailsController::class, 'destroy'])->name('multiday_tours_details.delete');
 
 Route::resource('experience', ExperienceController::class);

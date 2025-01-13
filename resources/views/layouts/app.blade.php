@@ -41,6 +41,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/reviews">Reviews</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/resort">Resort</a>
+                    </li>
                     <!-- Authentication Links -->
                     @if(Auth::check())
                         <li class="nav-item dropdown">
