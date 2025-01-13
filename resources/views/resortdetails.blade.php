@@ -60,7 +60,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h2 class="heading text-center">Overview</h2>
-                                            <p class="font-larger">{{$resort->discription}}</p>
+                                            <p class="font-larger">{{$resort->description}} </p>
                                         </div>
                                     </div>
                                 </div>

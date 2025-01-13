@@ -18,6 +18,9 @@ use App\Http\Controllers\OfferController;
 use App\Http\Controllers\VillaRoomController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\ResortController;
+use App\Http\Controllers\WineDineController;
+use App\Http\Controllers\FacilitiesActivityController;
+
 
 
 
@@ -35,9 +38,13 @@ Route::resource('offers', OfferController::class);
 Route::resource('villas', VillaRoomController::class);
 Route::resource('documents', DocumentController::class);
 Route::resource('resort', ResortController::class);
+Route::resource('winedine', WineDineController::class);
+Route::resource('facility', FacilitiesActivityController::class);
 
 
 Route::get('/villaedit/{id}/{resortid}', [VillaRoomController::class, 'edit'])->name('villaedit');
+Route::get('/winedineedit/{id}/{resortid}', [WineDineController::class, 'edit'])->name('winedineedit');
+Route::get('/facilityedit/{id}/{resortid}', [FacilitiesActivityController::class, 'edit'])->name('facilityedit');
 Route::delete('/multiday-tours-details/{id}', [MultiDayTourDetailsController::class, 'destroy'])->name('multiday_tours_details.delete');
 
 Route::resource('experience', ExperienceController::class);

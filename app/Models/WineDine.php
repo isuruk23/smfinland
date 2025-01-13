@@ -11,7 +11,7 @@ class WineDine extends Model
 
     protected $fillable = [
         'id',
-        'discription',
+        'description',
         'image',
         'resort_id',
         'status',
