@@ -32,9 +32,9 @@
                                                         <div class="col-lg-3 mb-4 offer-card">
                                    <div class="post-img-div">
                                                  @if ($resort->image)
-                                                <img class="card-img" src="{{ asset('public/storage/images/resort/' .$resort->image) }}" alt="{{ $resort->resort }}" class="img-fluid">
+                                                <img class="card-img" src="{{ asset('public/storage/' .$resort->image) }}" alt="{{ $resort->resort }}" class="img-fluid">
                                                 @else            
-                                                  <img class="card-img" src="{{ asset('images/sample.png') }}" alt="" class="img-fluid">
+                                                  <img class="card-img" src="{{ asset('public/images/sample.png') }}" alt="" class="img-fluid">
                                                 @endif
                                                
                                             </div>
@@ -44,7 +44,7 @@
                                                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>                                                </div>
                                                 <div class="resort">
                                                     <h5 class="title mb-2 mt-2">
-                                                        <a class="text-dark" href="resort-details.php?r=villa_haven_maldives">
+                                                        <a class="text-dark" href="/resort-details/{{ $resort->resort_alias }}/{{ $resort->id }}">
                                                         {{ $resort->resort }}</a>
                                                     </h5>
                                                 </div>
