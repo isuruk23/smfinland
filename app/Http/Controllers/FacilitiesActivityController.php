@@ -40,7 +40,7 @@ class FacilitiesActivityController extends Controller
 
         // Handle the file upload if exists
         if ($request->hasFile('file')) {
-            $imagePath = $request->file('file')->store('public/storage/', 'public');
+            $imagePath = $request->file('file')->store('images/resort/facility', 'public');
            
           
         }
@@ -98,7 +98,7 @@ class FacilitiesActivityController extends Controller
 
         // Handle the file upload if exists
         if ($request->hasFile('file')) {
-            $imagePath = $request->file('file')->store('public/storage/', 'public');
+            $imagePath = $request->file('file')->store('images/resort/facility', 'public');
            
             $facility->image = $imagePath;
         }

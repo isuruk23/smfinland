@@ -40,7 +40,7 @@ class WineDineController extends Controller
 
         // Handle the file upload if exists
         if ($request->hasFile('file')) {
-            $imagePath = $request->file('file')->store('public/storage/', 'public');
+            $imagePath = $request->file('file')->store('images/resort/dinein', 'public');
            
           
         }
@@ -101,7 +101,7 @@ class WineDineController extends Controller
 
         // Handle the file upload if exists
         if ($request->hasFile('file')) {
-            $imagePath = $request->file('file')->store('public/storage/', 'public');
+            $imagePath = $request->file('file')->store('images/resort/dinein', 'public');
            
             $winedine->image = $imagePath;
         }
