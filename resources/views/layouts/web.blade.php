@@ -11,7 +11,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="robots" content="index, follow">
     
-    <title>Simplifly Finland | Luxury Holidays Packages to Maldives & Beyond</title>
+    <title>Simplifly Finland | @yield('title', $meta['title'])</title>
     <meta name="author" content="Simplifly finland" />
     <meta
         content="Discover luxury travel with Simplifly Finland. Specializing in Maldives holidays packages and global destinations, we offer curated packages for ultimate relaxation and adventure."
@@ -158,96 +158,16 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
 
-    <script src="assets/vendor/aos/aos.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{{ asset('public/vendor/aos/aos.js') }}"></script>
+<script src="{{ asset('public/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('public/vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js "></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
+<script src="{{ asset('public/js/main.js') }}"></script>
+@yield('script')
 
-<script>
-$(document).ready(function() {
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-
-        if (scroll > 100) {
-            $(".header").addClass('header-scrolled');
-
-
-            $(".logo-blue").css('display', 'block');
-            $(".logo-white").css('display', 'none');
-
-
-        } else {
-            $(".header").removeClass('header-scrolled');
-            $(".logo-white").css('display', 'block');
-            $(".logo-blue").css('display', 'none');
-        }
-    });
-});
-</script>
-<script>
-var swiper = new Swiper('.swiper1', {
-    speed: 600,
-    slidesPerView: 3,
-    slidesPerColumn: 1,
-    spaceBetween: 30,
-    parallax: true,
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 15
-        },
-        // when window width is >= 480px
-        480: {
-            slidesPerView: 2,
-            spaceBetween: 30
-        },
-        // when window width is >= 640px
-        640: {
-            slidesPerView: 2,
-            spaceBetween: 30
-        },
-
-        // when window width is >= 768px
-        768: {
-            slidesPerView: 3,
-            spaceBetween: 30
-        },
-
-        // when window width is >= 992px
-        1100: {
-            slidesPerView: 4,
-            spaceBetween: 30
-        }
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    // navigation: {
-    //     nextEl: '.swiper-button-next',
-    //     prevEl: '.swiper-button-prev',
-    // },
-});
-
-// JS file of swiper-2
-
-var swiper = new Swiper('.swiper2', {
-    speed: 600,
-    parallax: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    // navigation: {
-    //   nextEl: '.swiper-button-next',
-    //   prevEl: '.swiper-button-prev',
-    // },
-});
-</script>
 </body>
 
 </html>
