@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- ================ start banner area ================= -->	
-<section class="contact-banner-area" id="contact" style='background: url("{{ asset('public/storage/images/resort/banner/'.$resort->bannerimage) }}") center center no-repeat;background-size: auto;'>
+<section class="contact-banner-area" id="contact" style="background: url({{ url('public/storage/'.$resort->bannerimage) }}) center center no-repeat;background-size: auto;">
 		<div class="container h-100">
 			<div class="contact-banner">
 				<div class="text-center">
