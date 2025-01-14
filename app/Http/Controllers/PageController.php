@@ -483,7 +483,7 @@ public function resortdetails($slug,$id){
     ];
    
     
-    $offers = Offer::where('resort',$id)->get();
+    $offers = Offer::where('resort_id',$id)->get();
     $villas = VillaRoom::where('resort_id',$id)->get();
     $documents = Document::where('resort_id',$id)->get();
     $restaurants = WineDine::where('resort_id',$id)->get();
