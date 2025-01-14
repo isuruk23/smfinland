@@ -43,7 +43,7 @@ class VillaRoomController extends Controller
             'ac' => 'required|boolean',
             'barthroom' => 'required|boolean',
             'resort' => 'required|exists:resorts,id', // assuming you have a resorts table
-            'file' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'file' => 'required|mimes:jpg,png,jpeg,gif,avif|max:2048',
         ]);
        
         // Store the villa
@@ -123,7 +123,7 @@ class VillaRoomController extends Controller
             'ac' => 'required|boolean',
             'barthroom' => 'required|boolean',
             'resort' => 'required', // Update if this maps to a database column
-            'file' => 'nullable|file|mimes:jpeg,png,jpg,gif,avif|max:2048',
+            'file' => 'nullable|mimes:jpeg,png,jpg,gif,avif|max:2048',
         ]);
     
         // Initialize $imagePath to handle cases where no file is uploaded
