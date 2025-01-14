@@ -154,8 +154,20 @@ class MultiDayTourController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(MultiDayTour $multiDayTour)
+    public function destroy($id)
     {
-        //
+        $tour = MultiDayTour::findOrFail($id);
+
+        if ($tour->image1) {
+            \Storage::delete($tour->image);
+        }
+        if ($tour->image2) {
+            \Storage::delete($tour->banner_image);
+        }
+
+        $tour->delete();
+
+        return redirect()->route('multi_day_tours.index')->with('success', 'Tour deleted successfully.');
+   
     }
 }

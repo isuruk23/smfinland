@@ -20,6 +20,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                @if(Auth::check())
                     <li class="nav-item">
                         <a class="nav-link" href="/multi_day_tours">Multiday Tours</a>
                     </li>
@@ -45,7 +46,7 @@
                         <a class="nav-link" href="/resort">Resort</a>
                     </li>
                     <!-- Authentication Links -->
-                    @if(Auth::check())
+                   
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle d-flex" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         

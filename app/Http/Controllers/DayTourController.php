@@ -123,8 +123,20 @@ class DayTourController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DayTour $dayTour)
+    public function destroy($id)
     {
-        //
+        $tour = DayTour::findOrFail($id);
+
+        if ($tour->image1) {
+            \Storage::delete($tour->image);
+        }
+        if ($tour->image2) {
+            \Storage::delete($tour->banner_image);
+        }
+
+        $tour->delete();
+
+        return redirect()->route('day_tours.index')->with('success', 'Tour deleted successfully.');
+   
     }
 }

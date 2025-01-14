@@ -105,14 +105,16 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Blog $blog)
+    public function destroy($id)
     {
-        // Delete the image if it exists
-        if ($blog->image) {
-            unlink(storage_path('app/public/' . $blog->image));
-        }
+        
+        $blog = Blog::findOrFail($id);
 
-        $blog->delete();
+        if ($blog->image) {
+            \Storage::delete($blog->image);
+        }      
+
+        $blog->delete();   
 
         return redirect()->route('blogs.index')->with('success', 'Blog deleted successfully');
     }

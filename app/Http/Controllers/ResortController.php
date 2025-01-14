@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Resort;
+use App\Models\FacilitiesActivity;
+use App\Models\WineDine;
+use App\Models\VillaRoom;
 use App\Models\Country;
 use App\Models\Offer;
 use App\Models\ResortCategory;
@@ -183,9 +186,48 @@ class ResortController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Resort $resort)
+    public function destroy($id)
     {
-        $resort->delete();
-        return response()->json(null, 204);
+        
+        $resort = Resort::findOrFail($id);
+        if ($resort->image) {
+            \Storage::delete($resort->image);
+        }   
+        if ($resort->bannerimage) {
+            \Storage::delete($resort->bannerimage);
+        }    
+        $resort->delete();  
+        
+        $villas = VillaRoom::where('resort_id', $id)->get();
+
+        foreach ($villas as $villa) {
+            if ($villa->image) {
+                \Storage::delete($villa->image);
+            }
+            $villa->delete();
+        }
+            // Correct WineDine logic
+            $wineDines = WineDine::where('resort_id', $id)->get();
+           
+
+            foreach ($wineDines as $wineDine) {
+                if ($wineDine->image) {
+                    \Storage::delete($wineDine->image);
+                }
+                $wineDine->delete();
+            }
+
+            // Correct FacilitiesActivity logic
+            $facilitiesActivities = FacilitiesActivity::where('resort_id', $id)->get();
+
+            foreach ($facilitiesActivities as $facilitiesActivity) {
+                if ($facilitiesActivity->image) {
+                    \Storage::delete($facilitiesActivity->image);
+                }
+                $facilitiesActivity->delete();
+            }
+
+
+        return redirect()->route('resort.index')->with('success', 'Resort deleted successfully');
     }
 }
