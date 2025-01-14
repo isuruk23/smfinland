@@ -34,7 +34,7 @@
 
 
 
-            <div class="container heading d-flex align-items-center justify-content-center vh-100">
+            <!-- <div class="container heading d-flex align-items-center justify-content-center vh-100">
                 <div class="row">
                     <div class="col-12">
                         <h1>The Most Welcome Destination
@@ -42,7 +42,7 @@
                     </div>
 
                 </div>
-            </div>
+            </div> -->
 
         </section><!-- End Hero Section -->
 
