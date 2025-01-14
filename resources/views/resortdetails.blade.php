@@ -194,7 +194,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="padding-base" id="pills-factsheet">
+                            <!-- <div class="padding-base" id="pills-factsheet">
                                 <div class="container">
                                     <h2 class="heading text-center">Fact Sheet</h2>
                                     <div class="row d-flex justify-content-center g-0" id="resorts">
@@ -205,7 +205,7 @@
                                     @endforeach
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="padding-base  bg-gray" id="pills-dining">
                                 <div class="container">
                                     <h2 class="heading text-center">Restaurants</h2>
@@ -218,34 +218,31 @@
                                                     </div>
                                                     <div class="description_content p-3 position-relative">
                                                         <h4>{{$restaurant->title}}</h4>
-                                                        <p>{{$restaurant->description}}</p>
+                                                        <p>{!!$restaurant->description!!}</p>
                                                     </div>
                                                 </div>
                                         @endforeach
                                     </div>
                                 </div>
                             </div>
-                            <div class="padding-base" id="pills-experiences">
+                            <!-- <div class="padding-base" id="pills-experiences">
                                 <div class="container">
                                     <h2 class="heading text-center">Experiences</h2>
                                     <div class="row py-2" data-masonry='{"percentPosition": true }'>
                                     @foreach ($experiences as $experience)
                                                 <div class="col-lg-3 mb-4 offer-card experiences">
-                                                    <!--div class="img-div">
-                                                        <img src="assets/img/resort/facility/ {{$experience->image}}"
-                                                            alt="" class="img-fluid">
-                                                    </div-->
+                                                  
                                                     <div class="description_content p-3 position-relative">
                                                         <h4>{{$experience->facilities_activities}}
                                                         </h4>
                                                         
                                                         <p class="description @if(strlen($experience->description) > 100) collapsed @endif">
                                                             @if(strlen($experience->description) > 100)
-                                                                {{ substr($experience->description, 0, 100) }}
+                                                                {!! substr($experience->description, 0, 100) !!}
                                                                 <span class="more-text d-none">{{ substr($experience->description, 100) }}</span>
                                                                 ...
                                                             @else
-                                                                {{ $experience->description }}
+                                                                {!! $experience->description !!}
                                                             @endif
                                                         </p>
 
@@ -264,7 +261,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
       
                            
                   

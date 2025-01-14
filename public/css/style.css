@@ -2549,10 +2549,21 @@ color: var(--primary);
 .tourdetails  ul li::before {
   content: "•"; /* Custom bullet symbol (you can use emoji or icons here) */
   color: var(--primary); /* Bullet color */
-  font-size: 50px; /* Bullet size */
+  font-size: 22px; /* Bullet size */
   position: absolute;
   left: 0;
-  top: -30px;
+  top: -15px;
+}
+
+.navbar .dropdown .dd-box-shadow {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.navbar .dropdown .dd-box-shadow .dropdown-active {
+    display: block;
+    opacity: 1;
+    visibility: unset;
 }
 
 .tourdetails  a {
