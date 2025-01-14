@@ -2555,16 +2555,7 @@ color: var(--primary);
   top: -15px;
 }
 
-.navbar .dropdown .dd-box-shadow {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.navbar .dropdown .dd-box-shadow .dropdown-active {
-    display: block;
-    opacity: 1;
-    visibility: unset;
-}
+
 
 .tourdetails  a {
   color: #007BFF;
