@@ -58,8 +58,8 @@ class ResortController extends Controller
             'description' => 'required|string',
             'imap' => 'required|string',
             'address' => 'required|string|max:255',
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'file2' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'file' => 'required|mimes:jpeg,png,jpg,gif,avif|max:2048',
+            'file2' => 'required|mimes:jpeg,png,jpg,gif,avif|max:2048',
         ]);
 
         $resort = new Resort();

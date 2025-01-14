@@ -165,9 +165,18 @@ class VillaRoomController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(VillaRoom $villaRoom)
+    public function destroy($id)
     {
+      
+        $villaRoom = VillaRoom::findOrFail($id);
+
+        if ($villaRoom->image) {
+            \Storage::delete($villaRoom->image);
+        }
+        
         $villaRoom->delete();
-        return response()->json(null, 204);
+
+        return redirect()->back()->with('success', 'Villa Room deleted successfully.');
+    
     }
 }

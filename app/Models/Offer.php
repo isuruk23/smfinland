@@ -10,7 +10,6 @@ class Offer extends Model
     use HasFactory;
     protected $fillable = [
         'id',
-        'resort',
         'title',
         'keyword',
         'summery',
@@ -19,6 +18,7 @@ class Offer extends Model
         'meal_type',
         'image',
         'status',
+        'resort_id',
         'updateddatetime',
         'tbl_user_idtbl_user',
     ];

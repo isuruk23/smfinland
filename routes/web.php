@@ -42,6 +42,7 @@ Route::resource('winedine', WineDineController::class);
 Route::resource('facility', FacilitiesActivityController::class);
 
 });
+Route::get('/offeredit/{id}/{resortid}', [OfferController::class, 'edit'])->name('offeredit');
 Route::get('/villaedit/{id}/{resortid}', [VillaRoomController::class, 'edit'])->name('villaedit');
 Route::get('/winedineedit/{id}/{resortid}', [WineDineController::class, 'edit'])->name('winedineedit');
 Route::get('/facilityedit/{id}/{resortid}', [FacilitiesActivityController::class, 'edit'])->name('facilityedit');

@@ -60,7 +60,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h2 class="heading text-center">Overview</h2>
-                                            <p class="font-larger">{{$resort->description}} </p>
+                                            <p class="font-larger">{!! $resort->description !!} </p>
                                         </div>
                                     </div>
                                 </div>
@@ -107,10 +107,10 @@
                                                                             <p class="description @if(strlen($villa->description) > 100) collapsed @endif">
                                                                             @if(strlen($villa->description) > 100)
                                                                                 {{ substr($villa->description, 0, 100) }}
-                                                                                <span class="more-text d-none">{{ substr($villa->description, 100) }}</span>
+                                                                                <span class="more-text d-none">{!! substr($villa->description, 100) !!}</span>
                                                                                 ...
                                                                             @else
-                                                                                {{ $villa->description }}
+                                                                                {!! $villa->description !!}
                                                                             @endif
                                                                         </p>
 																											
