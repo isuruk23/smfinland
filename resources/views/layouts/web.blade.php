@@ -151,8 +151,8 @@
         </div>
         <div class="col-md-4">
             <div class="links">
-                <a href="booking-cancellation-policy.php">Booking & Cancellation Policy</a>
-                <a href="privacy-policy.php">Privacy Policy </a>
+                <a href="/booking-cancellation-policy">Booking & Cancellation Policy</a>
+                <a href="/privacy-policy">Privacy Policy </a>
             </div>
         </div>
     </div>

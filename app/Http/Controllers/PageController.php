@@ -388,6 +388,16 @@ public function faq(){
     return view('faq', compact('meta'));
 }
 
+public function booking(){
+    $meta = [
+        'title' => 'About Simplifly Sri Lanka Agents',
+        'meta_description' => 'Sri Lanka is a country with a diverse population of people of many nationalities. Be mesmerized by the infinite miles of beautiful white sandy beaches and gorgeous blue waters. Sip a nice cup of Ceylon Tea while enjoying the varied spices and rice and curries. Simplifly Sri Lanka (Pvt) Ltd believes in an exceptional quality of living, where every journey should be a memorable experience.',
+        'meta_keywords' => 'simplifly, simpliflysrilanka, sri lanka tours, family vacations, solo travellers, tropical getaway, island holidays, holiday planning, srilanka',
+    ];
+    return view('bookingcancellationpolicy', compact('meta'));
+}
+
+
 public function honeymoonresorts(){
     $meta = [
         'title' => 'Simplifly Finland - Honeymoon Resort',

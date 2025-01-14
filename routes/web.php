@@ -22,7 +22,7 @@ use App\Http\Controllers\WineDineController;
 use App\Http\Controllers\FacilitiesActivityController;
 
 
-
+Route::middleware(['auth'])->group(function () {
 
 Route::resource('multi_day_tours', MultiDayTourController::class);
 Route::resource('day_tours', DayTourController::class);
@@ -41,7 +41,7 @@ Route::resource('resort', ResortController::class);
 Route::resource('winedine', WineDineController::class);
 Route::resource('facility', FacilitiesActivityController::class);
 
-
+});
 Route::get('/villaedit/{id}/{resortid}', [VillaRoomController::class, 'edit'])->name('villaedit');
 Route::get('/winedineedit/{id}/{resortid}', [WineDineController::class, 'edit'])->name('winedineedit');
 Route::get('/facilityedit/{id}/{resortid}', [FacilitiesActivityController::class, 'edit'])->name('facilityedit');
@@ -86,6 +86,7 @@ Route::get('/privacy-policy', [PageController::class, 'privacypolicy']);
 Route::get('/terms-and-condition', [PageController::class, 'termscondition']);
 Route::get('/our-team', [PageController::class, 'ourteam']);
 Route::get('/faq', [PageController::class, 'faq']);
+
 Route::get('/four-season', [PageController::class, 'fourseason']);
 Route::get('/destination/{slug}/{id}', [App\Http\Controllers\PageController::class, 'destinationdetails']);
 Route::get('/thingstodo/{slug}/{id}', [App\Http\Controllers\PageController::class, 'thingstododetails']);

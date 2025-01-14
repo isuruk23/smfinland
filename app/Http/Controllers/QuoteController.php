@@ -154,8 +154,15 @@ class QuoteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Quote $quote)
+    public function destroy($id)
     {
-        //
+        
+        $quote = Quote::findOrFail($id);
+
+          
+
+        $quote->delete();   
+
+        return redirect()->route('quotes.index')->with('success', 'Quote deleted successfully');
     }
 }
