@@ -74,7 +74,7 @@
                                             
                                                 <div class="col-lg-3 offer-card p-3">
                                                     <h4 class="text-center">{{ $offer->title }}</h4>
-                                                    <p>{!! $offer->discription !!}</p>
+                                                    <p>{!! $offer->description !!}</p>
                                                     <div class="row align-items-center justify-content-center button-container">
                                                     <div class="col-12 text-center"><a class="btn btn-primary " href="offer/{{ $offer->id }}">Book
                                                             Now

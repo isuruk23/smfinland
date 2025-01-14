@@ -32,7 +32,7 @@ class WineDineController extends Controller
          // Validate the incoming request
          $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255', // assuming you have a resorts table
+            'description' => 'required|string', // assuming you have a resorts table
             'file' => 'nullable|file|mimes:jpg,png,jpeg,gif,avif|max:2048',
         ]);
 
@@ -93,7 +93,7 @@ class WineDineController extends Controller
         // Validate the incoming request
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255', // assuming you have a resorts table
+            'description' => 'required|string', // assuming you have a resorts table
             'file' => 'nullable|file|mimes:jpg,png,jpeg,gif,avif|max:2048',
         ]);
 
