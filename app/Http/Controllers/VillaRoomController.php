@@ -45,30 +45,36 @@ class VillaRoomController extends Controller
             'resort' => 'required|exists:resorts,id', // assuming you have a resorts table
             'file' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
-
+       
         // Store the villa
-        $villa = Villa::create([
-            'type' => $request->type,
-            'name' => $request->name,
-            'description' => $request->description,
-            'roomsize' => $request->roomsize,
-            'bed' => $request->bed,
-            'view' => $request->view,
-            'wifi' => $request->wifi,
-            'ac' => $request->ac,
-            'barthroom' => $request->barthroom,
-            'resort_id' => $request->resort, // Assuming resort_id is the foreign key
-        ]);
+        $villa = new VillaRoom();
+        $villa->type = $request->type;
+        $villa->name = $request->name;
+        $villa->description = $request->description;
+        $villa->roomsize = $request->roomsize;
+        $villa->bed = $request->bed;
+        $villa->view = $request->view;
+        $villa->wifi = $request->wifi;
+        $villa->ac = $request->ac;
+        $villa->barthroom = $request->barthroom;
+        $villa->resort_id = $request->resort;
+        $villa->status =1;
+
+       
 
         // Handle the file upload if exists
         if ($request->hasFile('file')) {
-            $imagePath = $request->file('file')->store('villa_images', 'public');
-            $villa->image_path = $imagePath;
-            $villa->save();
+            $villa->image  = $request->file('file')->store('villa_images', 'public');
+            
+           
         }
-
+        $villa->save();
         // Redirect back with a success message
-        return redirect()->route('villas.index')->with('success', 'Villa added successfully!');
+       $resortid=$request->resort;
+       $villaRooms = VillaRoom::where('resort_id',$resortid)->get();
+       
+        return view('villas.index', compact('villaRooms', 'resortid'))
+        ->with('success', 'Villa updated successfully!');
     }
 
 
@@ -178,5 +184,27 @@ class VillaRoomController extends Controller
 
         return redirect()->back()->with('success', 'Villa Room deleted successfully.');
     
+    }
+    public function getVillaDetails(Request $request)
+    {
+        $id = $request->input('id');
+
+        // Fetch the villa details based on the ID from the database
+        $villa = VillaRoom::where('id', $id)->first();
+
+        if ($villa) {
+            return response()->json([
+                'name' => $villa->name,
+                'description' => $villa->description,
+                'roomsize' => $villa->room_size,
+                'sleep' => $villa->sleep,
+                'view' => $villa->view,
+                'wifi' => $villa->wifi,
+                'ac' => $villa->ac,
+                'barthroom' => $villa->bathroom,
+            ]);
+        }
+
+        return response()->json(['error' => 'Villa not found'], 404);
     }
 }

@@ -124,4 +124,21 @@ class FacilitiesActivityController extends Controller
         $facilitiesActivity->delete();
         return response()->json(null, 204);
     }
+
+    public function getExperienceDetails(Request $request)
+    {
+        $id = $request->input('id');
+
+        // Fetch the experience details based on the ID from the database
+        $experience = FacilitiesActivity::where('id', $id)->first();
+
+        if ($experience) {
+            return response()->json([
+                'name' => $experience->name,
+                'description' => $experience->description
+            ]);
+        }
+
+        return response()->json(['error' => 'Experience not found'], 404);
+    }
 }

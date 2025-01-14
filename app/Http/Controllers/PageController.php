@@ -409,7 +409,9 @@ public function honeymoonresorts(){
     ->join('resort_categories', 'resorts.category', '=', 'resort_categories.id')
     ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
     ->select('resorts.*', 'resort_types.type AS category', 'resort_types.type')
-    ->where('resorts.category',2)
+    ->where('resorts.category',2)    
+    ->where('resorts.status',1)
+    ->orderby('resorts.resort' ,'ASC')
     ->get();
 
     return view('honeymoonresorts', compact('resorts','meta'));
@@ -426,7 +428,9 @@ public function familyresorts(){
     ->join('resort_categories', 'resorts.category', '=', 'resort_categories.id')
     ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
     ->select('resorts.*', 'resort_types.type AS category', 'resort_types.type')
-    ->where('resorts.category',3)
+    ->where('resorts.category',3)    
+    ->where('resorts.status',1)
+    ->orderby('resorts.resort' ,'ASC')
     ->get();
 
 
@@ -445,7 +449,9 @@ public function coupleresorts(){
     ->join('resort_categories', 'resorts.category', '=', 'resort_categories.id')
     ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
     ->select('resorts.*', 'resort_types.type AS category', 'resort_types.type')
-    ->where('resorts.category',4)
+    ->where('resorts.category',4)    
+    ->where('resorts.status',1)
+    ->orderby('resorts.resort' ,'ASC')
     ->get();
 
 
@@ -464,6 +470,8 @@ public function allinclusiveresort(){
     ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
     ->select('resorts.*', 'resort_types.type AS category', 'resort_types.type')
     ->where('resorts.category',1)
+    ->where('resorts.status',1)
+    ->orderby('resorts.resort' ,'ASC')
     ->get();
 
 
@@ -483,6 +491,7 @@ public function resorts(){
     ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
     ->select('resorts.*', 'resort_types.type AS category', 'resort_types.type')
     ->where('resorts.status',1)
+    ->orderby('resorts.resort' ,'ASC')
     ->get();
 
 
@@ -511,6 +520,67 @@ public function resortdetails($slug,$id){
 
     return view('resortdetails', compact('meta','resort','offers','villas','documents','restaurants','experiences'));
 }
+
+public function resortvillaquote($villaid,$resortid){
+  
+    $tourtype='villa';
+       
+    $ip = request()->ip();
+
+   // Make a request to ipinfo.io API
+$response = Http::get("https://ipinfo.io/{8.8.8.8}/json");
+// Debug: dump the response structure 
+
+// Extract the country code from the response
+$visitorCountryCode = substr($response->json()['country'], 0, 2); // Get the country code (e.g., "US")
+//dd(CountryLoader::countries());
+$countries = collect(CountryLoader::countries())->map(function ($country) {
+    return [
+        'country-code' => $country['iso_3166_1_alpha2'],
+        'name' => $country['name'],
+        'code' => $country['calling_code'] ?? '',
+    ];
+})->sortBy('name')->values();
+$meta = [
+    'title' => 'Get a Quote',
+    'meta_description' => 'Find out exciting travel offers Sri Lanka online to book your guided tour with us. Get a special quote from the leading tour agents, Simplify Sri Lanka!',
+    'meta_keywords' => 'Travel Offers Sri Lanka, Get a Quote',
+];
+$date= now()->toDateString();
+    return view('quote', compact('countries','villaid','resortid','tourtype', 'visitorCountryCode','meta','date'));
+
+}
+public function offerquote($resortid,$offerid){
+  
+      $tourtype='offer';
+         
+      $ip = request()->ip();
+  
+     // Make a request to ipinfo.io API
+  $response = Http::get("https://ipinfo.io/{8.8.8.8}/json");
+  // Debug: dump the response structure 
+  
+  // Extract the country code from the response
+  $visitorCountryCode = substr($response->json()['country'], 0, 2); // Get the country code (e.g., "US")
+  //dd(CountryLoader::countries());
+  $countries = collect(CountryLoader::countries())->map(function ($country) {
+      return [
+          'country-code' => $country['iso_3166_1_alpha2'],
+          'name' => $country['name'],
+          'code' => $country['calling_code'] ?? '',
+      ];
+  })->sortBy('name')->values();
+  $meta = [
+      'title' => 'Get a Quote',
+      'meta_description' => 'Find out exciting travel offers Sri Lanka online to book your guided tour with us. Get a special quote from the leading tour agents, Simplify Sri Lanka!',
+      'meta_keywords' => 'Travel Offers Sri Lanka, Get a Quote',
+  ];
+  $date= now()->toDateString();
+      return view('quote', compact('countries','resortid','offerid','tourtype', 'visitorCountryCode','meta','date'));
+  
+  }
+
+
 }
 
 

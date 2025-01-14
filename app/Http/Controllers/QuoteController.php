@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Rinvex\Country\CountryLoader;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+
 
 class QuoteController extends Controller
 {
@@ -69,7 +71,10 @@ class QuoteController extends Controller
         $quote->email = $request->email;
         $quote->tourtype = $request->tourtype;
         $quote->tourid = $request->tourid;
-
+        $quote->villaid = $request->villaid;
+        $quote->resortid = $request->resortid;
+        $quote->offerid = $request->offerid;
+        
         $quote->save(); // Save data to the database
 
         // Redirect or return a response
@@ -83,8 +88,14 @@ class QuoteController extends Controller
     public function show($id)
     {
         // Find the quote record by id
-        $quote = Quote::findOrFail($id);
-
+        
+        $quote =DB::table('quotes')
+        ->leftjoin('resorts', 'quotes.resortid', '=', 'resorts.id')
+        ->leftjoin('villa_rooms', 'quotes.villaid', '=', 'villa_rooms.id')
+        ->leftjoin('offers', 'quotes.offerid', '=', 'offers.id')
+        ->select('quotes.*', 'villa_rooms.name AS villaname', 'resorts.resort','offers.title AS offertitle')
+        ->where('quotes.id',$id)
+        ->first();
         // Return the view with the quote data
         return view('quote.show', compact('quote'));
     }
@@ -115,6 +126,7 @@ class QuoteController extends Controller
     public function update(Request $request, $id)
     {
         // Validate the updated data
+        
         $request->validate([
             'name' => 'required|string|max:255',
             'from_date' => 'required|date',
@@ -142,6 +154,8 @@ class QuoteController extends Controller
         $quote->email = $request->email;
         $quote->tour = $request->tour;
         $quote->tourtype = $request->tourtype;
+        $quote->villaid = $request->villaid;
+        $quote->resortid = $request->resortid;
 
         // Save the updated data
         $quote->save();

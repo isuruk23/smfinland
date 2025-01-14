@@ -34,7 +34,7 @@
             @foreach($quotes as $quote)
                 <tr>
                     <td>{{ $quote->name }}</td>
-                    <td>{{ $quote->date }}</td>
+                    <td>{{ $quote->created_at }}</td>
                     <td>{{ $quote->country }}</td>
                     <td>{{ $quote->night }}</td>
                     <td>{{ $quote->tourid }}</td>

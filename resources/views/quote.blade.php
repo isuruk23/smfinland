@@ -163,7 +163,17 @@
                             
                             <div class="col-md-12 text-right">
                                 <input type="hidden" class="form-control" id="tourtype" name="tourtype" value="{{$tourtype}}">
+                                @if(isset($tourid))
                                 <input type="hidden" class="form-control" id="tourid" name="tourid" value="{{$tourid}}">
+                                @endif
+                                @if(isset($villaid))
+                                <input type="text" class="form-control" id="villaid" name="villaid" value="{{$villaid}}">
+                                <input type="text" class="form-control" id="resortid" name="resortid" value="{{$resortid}}">
+                                @endif
+                                @if(isset($offerid))
+                                <input type="text" class="form-control" id="offerid" name="offerid" value="{{$offerid}}">
+                                <input type="text" class="form-control" id="resortid" name="resortid" value="{{$resortid}}">
+                                @endif
                                 <button type="submit" value="submit" class="button-contact"><span>Quote</span></button>
                             </div>
                         </form>

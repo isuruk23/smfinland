@@ -20,5 +20,8 @@ class Quote extends Model
         'email',
         'tourid',
         'tourtype',
+        'villaid',
+        'resortid',
+        'offerid',
     ];
 }

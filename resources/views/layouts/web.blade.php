@@ -19,9 +19,7 @@
     <meta name="keywords"
         content="simplifly,simpliflyfinland,Maldives resorts, Maldives hotels, resorts in Maldives, hotels in Maldives, holidays in Maldives, honeymoon in Maldives, travel to Maldives, Maldives atolls, vacation in Maldives,top resorts in Maldives, family resorts, family resorts in Maldives, budget resorts, budget resorts in Maldives, top luxurious resorts, top luxurious resorts in Maldives, vacation, vacations, vacation packages, vacation package, travel package, travel packages,Holiday in Maldives,Honeymoon in Maldives, 	Hotels in Maldives, Visit Maldives, Book Maldives, Maldives Holiday offers, Maldives Holiday deals, Maldives all inclusive, 	Cheap deals for Maldives, Diving resort in Maldives, Surfing resorts in Maldives, Couple resorts in Maldives, Honeymoon resorts in Maldives, Family resorts in Maldives, Budget resorts in Maldives, Weddings in Maldives, Top luxury resorts in Maldives, Vacation packages in Maldives,Travel packages in Maldives, Best Maldives resorts, Top 10 Maldives resorts, Hotels and resorts in Maldives, 	Travel agents in Maldives, Resorts in Maldives, Maldives holiday packages, Tours and travels in Maldives" />
  
-    <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#3cb371" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#3cb371" media="(prefers-color-scheme: dark)">
+
 <link href="{{ asset('public/storage/images/favicon.png') }}" rel="apple-touch-icon">
 <link rel="icon" type="image/x-icon" href="{{ asset('public/storage/images/favicon.png') }}">
 <link href="{{ asset('public/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -172,7 +170,15 @@
 <!-- Template Main JS File -->
 <script src="{{ asset('public/js/main.js') }}"></script>
 @yield('script')
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EYCEWM799T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-EYCEWM799T');
+</script>
 </body>
 
 </html>
