@@ -36,7 +36,7 @@
                                         <tr>
                                             <td>{{ $facility->id }}</td>
                                             <td>{{ $facility->facilities_activities }}</td>
-                                            <td>{{ $facility->description }}</td>                                    
+                                            <td>{!! $facility->description !!}</td>                                    
                                             <td>
                                                 @if($facility->image)
                                                     <img src="{{ asset('public/storage/' . $facility->image) }}" alt="{{ $facility->winedine }}" class="img-thumbnail" width="100">

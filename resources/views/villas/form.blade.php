@@ -123,22 +123,7 @@
                         @enderror
                     </div>
 
-                    <!-- Resort -->
-                    <div class="form-group">
-                        <label class="small font-weight-bold text-dark">Resort*</label>
-                        <select class="form-control form-control-sm" name="resort" id="resort" >
-                            <option value="">Select</option>
-                            @foreach($resorts as $resort)
-                                <option value="{{ $resort->id }}" 
-                                        {{ old('resort', $villa->resort_id ?? '') == $resort->id ? 'selected' : '' }}>
-                                    {{ $resort->resort }}
-                                </option>
-                            @endforeach
-                        </select>
-                        @error('resort')
-                            <span class="text-danger small">{{ $message }}</span>
-                        @enderror
-                    </div>
+                    
 
                     <!-- Upload Image -->
                     <div class="form-group mb-1">
@@ -151,6 +136,7 @@
 
                     <!-- Submit Button -->
                     <div class="form-group mt-2">
+                        <input type="hidden" name="resort" value="{{$resortid}}">
                         <button type="submit" id="submitBtn" class="btn btn-outline-primary btn-sm w-50">
                             <i class="far fa-save"></i>&nbsp;{{ isset($villa) ? 'Update' : 'Add' }}
                         </button>
