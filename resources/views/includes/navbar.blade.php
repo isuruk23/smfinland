@@ -57,8 +57,8 @@
                         <a href="/" class="scrollto">
 
                             <!-- <img class="logo-white" src="assets/img/simplifly_maldives logo_white.png" alt=""> -->
-                            <img class="logo-blue d-none" src="{{ asset('public/storage/images/logofinland.png') }}" alt="">
-                            <img class="logo-white d-none" src="{{ asset('public/storage/images/logowhitefinland.png') }}" alt="">
+                            <img class="logo-blue d-none" src="{{ asset('public/storage/images/logofinland.png') }}" alt="simplifly finland">
+                            <img class="logo-white d-none" src="{{ asset('public/storage/images/logowhitefinland.png') }}" alt="simplifly finland">
 
                         </a>
 
@@ -80,7 +80,7 @@
                             <li class="dropdown has-dropdown"><a href="#"><span>MALDIVES RESORT</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul class="dd-box-shadow">
-                                <li><a href="/maldives-resort">Maldives Resort</a></li>
+                                    <li><a href="/maldives-resort">All Maldives Resort</a></li>
                                     <li><a href="/honeymoon-resorts">Honeymoon Resort
                                     </a></li>
                                     <li><a href="/family-resorts">Family Resort</a></li>
@@ -127,7 +127,7 @@
             <li class="dropdown has-dropdown"><a href="#"><span>MALDIVES RESORT</span> <i
                         class="bi bi-chevron-down"></i></a>
                 <ul class="dd-box-shadow">
-                <li><a href="/maldives-resort">Maldives Resort</a></li>
+                <li><a href="/maldives-resort">All Maldives Resort</a></li>
                 <li><a href="/honeymoon-resorts">Honeymoon Resort</a></li>
                 <li><a href="/family-resorts">Family Resort</a></li>
                 <li><a href="/couple-resorts">Couple Resort</a></li>

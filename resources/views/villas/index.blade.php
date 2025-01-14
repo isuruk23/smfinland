@@ -37,7 +37,7 @@
                                         <tr>
                                             <td>{{ $villaRoom->id }}</td>
                                             <td>{{ $villaRoom->name }}</td>
-                                            <td>{{ $villaRoom->description }}</td>                                      
+                                            <td>{!! $villaRoom->description !!}</td>                                      
                                             <td>{{ $villaRoom->type }}</td>                                      
                                             <td>
                                                 @if($villaRoom->image)
