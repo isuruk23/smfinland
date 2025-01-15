@@ -30,11 +30,11 @@
 
                                 <ul class="nav nav-pills" id="pills-tab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <a class="btn nav-link" href="#pills-overview"
+                                        <a class="btn nav-link btn-primary" href="#pills-overview"
                                             onclick="toggleActive(this)">Overview</a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="btn btn-primary nav-link" href="#pills-offers"
+                                        <a class="btn  nav-link" href="#pills-offers"
                                             onclick="toggleActive(this)">Offers</a>
                                     </li>
                                     <li class="nav-item" role="presentation">

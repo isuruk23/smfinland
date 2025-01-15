@@ -69,7 +69,7 @@
                     <nav id="navbar" class="navbar">
                         <ul>
                             <li class="nav-link item1"><i class="nav-link scrollto"></i> <a href="/">Home</a></li>
-                            <li class="dropdown has-dropdown"><a href="#"><span>SRI LANKAN TOUR PACKAGES</span> <i
+                            <li class="dropdown has-dropdown"><a href="#"><span>SRI LANKAN TOUS</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul class="dd-box-shadow">
                                     <li><a href="/multiday-tours">Multiday Tours</a></li>

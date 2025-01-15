@@ -14,10 +14,6 @@
                    
 
                     <div class="carousel-item vh-100 active">
-                        <img src="{{ asset('public/storage/images/slider/maldives_hotels.avif') }}" class="d-block w-100" alt="Simplifly Finland">
-                    </div>
-
-                    <div class="carousel-item vh-100">
                         <img src="{{ asset('public/storage/images/slider/sri_lankan_holiday.avif') }}" class="d-block w-100" alt="Simplifly Finland">
                     </div>
 
