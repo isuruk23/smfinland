@@ -72,15 +72,15 @@
                             <li class="dropdown has-dropdown"><a href="#"><span>SRI LANKAN TOUR PACKAGES</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul class="dd-box-shadow">
-                                    <li><a href="/multiday-tours">Multiday Tour Packages</a></li>
-                                    <li><a href="/day-tours">Day Tour Packages</a></li>
+                                    <li><a href="/multiday-tours">Multiday Tours</a></li>
+                                    <li><a href="/day-tours">Day Tours</a></li>
 
                                 </ul>
                             </li>
-                            <li class="dropdown has-dropdown"><a href="#"><span>MALDIVES RESORT</span> <i
+                            <li class="dropdown has-dropdown"><a href="#"><span>MALDIVES RESORTS</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul class="dd-box-shadow">
-                                    <li><a href="/maldives-resort">All Maldives Resort</a></li>
+                                    <li><a href="/maldives-resort">View All Resorts</a></li>
                                     <li><a href="/honeymoon-resorts">Honeymoon Resort
                                     </a></li>
                                     <li><a href="/family-resorts">Family Resort</a></li>
@@ -116,18 +116,18 @@
         <ul class="d-flex flex-column list-unstyled">
 
             <li class="nav-link item1"><i class="nav-link"></i> <a href="/">Home</a></li>
-            <li class="dropdown has-dropdown"><a href="#"><span>SRI LANKAN TOUR PACKAGES</span> <i
+            <li class="dropdown has-dropdown"><a href="#"><span>SRI LANKAN TOURS</span> <i
                         class="bi bi-chevron-down"></i></a>
                 <ul class="dd-box-shadow">
-                <li><a href="/multiday-tours">Multiday Tour Packages</a></li>
-                <li><a href="/day-tours">Day Tour Packages</a></li>
+                <li><a href="/multiday-tours">Multiday Tours</a></li>
+                <li><a href="/day-tours">Day Tours</a></li>
 
                 </ul>
             </li>
-            <li class="dropdown has-dropdown"><a href="#"><span>MALDIVES RESORT</span> <i
+            <li class="dropdown has-dropdown"><a href="#"><span>MALDIVES RESORTS</span> <i
                         class="bi bi-chevron-down"></i></a>
                 <ul class="dd-box-shadow">
-                <li><a href="/maldives-resort">All Maldives Resort</a></li>
+                <li><a href="/maldives-resort">View All Resorts</a></li>
                 <li><a href="/honeymoon-resorts">Honeymoon Resort</a></li>
                 <li><a href="/family-resorts">Family Resort</a></li>
                 <li><a href="/couple-resorts">Couple Resort</a></li>

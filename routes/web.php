@@ -102,3 +102,12 @@ Route::post('/quotenow', [QuoteController::class, 'store'])->name('quotenow');
 
 
 
+Route::get('/sitemap.xml', function () {
+    $sitemapPath = public_path('sitemap.xml');
+    if (file_exists($sitemapPath)) {
+        return Response::file($sitemapPath, [
+            'Content-Type' => 'application/xml',
+        ]);
+    }
+    abort(404);
+});
