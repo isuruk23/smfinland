@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- ================ start banner area ================= -->	
-<section class="contact-banner-area" id="contact" style='background: url("public/storage/images/sri_lankan_vacation.avif") center center no-repeat;background-size: auto;'>
+<section class="contact-banner-area" id="contact" style='background: url("public/storage/images/sri_lankan_vacation.avif") center center no-repeat;background-size: auto; background-size: cover;'>
 		<div class="container h-100">
 			<div class="contact-banner">
 				<div class="text-center">
@@ -59,14 +59,14 @@ vacation into a delight</p>
 										<div class="d-flex flex-column">
 											<div class="start">Starting From</div>
 											<div class="price text-danger">
-												<del>${{ intval($tour->price) }} PP</del>
+												<del>€ {{ intval($tour->price) }} PP</del>
 											</div>
 
 										</div>
 									</div>
 									<div class="col-6 text-start">
-										<div class="price"><span class="text-big">USD
-                    ${{ intval($tour->price-($tour->price*$tour->discount/100)) }}</span>
+										<div class="price"><span class="text-big">
+										€ {{ intval($tour->price-($tour->price*$tour->discount/100)) }}</span>
 											<span>PP</span>
 										</div>
 									</div>
