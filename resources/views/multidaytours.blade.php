@@ -62,14 +62,14 @@
                             <div class="d-flex flex-column">
                                 <div class="start">Starting From</div>
                                 <div class="price text-danger">
-                                    <del>${{ intval($tour->price) }}  PP</del>
+                                    <del>€ {{ intval($tour->price) }}  PP</del>
                                 </div>
 
                             </div>
                         </div>
                         <div class="col-6 text-start">
-                            <div class="price"><span class="text-big">USD
-                            ${{ intval($tour->price-($tour->price*$tour->discount/100)) }}</span>
+                            <div class="price"><span class="text-big">
+                            € {{ intval($tour->price-($tour->price*$tour->discount/100)) }}</span>
                                 <span>PP</span>
                             </div>
                         </div>

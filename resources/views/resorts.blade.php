@@ -52,7 +52,7 @@
                                                     <div class="col-12 text-start">
                                                         <div class="d-flex flex-column">
                                                             <div class="start">Starting From</div>
-                                                            <div class="price"><span class="text-big">USD
+                                                            <div class="price"><span class="text-big">€ 
                                                             {{ $resort->price }}</span>
                                                                 <span>PP</span>
                                                             </div>

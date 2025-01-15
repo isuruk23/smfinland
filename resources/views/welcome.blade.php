@@ -11,13 +11,17 @@
 
             <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner vh-100">
-                <div class="carousel-item vh-100 active">
-                        <img src="{{ asset('public/storage/images/slider/best_hotels_in_maldives.avif') }}" class="d-block w-100" alt="Simplifly Finland">
-                    </div>
-                    
+                   
+
                     <div class="carousel-item vh-100">
-                        <img src="{{ asset('public/storage/images/slider/sri_lankan_holiday.avif') }}" class="d-block w-100" alt="Simplifly Finland">
+                        <img src="{{ asset('public/storage/images/slider/maldives_hotels.avif') }}" class="d-block w-100" alt="Simplifly Finland">
                     </div>
+
+                    <div class="carousel-item vh-100">
+                        <img src="{{ asset('public/storage/images/slider/sri_lankan_holiday_package.avif') }}" class="d-block w-100" alt="Simplifly Finland">
+                    </div>
+
+                   
                     
                 </div>
                 <!--button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -98,14 +102,14 @@ N/10D</div> -->
                                                     <div class="d-flex flex-column">
                                                         <div class="start">Starting From</div>
                                                         <div class="price text-danger">
-                                                            <del>${{ intval($tour->price) }} PP</del>
+                                                            <del>€{{ intval($tour->price) }} PP</del>
                                                         </div>
 
                                                     </div>
                                                 </div>
                                                 <div class="col-6 text-start">
-                                                    <div class="price"><span class="text-big">USD
-                                                    ${{ intval($tour->price-($tour->price*$tour->discount/100)) }}</span>
+                                                    <div class="price"><span class="text-big">
+                                                    €{{ intval($tour->price-($tour->price*$tour->discount/100)) }}</span>
                                                         <span>PP</span>
                                                     </div>
                                                 </div>
@@ -192,14 +196,14 @@ D</div> -->
                                                         <div class="d-flex flex-column">
                                                             <div class="start">Starting From</div>
                                                             <div class="price text-danger">
-                                                                <del>${{ intval($tour->price) }} PP</del>
+                                                                <del>€{{ intval($tour->price) }} PP</del>
                                                             </div>
 
                                                         </div>
                                                     </div>
                                                     <div class="col-6 text-start">
-                                                        <div class="price"><span class="text-big">USD
-                                                        ${{ intval($tour->price-($tour->price*$tour->discount/100)) }} </span>
+                                                        <div class="price"><span class="text-big">
+                                                        €{{ intval($tour->price-($tour->price*$tour->discount/100)) }} </span>
                                                             <span>PP</span>
                                                         </div>
                                                     </div>
@@ -284,8 +288,8 @@ D</div> -->
                                                     <div class="col-12 text-start">
                                                         <div class="d-flex flex-column">
                                                             <div class="start">Starting From</div>
-                                                            <div class="price"><span class="text-big">USD
-                                                            {{ $resort->price }}</span>
+                                                            <div class="price"><span class="text-big">
+                                                            € {{ $resort->price }}</span>
                                                                 <span>PP</span>
                                                             </div>
                                                         </div>
