@@ -157,8 +157,7 @@
     <div class="row mb-3">
         <div class="col-12 text-center">
             <div class="social-links">
-                <a href="https://twitter.com/SimpliflyMLE" class="twitter me-2"><i class="bi bi-twitter"></i></a>
-                <a href="https://web.facebook.com/simpliflymaldives?_rdc=1&_rdr" class="facebook me-2"><i
+                  <a href="https://web.facebook.com/simpliflymaldives?_rdc=1&_rdr" class="facebook me-2"><i
                         class="bi bi-facebook"></i></a>
                 <a href="https://www.instagram.com/simpliflymaldives/" class="instagram me-2"><i
                         class="bi bi-instagram"></i></a>
