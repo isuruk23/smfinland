@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="carousel-item vh-100">
-                        <img src="{{ asset('public/storage/images/slider/sri_lankan_holiday_package.avif') }}" class="d-block w-100" alt="Simplifly Finland">
+                        <img src="{{ asset('public/storage/images/slider/sri_lankan_holiday.avif') }}" class="d-block w-100" alt="Simplifly Finland">
                     </div>
 
                    

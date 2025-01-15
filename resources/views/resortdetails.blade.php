@@ -43,14 +43,14 @@
                                     <li class="nav-item" role="presentation">
                                         <a class="btn nav-link" href="#pills-dining" onclick="toggleActive(this)">Restaurants</a>
                                     </li>
-                                    <li class="nav-item" role="presentation">
+                                    <!-- <li class="nav-item" role="presentation">
                                         <a class="btn nav-link" href="#pills-experiences"
                                             onclick="toggleActive(this)">Experiences</a>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <a class="btn nav-link" href="#pills-factsheet"
                                             onclick="toggleActive(this)">Fact Sheet</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </div>

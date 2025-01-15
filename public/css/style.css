@@ -1228,7 +1228,7 @@ border-bottom: var(--lightgray) solid 1px;
         height: 500px; } }
     .contact-banner-area .contact-banner {
       position: absolute;
-      top: 58%;
+      top: 25%;
       left: 50%;
       width: 100%;
       transform: translateX(-50%); }
