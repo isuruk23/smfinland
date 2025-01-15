@@ -54,7 +54,7 @@
                                                             <div class="start">Starting From</div>
                                                             <div class="price"><span class="text-big">€ 
                                                             {{ $resort->price }}</span>
-                                                                <span>PP</span>
+                                                                <span>Per Person</span>
                                                             </div>
                                                         </div>
                                                     </div>

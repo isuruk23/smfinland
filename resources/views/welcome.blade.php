@@ -13,7 +13,7 @@
                 <div class="carousel-inner vh-100">
                    
 
-                    <div class="carousel-item vh-100">
+                    <div class="carousel-item vh-100 active">
                         <img src="{{ asset('public/storage/images/slider/maldives_hotels.avif') }}" class="d-block w-100" alt="Simplifly Finland">
                     </div>
 
@@ -102,7 +102,7 @@ N/10D</div> -->
                                                     <div class="d-flex flex-column">
                                                         <div class="start">Starting From</div>
                                                         <div class="price text-danger">
-                                                            <del>€{{ intval($tour->price) }} PP</del>
+                                                            <del>€{{ intval($tour->price) }} Per Person</del>
                                                         </div>
 
                                                     </div>
@@ -110,7 +110,7 @@ N/10D</div> -->
                                                 <div class="col-6 text-start">
                                                     <div class="price"><span class="text-big">
                                                     €{{ intval($tour->price-($tour->price*$tour->discount/100)) }}</span>
-                                                        <span>PP</span>
+                                                        <span>Per Person</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -196,7 +196,7 @@ D</div> -->
                                                         <div class="d-flex flex-column">
                                                             <div class="start">Starting From</div>
                                                             <div class="price text-danger">
-                                                                <del>€{{ intval($tour->price) }} PP</del>
+                                                                <del>€{{ intval($tour->price) }} Per Person</del>
                                                             </div>
 
                                                         </div>
@@ -204,7 +204,7 @@ D</div> -->
                                                     <div class="col-6 text-start">
                                                         <div class="price"><span class="text-big">
                                                         €{{ intval($tour->price-($tour->price*$tour->discount/100)) }} </span>
-                                                            <span>PP</span>
+                                                            <span>Per Person</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -290,13 +290,13 @@ D</div> -->
                                                             <div class="start">Starting From</div>
                                                             <div class="price"><span class="text-big">
                                                             € {{ $resort->price }}</span>
-                                                                <span>PP</span>
+                                                                <span>Per Person</span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row justify-content-around align-items-center">
-                                                    <div class="col-6 text-end"><a href="quote.php?resort=1"
+                                                    <div class="col-6 text-end"><a href="/quote"
                                                             class="btn btn-primary">Get a
                                                             Quote</a>
                                                     </div>
