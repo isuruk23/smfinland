@@ -67,6 +67,7 @@ class PageController extends Controller
             'meta_keywords' => ' sri lanka tours, family vacations, solo travellers, tropical getaway, island holidays, holiday planning, srilanka multyday tours',
         ];
         $multitourspage = MultiDayTour::where('is_active',1)->paginate(15);
+        
 ;
 
         return view('multidaytours', compact('multitourspage','meta'));

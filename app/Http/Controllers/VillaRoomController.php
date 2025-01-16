@@ -196,12 +196,12 @@ class VillaRoomController extends Controller
             return response()->json([
                 'name' => $villa->name,
                 'description' => $villa->description,
-                'roomsize' => $villa->room_size,
-                'sleep' => $villa->sleep,
+                'roomsize' => $villa->roomsize,
+                'sleep' => $villa->bed,
                 'view' => $villa->view,
                 'wifi' => $villa->wifi,
                 'ac' => $villa->ac,
-                'barthroom' => $villa->bathroom,
+                'barthroom' => $villa->barthroom,
             ]);
         }
 
