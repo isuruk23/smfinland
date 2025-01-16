@@ -13,7 +13,7 @@
                 <div class="carousel-inner vh-100">
                    
                     <div class="carousel-item vh-100 active">
-                        <img src="{{ asset('public/storage/images/slider/family_holiday_in_maldives.webp') }}" class="d-block w-100" alt="Simplifly Finland">
+                        <img src="{{ asset('public/storage/images/slider/family_holiday_in_maldives.avif') }}" class="d-block w-100" alt="Simplifly Finland">
                     </div>
                     <div class="carousel-item vh-100 ">
                         <img src="{{ asset('public/storage/images/slider/sri_lankan_holiday.avif') }}" class="d-block w-100" alt="Simplifly Finland">
