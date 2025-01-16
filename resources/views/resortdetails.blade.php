@@ -106,7 +106,7 @@
                                                                             <h4>{{ $villa->name }}  </h4>
                                                                             <p class="description @if(strlen($villa->description) > 100) collapsed @endif">
                                                                             @if(strlen($villa->description) > 100)
-                                                                                {{ substr($villa->description, 0, 100) }}
+                                                                                {!! substr($villa->description, 0, 100) !!}
                                                                                 <span class="more-text d-none">{!! substr($villa->description, 100) !!}</span>
                                                                                 ...
                                                                             @else
@@ -117,52 +117,22 @@
 																			
                                                                            
                                                                         </div>
-                                                                        <div class="col-md-4 mt-3">
-                                                                            <p>
-                                                                              
-                                                                                <i class="bi bi-house"></i> Room
-                                                                                Size: {{$villa->roomsize}} sqm
-                                                                                
-                                                                            </p>
+                                                                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mt-3">
+                                                                        @if($villa->roomsize)  <p>  <i class="bi bi-house"></i> {{$villa->roomsize}} sqm </p>@endif 
                                                                         </div>
-                                                                        <div class="col-md-4 mt-3">
-                                                                            <p>
-                                                                             
-                                                                                <i class="bi bi-grid-3x2-gap"></i>Sleeps:
-                                                                               {{$villa->bed}} Bed
-                                                                            </p>
+                                                                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mt-3">
+                                                                        @if($villa->bed)     <p><i class="bi bi-grid-3x2-gap"></i> {{$villa->bed}} Bed</p>@endif                                                                             </div>
+                                                                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mt-3">
+                                                                        @if($villa->view)     <p>  <i class="bi bi-eye"></i> {{$villa->view}} </p> @endif
                                                                         </div>
-                                                                        <div class="col-md-4 mt-3">
-                                                                            <p>                                                                                
-                                                                               
-                                                                                <i class="bi bi-eye"></i>View: 
-                                                                                {{$villa->view}}
-                                                                               
-                                                                            </p>
+                                                                        <div class="col-6 col-sm-6 col-md-6 col-lg-4 mt-3">
+                                                                            <p>  @if($villa->wifi == 1) <i class='bi bi-wifi'></i> Wifi  @endif </p>
                                                                         </div>
-                                                                        <div
-                                                                            class="col-6 col-sm-6 col-md-6 col-lg-4 mb-2">
-                                                                            <p> 
-                                                                            @if($villa->wifi == 1)
-                                                                            <i class='bi bi-wifi'></i> Wifi
-                                                                            @endif
-                                                                        </p>
+                                                                        <div class="col-6 col-sm-6 col-md-6 col-lg-4 mt-3">
+                                                                            <p> @if($villa->ac == 1)  <i class="bi bi-snow2"></i> AC @endif  </p>
                                                                         </div>
-                                                                        <div
-                                                                            class="col-6 col-sm-6 col-md-6 col-lg-4 mb-2">
-                                                                            <p>
-                                                                            @if($villa->ac == 1)
-                                                                                <i class="bi bi-snow2"></i> AC
-                                                                            @endif
-                                                                            </p>
-                                                                        </div>
-                                                                        <div
-                                                                            class="col-6 col-sm-6 col-md-6 col-lg-4 mb-2">
-                                                                            <p> 
-                                                                             @if($villa->barthroom == 1)
-                                                                             <i class='bi bi-textarea-resize'></i> Private Bathroom
-                                                                            @endif
-                                                                            </p>
+                                                                        <div class="col-6 col-sm-6 col-md-6 col-lg-4 mt-3">
+                                                                            <p>  @if($villa->barthroom == 1) <i class='bi bi-textarea-resize'></i> Barthroom @endif </p>
                                                                         </div>
 																		<div class="col-lg-12">
 																			<div class="text-start py-5">
@@ -282,7 +252,7 @@
 
                                 </div>
                                 <div class="modal-footer text-center">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary btnVillaRequest " data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -301,7 +271,7 @@
 
                                 </div>
                                 <div class="modal-footer text-center">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary btnVillaRequest " data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -357,52 +327,85 @@
 
     // Handler for villa details
     $(".villa-more").click(function (e) {
-        e.preventDefault();
-        var id = $(this).attr("villa-id");
-        $('#villadetailsmodel').fadeIn(1500).modal('show');
+    e.preventDefault();
+    var id = $(this).attr("villa-id");
+    $('#villadetailsmodel').fadeIn(1500).modal('show');
 
-        $.ajax({
-            type: "POST",
-            url: '/villamore',
-            data: { 
-                id: id,
-                _token: "{{ csrf_token() }}",
-            },
-            success: function (result) {
-                // Parse the response and update the modal content
-                var name = result.name;
-                var description = result.description;
-                var roomsize = result.roomsize;
-                var sleep = result.sleep;
-                var view = result.view;
-                var wifi = result.wifi;
-                var ac = result.ac;
-                var bathroom = result.barthroom;
+    $.ajax({
+        type: "POST",
+        url: '/villamore',
+        data: { 
+            id: id,
+            _token: "{{ csrf_token() }}",
+        },
+        success: function (result) {
+            // Parse the response and update the modal content
+            var name = result.name;
+            var description = result.description;
+            var roomsize = result.roomsize;
+            var sleep = result.sleep;
+            var view = result.view;
+            var wifi = result.wifi;
+            var ac = result.ac;
+            var bathroom = result.barthroom;
 
-                // Generate icons based on availability
-                var iswifi = wifi ? '<i class="bi bi-wifi"></i>' : '';
-                var isac = ac ? '<i class="bi bi-snow2"></i>' : '';
-                var isbathroom = bathroom ? '<i class="bi bi-textarea-resize"></i>' : '';
+            // Generate icons based on availability
+            var iswifi = wifi ? '<i class="bi bi-wifi"></i>' : '';
+            var isac = ac ? '<i class="bi bi-snow2"></i>' : '';
+            var isbathroom = bathroom ? '<i class="bi bi-textarea-resize"></i>' : '';
 
-                $('.villa-title').html(name);
-                $('.villa-body').html(`
-                    <div class="row g-0">${description}</div>
-                    <div class="row villa-icon mt-4">
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-4"><p><i class="bi bi-house"></i> ${roomsize}</p></div>
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-4"><p><i class="bi bi-people"></i> ${sleep}</p></div>
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-4"><p><i class="bi bi-eye"></i> ${view}</p></div>
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-4">${iswifi}</div>
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-4">${isac}</div>
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-4">${isbathroom}</div>
-                    </div>
-                `);
-            },
-            error: function (xhr) {
-                console.error(xhr.responseText);
-                alert('An error occurred while fetching villa details.');
+            // Set the villa title
+            $('.villa-title').html(name);
+
+            // Dynamically build the body with conditional rendering
+            var villaBodyHtml = `
+                <div class="row g-0">${description}</div>
+                <div class="row villa-icon mt-4">
+            `;
+            
+            // Add roomsize if it's not empty
+            if (roomsize) {
+                villaBodyHtml += `<div class="col-6 col-sm-6 col-md-6 col-lg-4"><p><i class="bi bi-house"></i> ${roomsize} sqm</p></div>`;
             }
-        });
+
+            // Add sleep if it's not empty
+            if (sleep) {
+                villaBodyHtml += `<div class="col-6 col-sm-6 col-md-6 col-lg-4"><p><i class="bi bi-people"></i> ${sleep} Bed</p></div>`;
+            }
+
+            // Add view if it's not empty
+            if (view) {
+                villaBodyHtml += `<div class="col-6 col-sm-6 col-md-6 col-lg-4"><p><i class="bi bi-eye"></i> ${view}</p></div>`;
+            }
+
+            // Add wifi icon if available
+            if (iswifi) {
+                villaBodyHtml += `<div class="col-6 col-sm-6 col-md-6 col-lg-4">${iswifi} Wifi</div>`;
+            }
+
+            // Add AC icon if available
+            if (isac) {
+                villaBodyHtml += `<div class="col-6 col-sm-6 col-md-6 col-lg-4">${isac} AC</div>`;
+            }
+
+            // Add bathroom icon if available
+            if (isbathroom) {
+                villaBodyHtml += `<div class="col-6 col-sm-6 col-md-6 col-lg-4">${isbathroom}</div>`;
+            }
+
+            // Close the row div
+            villaBodyHtml += `</div>`;
+
+            // Update the modal content
+            $('.villa-body').html(villaBodyHtml);
+        },
+        error: function (xhr) {
+            console.error(xhr.responseText);
+            alert('An error occurred while fetching villa details.');
+        }
     });
+});
+
 });
 
     </script>

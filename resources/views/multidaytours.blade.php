@@ -46,9 +46,7 @@
                                                 @endif
                 </div>
                 <div class="description_content p-3 position-relative">
-                    <!-- <div class="type position-absolute"><br />
-<b>Warning</b>:  Undefined array key "type" in <b>C:\xampp\htdocs\simpliflyfinland\multiday_packages.php</b> on line <b>65</b><br />
-</div> -->
+                    <div class="type position-absolute">{{$tour->nights}} Nights</div>
                     <div class="star-rating rates text-warning">
                     {{$tour->discount}} % OFF
                     </div>

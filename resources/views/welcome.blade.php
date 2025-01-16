@@ -12,8 +12,10 @@
             <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner vh-100">
                    
-
                     <div class="carousel-item vh-100 active">
+                        <img src="{{ asset('public/storage/images/slider/family_holiday_in_maldives.webp') }}" class="d-block w-100" alt="Simplifly Finland">
+                    </div>
+                    <div class="carousel-item vh-100 ">
                         <img src="{{ asset('public/storage/images/slider/sri_lankan_holiday.avif') }}" class="d-block w-100" alt="Simplifly Finland">
                     </div>
 
@@ -82,9 +84,7 @@
                                                 @endif
                                         </div>
                                         <div class="description_content p-3 position-relative">
-                                            <!-- <div class="type position-absolute"><br />
-<b>Warning</b>:  Undefined array key "night" in <b>C:\xampp\htdocs\simpliflyfinland\index.php</b> on line <b>145</b><br />
-N/10D</div> -->
+                                        <div class="type position-absolute">{{$tour->nights}} Nights</div>
                                             <div class="star-rating rates text-warning">
                                             {{$tour->discount}} % OFF
                                             </div>
