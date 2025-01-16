@@ -123,22 +123,29 @@ class PageController extends Controller
        
         $tour = MultiDayTour::where('id',$id)->first();
     
-        $ip = request()->ip();
+          $ip = request()->ip();
 
         // Make a request to ipinfo.io API
-     $response = Http::get("https://ipinfo.io/{8.8.8.8}/json");
-     // Debug: dump the response structure 
- 
-     // Extract the country code from the response
-     $visitorCountryCode = substr($response->json()['country'], 0, 2); // Get the country code (e.g., "US")
-   //country-code  dd(CountryLoader::countries());
-     $countries = collect(CountryLoader::countries())->map(function ($country) {
-         return [
-             'country-code' => $country['iso_3166_1_alpha2'],
-             'name' => $country['name'],
-             'code' => $country['calling_code'] ?? '',
-         ];
-     })->sortBy('name')->values();
+        
+        $response = Http::get("https://ipinfo.io/{$ip}/json");
+
+        $visitorCountryCode = $response->json('country', null); // Use null as a fallback if 'country' key is missing
+            if ($visitorCountryCode) {
+                $visitorCountryCode = substr($visitorCountryCode, 0, 2); // Get the first two characters of the country code
+            } else {
+                $visitorCountryCode = 'Unknown'; // Fallback if country code is not available
+            }
+            
+            
+        
+            // Load country data and format it
+            $countries = collect(CountryLoader::countries())->map(function ($country) {
+                return [
+                    'country-code' => $country['iso_3166_1_alpha2'],
+                    'name' => $country['name'],
+                    'code' => $country['calling_code'] ?? '',
+                ];
+            })->sortBy('name')->values();
 
       
         $meta = [
@@ -155,21 +162,26 @@ class PageController extends Controller
     public function daytourdetails($slug,$id)
     {
         $ip = request()->ip();
+
         // Make a request to ipinfo.io API
-     $response = Http::get("https://ipinfo.io/{8.8.8.8}/json");
-     // Debug: dump the response structure 
- 
-     // Extract the country code from the response
-     $visitorCountryCode = substr($response->json()['country'], 0, 2); // Get the country code (e.g., "US")
-   //country-code  dd(CountryLoader::countries());
-     $countries = collect(CountryLoader::countries())->map(function ($country) {
-         return [
-             'country-code' => $country['iso_3166_1_alpha2'],
-             'name' => $country['name'],
-             'code' => $country['calling_code'] ?? '',
-         ];
-     })->sortBy('name')->values();
-     
+        $response = Http::get("https://ipinfo.io/{$ip}/json");
+        
+        $visitorCountryCode = $response->json('country', null); // Use null as a fallback if 'country' key is missing
+            if ($visitorCountryCode) {
+                $visitorCountryCode = substr($visitorCountryCode, 0, 2); // Get the first two characters of the country code
+            } else {
+                $visitorCountryCode = 'Unknown'; // Fallback if country code is not available
+            }
+        
+            // Load country data and format it
+            $countries = collect(CountryLoader::countries())->map(function ($country) {
+                return [
+                    'country-code' => $country['iso_3166_1_alpha2'],
+                    'name' => $country['name'],
+                    'code' => $country['calling_code'] ?? '',
+                ];
+            })->sortBy('name')->values();
+
         $tour = DayTour::where('id',$id)->first();
         $meta = [
             'title' => $tour->name,
@@ -185,22 +197,28 @@ class PageController extends Controller
         $tourid=$tour->id;
         $tourtype='day';
        
-        $ip = request()->ip();
- 
-       // Make a request to ipinfo.io API
-    $response = Http::get("https://ipinfo.io/{8.8.8.8}/json");
-    // Debug: dump the response structure 
+       $ip = request()->ip();
 
-    // Extract the country code from the response
-    $visitorCountryCode = substr($response->json()['country'], 0, 2); // Get the country code (e.g., "US")
-   //dd(CountryLoader::countries());
-    $countries = collect(CountryLoader::countries())->map(function ($country) {
-        return [
-            'country-code' => $country['iso_3166_1_alpha2'],
-            'name' => $country['name'],
-            'code' => $country['calling_code'] ?? '',
-        ];
-    })->sortBy('name')->values();
+        // Make a request to ipinfo.io API
+        $response = Http::get("https://ipinfo.io/{$ip}/json");
+        
+        $visitorCountryCode = $response->json('country', null); // Use null as a fallback if 'country' key is missing
+            if ($visitorCountryCode) {
+                $visitorCountryCode = substr($visitorCountryCode, 0, 2); // Get the first two characters of the country code
+            } else {
+                $visitorCountryCode = 'Unknown'; // Fallback if country code is not available
+            }
+        
+            // Load country data and format it
+            $countries = collect(CountryLoader::countries())->map(function ($country) {
+                return [
+                    'country-code' => $country['iso_3166_1_alpha2'],
+                    'name' => $country['name'],
+                    'code' => $country['calling_code'] ?? '',
+                ];
+            })->sortBy('name')->values();
+
+
     $meta = [
         'title' => 'Get a Quote',
         'meta_description' => 'Find out exciting travel offers Sri Lanka online to book your guided tour with us. Get a special quote from the leading tour agents, Simplify Sri Lanka!',
@@ -215,20 +233,28 @@ class PageController extends Controller
         $tourtype='day';
 
         $ip = request()->ip();
-       // Make a request to ipinfo.io API
-    $response = Http::get("https://ipinfo.io/{8.8.8.8}/json");
-    // Debug: dump the response structure 
 
-    // Extract the country code from the response
-    $visitorCountryCode = substr($response->json()['country'], 0, 2); // Get the country code (e.g., "US")
-  //country-code  dd(CountryLoader::countries());
-    $countries = collect(CountryLoader::countries())->map(function ($country) {
-        return [
-            'country-code' => $country['iso_3166_1_alpha2'],
-            'name' => $country['name'],
-            'code' => $country['calling_code'] ?? '',
-        ];
-    })->sortBy('name')->values();
+        // Make a request to ipinfo.io API
+        $response = Http::get("https://ipinfo.io/{$ip}/json");
+        
+        $visitorCountryCode = $response->json('country', null); // Use null as a fallback if 'country' key is missing
+            if ($visitorCountryCode) {
+                $visitorCountryCode = substr($visitorCountryCode, 0, 2); // Get the first two characters of the country code
+            } else {
+                $visitorCountryCode = 'Unknown'; // Fallback if country code is not available
+            }
+        
+            // Load country data and format it
+            $countries = collect(CountryLoader::countries())->map(function ($country) {
+                return [
+                    'country-code' => $country['iso_3166_1_alpha2'],
+                    'name' => $country['name'],
+                    'code' => $country['calling_code'] ?? '',
+                ];
+            })->sortBy('name')->values();
+
+
+
 $meta = [
         'title' => 'Get a Quote',
         'meta_description' => 'Find out exciting travel offers Sri Lanka online to book your guided tour with us. Get a special quote from the leading tour agents, Simplify Sri Lanka!',
@@ -240,20 +266,26 @@ $meta = [
     }
     public function quote(){
         $ip = request()->ip();
+
         // Make a request to ipinfo.io API
-     $response = Http::get("https://ipinfo.io/{8.8.8.8}/json");
-     // Debug: dump the response structure 
- 
-     // Extract the country code from the response
-     $visitorCountryCode = substr($response->json()['country'], 0, 2); // Get the country code (e.g., "US")
-   //country-code  dd(CountryLoader::countries());
-     $countries = collect(CountryLoader::countries())->map(function ($country) {
-         return [
-             'country-code' => $country['iso_3166_1_alpha2'],
-             'name' => $country['name'],
-             'code' => $country['calling_code'] ?? '',
-         ];
-     })->sortBy('name')->values();
+        $response = Http::get("https://ipinfo.io/{$ip}/json");
+        
+        $visitorCountryCode = $response->json('country', null); // Use null as a fallback if 'country' key is missing
+            if ($visitorCountryCode) {
+                $visitorCountryCode = substr($visitorCountryCode, 0, 2); // Get the first two characters of the country code
+            } else {
+                $visitorCountryCode = 'Unknown'; // Fallback if country code is not available
+            }
+        
+            // Load country data and format it
+            $countries = collect(CountryLoader::countries())->map(function ($country) {
+                return [
+                    'country-code' => $country['iso_3166_1_alpha2'],
+                    'name' => $country['name'],
+                    'code' => $country['calling_code'] ?? '',
+                ];
+            })->sortBy('name')->values();
+
  $tourid=0;
  $tourtype="quote";
  
@@ -525,22 +557,27 @@ public function resortvillaquote($villaid,$resortid){
   
     $tourtype='villa';
        
-    $ip = request()->ip();
+     $ip = request()->ip();
 
-   // Make a request to ipinfo.io API
-$response = Http::get("https://ipinfo.io/{8.8.8.8}/json");
-// Debug: dump the response structure 
+        // Make a request to ipinfo.io API
+        $response = Http::get("https://ipinfo.io/{$ip}/json");
+        
+        $visitorCountryCode = $response->json('country', null); // Use null as a fallback if 'country' key is missing
+            if ($visitorCountryCode) {
+                $visitorCountryCode = substr($visitorCountryCode, 0, 2); // Get the first two characters of the country code
+            } else {
+                $visitorCountryCode = 'Unknown'; // Fallback if country code is not available
+            }
+        
+            // Load country data and format it
+            $countries = collect(CountryLoader::countries())->map(function ($country) {
+                return [
+                    'country-code' => $country['iso_3166_1_alpha2'],
+                    'name' => $country['name'],
+                    'code' => $country['calling_code'] ?? '',
+                ];
+            })->sortBy('name')->values();
 
-// Extract the country code from the response
-$visitorCountryCode = substr($response->json()['country'], 0, 2); // Get the country code (e.g., "US")
-//dd(CountryLoader::countries());
-$countries = collect(CountryLoader::countries())->map(function ($country) {
-    return [
-        'country-code' => $country['iso_3166_1_alpha2'],
-        'name' => $country['name'],
-        'code' => $country['calling_code'] ?? '',
-    ];
-})->sortBy('name')->values();
 $meta = [
     'title' => 'Get a Quote',
     'meta_description' => 'Find out exciting travel offers Sri Lanka online to book your guided tour with us. Get a special quote from the leading tour agents, Simplify Sri Lanka!',
@@ -554,22 +591,28 @@ public function offerquote($resortid,$offerid){
   
       $tourtype='offer';
          
-      $ip = request()->ip();
-  
-     // Make a request to ipinfo.io API
-  $response = Http::get("https://ipinfo.io/{8.8.8.8}/json");
-  // Debug: dump the response structure 
-  
-  // Extract the country code from the response
-  $visitorCountryCode = substr($response->json()['country'], 0, 2); // Get the country code (e.g., "US")
-  //dd(CountryLoader::countries());
-  $countries = collect(CountryLoader::countries())->map(function ($country) {
-      return [
-          'country-code' => $country['iso_3166_1_alpha2'],
-          'name' => $country['name'],
-          'code' => $country['calling_code'] ?? '',
-      ];
-  })->sortBy('name')->values();
+   $ip = request()->ip();
+
+        // Make a request to ipinfo.io API
+        $response = Http::get("https://ipinfo.io/{$ip}/json");
+        
+        $visitorCountryCode = $response->json('country', null); // Use null as a fallback if 'country' key is missing
+            if ($visitorCountryCode) {
+                $visitorCountryCode = substr($visitorCountryCode, 0, 2); // Get the first two characters of the country code
+            } else {
+                $visitorCountryCode = 'Unknown'; // Fallback if country code is not available
+            }
+        
+            // Load country data and format it
+            $countries = collect(CountryLoader::countries())->map(function ($country) {
+                return [
+                    'country-code' => $country['iso_3166_1_alpha2'],
+                    'name' => $country['name'],
+                    'code' => $country['calling_code'] ?? '',
+                ];
+            })->sortBy('name')->values();
+
+
   $meta = [
       'title' => 'Get a Quote',
       'meta_description' => 'Find out exciting travel offers Sri Lanka online to book your guided tour with us. Get a special quote from the leading tour agents, Simplify Sri Lanka!',
