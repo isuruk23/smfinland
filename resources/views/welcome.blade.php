@@ -10,7 +10,7 @@
         <section id="hero" class="hero">
 
             <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner vh-100">
+                <div class="carousel-inner ">
                    
                     <div class="carousel-item vh-100 active">
                         <img src="{{ asset('public/storage/images/slider/family_holiday_in_maldives.avif') }}" class="d-block w-100" alt="Simplifly Finland">

@@ -867,10 +867,10 @@ section {
 }
 
 .hero .carousel {
-  height: calc(100vh - 130px);
+  /* height: calc(100vh - 130px);
   width: 100vw;
   top: 0;
-  position: absolute !important;
+  position: absolute !important; */
 }
 
 .hero img {
