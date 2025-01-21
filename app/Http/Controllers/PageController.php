@@ -128,7 +128,7 @@ class PageController extends Controller
 
         // Make a request to ipinfo.io API
         
-        $response = Http::get("https://ipinfo.io/{$ip}/json");
+        $response = Http::get("https://ipinfo.io/{8.8.8.8}/json");
 
         $visitorCountryCode = $response->json('country', null); // Use null as a fallback if 'country' key is missing
             if ($visitorCountryCode) {

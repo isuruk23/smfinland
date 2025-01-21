@@ -39,6 +39,7 @@
             <div class="col-lg-3 mb-4 offer-card">
                  <div class="post-img-div">
                
+            <div class="discount-tag"><span>{{ $tour->discount }}%<br>OFF</span></div>
                         @if ($tour->image)
                                                 <img class="card-img" src="{{ asset('public/storage/' .$tour->image) }}" alt="{{ $tour->name }}" class="img-fluid">
                                                 @else            
@@ -46,11 +47,12 @@
                                                 @endif
                 </div>
                 <div class="description_content p-3 position-relative">
-                    <div class="type position-absolute">{{$tour->nights}} Nights</div>
-                    <div class="star-rating rates text-warning">
+                   
+                    <!-- <div class="star-rating rates text-warning">
                     {{$tour->discount}} % OFF
-                    </div>
+                    </div> -->
                     <div class="resort">
+                    <div class="type position-absolute">{{$tour->nights}} Nights</div>
                         <h5 class="title mb-2 mt-2">
                         {{ $tour->name }}</a>
                         </h5>

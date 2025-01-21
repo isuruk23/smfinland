@@ -60,7 +60,7 @@
                 <div class="row align-items-center py-3">
                     <div class="col-12">
                         <div class="section-header">
-                            <h2>Multiday Tour Packages <span class="line-sep">-</span> <span class="text-green">Sri
+                            <h2>Multiday Tours <span class="line-sep">-</span> <span class="text-green">Sri
                                     Lanka</span></h2>
                         </div>
 
@@ -74,6 +74,7 @@
                                 @foreach ($multitours as $tour)
                                 <div class="swiper-slide">
                                     <article>
+                                    <div class="discount-tag"><span>{{ $tour->discount }}%<br>OFF</span></div>
                                         <div class="post-img-div">
                                           
 
@@ -85,9 +86,9 @@
                                         </div>
                                         <div class="description_content p-3 position-relative">
                                         <div class="type position-absolute">{{$tour->nights}} Nights</div>
-                                            <div class="star-rating rates text-warning">
+                                            <!-- <div class="star-rating rates text-warning">
                                             {{$tour->discount}} % OFF
-                                            </div>
+                                            </div> -->
                                             <div class="resort">
                                                 <h5 class="title mb-2 mt-2">
                                                 {{ $tour->name }}</a>
@@ -151,7 +152,7 @@
                     <div class="row align-items-center py-3">
                         <div class="col-12">
                             <div class="section-header">
-                                <h2>Day Tour Packages <span class="line-sep">-</span> <span class="text-green">Sri
+                                <h2>Day Tours <span class="line-sep">-</span> <span class="text-green">Sri
                                         Lanka</span></h2>
                             </div>
 
@@ -165,6 +166,7 @@
                                     @foreach ($tours as $tour)
                                     <div class="swiper-slide">
                                         <article>
+                                        <div class="discount-tag"><span>{{ $tour->discount }}%<br>OFF</span></div>
                                             <div class="post-img-div">
                                                
                                                     @if ($tour->image)
@@ -179,9 +181,9 @@
 N/<br />
 <b>Warning</b>:  Undefined array key "days" in <b>C:\xampp\htdocs\simpliflyfinland\index.php</b> on line <b>238</b><br />
 D</div> -->
-                                                <div class="star-rating rates text-warning">
+                                                <!-- <div class="star-rating rates text-warning">
                                                 {{$tour->discount}}% OFF
-                                                </div>
+                                                </div> -->
                                                 <div class="resort">
                                                     <h5 class="title mb-2 mt-2">
                                                     {{ $tour->name }}</a>
@@ -249,7 +251,7 @@ D</div> -->
                     <div class="row align-items-center py-3">
                         <div class="col-12">
                             <div class="section-header">
-                                <h2> Resort <span class="line-sep">-</span> <span
+                                <h2> Resorts <span class="line-sep">-</span> <span
                                         class="text-green">Maldives</span></h2>
                             </div>
 

@@ -33,8 +33,10 @@ vacation into a delight</p>
       @foreach ($tours as $tour)
     
 
-        <div class="col-lg-3 mb-4 offer-card">
+        <div class="col-lg-3 mb-4 offer-card position-relative">
+		
                              <div class="post-img-div">
+							 <div class="discount-tag"><span>{{ $tour->discount }}%<br>OFF</span></div>
                              @if ($tour->image)
                               <img class="card-img" src="{{ asset('public/storage/' .$tour->image) }}" alt="{{ $tour->name }}" class="img-fluid">
                               @else            
@@ -46,9 +48,9 @@ vacation into a delight</p>
 								<!-- <div class="type position-absolute"><br />
 <b>Warning</b>:  Undefined array key "type" in <b>C:\xampp\htdocs\simpliflyfinland\daytour_packages.php</b> on line <b>65</b><br />
 </div> -->
-								<div class="star-rating rates text-warning">
+								<!-- <div class="star-rating rates text-warning">
 									15 % OFF
-								</div>
+								</div> -->
 								<div class="resort">
 									<h5 class="title mb-2 mt-2">
                   {{ $tour->name }}
