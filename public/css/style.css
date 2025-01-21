@@ -155,6 +155,10 @@ button {
   transition: background 0.4s, all 0.3s linear;
   height: 200px; }
 
+  #header .main-menu .navbar .dropdown ul a{
+    border-bottom: var(--lightgray) solid 1px;
+  }
+
   .header_area .navbar {
     background: transparent;
     padding: 0px;
@@ -1357,7 +1361,25 @@ border-bottom: var(--lightgray) solid 1px;
   border-radius: 10px;
   overflow: hidden;
 }
+.discount-tag {
+  position: absolute;
+  right: 12px;
+  top: 0;
+  height: 61px;
+  border-left: 26px solid var(--red);
+  border-right: 26px solid var(--red);
+  border-bottom: 16px solid transparent;
+  z-index: 1;
+}
 
+.discount-tag span {
+  color: #fff;
+  font-weight: normal;
+  font-size: 12px;
+  position: absolute;
+  left: -15px;
+  top: 5px;
+}
 .blog-posts .post-img {
   max-height: 240px;
   margin: -30px -30px 15px -30px;

@@ -9,11 +9,11 @@
 		<div class="container h-100">
 			<div class="contact-banner">
 				<div class="text-center">
-        <h1>About Us</h1>
+        <h1>Who We Are</h1>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">About us</li>
+              <li class="breadcrumb-item active" aria-current="page">Who We Are</li>
             </ol>
           </nav>
 				</div>
@@ -87,14 +87,17 @@
                 <div class="container">
                     <div class="row py-5 item1">
                         <div class="col-md-6">
-                            <h2>Explore, Dream & Discover Luxury Travel </h2>
-                            <p>Our mission is to redefine the travel experience
-                                by seamlessly integrating environmental and
-                                social responsibility into every journey. We are
-                                dedicated to curating eco-friendly and culturally
-                                enriching adventures that prioritize the
-                                preservation of natural ecosystems and support
-                                local communities. </p>
+                            <h2>A Mission with Meaning </h2>
+                            <p>Imagine waking up in a luxurious villa surrounded by turquoise 
+waters, knowing that your stay contributes to protecting coral 
+reefs. Picture wandering through the lush landscapes of Sri Lanka, 
+where every step helps preserve its biodiversity. Visualize a snowy 
+escape in Finland, where you’ll experience the magic of the 
+Northern Lights while supporting local Sami communities.
+</p>
+<p>Our mission is to redefine travel by blending eco-conscious luxury 
+with cultural authenticity. Every adventure we curate prioritizes the 
+preservation of natural ecosystems and uplifts the communities we cherish.</p>
                         </div>
                         <div class="col-md-6">
                             <img src="{{ asset('public/storage/images/about/why_simplifly_maldives.avif') }}" alt="image-1">
@@ -106,41 +109,38 @@
                         </div>
                         <div class="col-md-6 order-1 order-md-2 text-center text-md-start">
                             <h2>How we can help you </h2>
-                            <p>Our personalized travel consultant service is
-                                designed to provide you with a personalized
-                                and customized travel experience. Our team
-                                of dedicated travel consultants will work
-                                closely with you to understand your travel
-                                preferences, requirements, and the budget.
-                                Once we have gathered all the necessary
-                                information, we will create a tailored itinerary
-                                that includes accommodations, transportation,
-                                and activities based on your specific interests
-                                and preferences. We will also provide you with
-                                recommendations and insider tips to enhance
-                                your travel experience.</p>
+                            <p>Our personalized travel consultant service is 
+designed to provide you with a personalized and 
+customized travel experience. Our team of 
+dedicated travel consultants will work closely with 
+you to understand your travel preferences, 
+requirements, and the budget. Once we have 
+gathered all the necessary information, we will 
+create a tailored itinerary that includes 
+accommodations, transportation, and activities 
+based on your specific interests and preferences. 
+We will also provide you with recommendations 
+and insider tips to enhance your travel experience.
+</p>
 
                         </div>
                     </div>
                     <div class="row py-5 item3">
                         <div class="col-md-6">
-                            <h2>Our Travel Consultants</h2>
+                            <h2>Your Travel Dream Team</h2>
                             <p>
-                                Our travel consultants have extensive
-                                knowledge and expertise in Finland, Maldives &
-                                Sri Lanka. Whether you are planning a romantic
-                                getaway, a family vacation, or an all-inclusive
-                                adventure, we will ensure that every detail of
-                                your trip is taken care of, allowing you to simply
-                                relax and enjoy your journey. Additionally, our
-                                personalized travel consultant service includes
-                                ongoing support and assistance throughout your
-                                trip. If any issues or changes arise during your
-                                travels, our team will be available to provide
-                                immediate assistance and ensure that your
-                                journey is stress-free. Contact us today to start
-                                planning your personalized travel experience
-                                with our dedicated travel consultants.</p>
+                            Our team of passionate travel consultants is here to 
+make your travel dreams a reality. Whether it’s a 
+romantic getaway in the Maldives, a family 
+adventure in Sri Lanka, or an Arctic escapade in 
+Finland, we dive into every detail to design an 
+itinerary tailored just for you.
+From handpicking accommodations that meet our 
+high standards of excellence to offering insider tips 
+and 24/7 support, we’re with you every step of the 
+way. And because travel is as unpredictable as it is 
+exciting, our team ensures your journey remains 
+stress-free, no matter what surprises come your way.</p>
                         </div>
                         <div class="col-md-6">
                             <img src="{{ asset('public/storage/images/about/our_travel_consultants.avif') }}" alt="Our Travel Consultants">
@@ -151,27 +151,27 @@
                             <img src="{{ asset('public/storage/images/about/why_simplifly_finland.avif') }}" alt="image-1">
                         </div>
                         <div class="col-md-6 order-1 order-md-2 text-center text-md-start">
-                            <h2>Why Simplifly Finland?</h2>
-                            <p>“Embarking on a journey is a deeply personal
-                                experience, and as your dedicated travel expert,
-                                our commitment is to craft a tailor-made
-                                adventure that reflects your unique preferences,
-                                interests, and aspirations. With a wealth of
-                                professional expertise, I navigate the vast
-                                landscape of travel possibilities to curate an
-                                experience that goes beyond the ordinary”</p>
-                            <p>We offer wide range of packages to Finland, Sri
-                                Lanka & Maldives with 24/7 service inclusive of
-                                competitive prices. Our team of travel experts
-                                will ensure that your trip to all three destinations
-                                are memorable and hassle-free. We take pride
-                                in curating our unique portfolio, and our industry
-                                experts play a crucial role in ensuring that each
-                                resort meets our high standards of excellence.
-                                After your memorable stay, they leave us a
-                                valuable feedback and reviews that help us
-                                continually refine and improve our offerings.</p>
-
+                            <h2>Why Choose Simplifly Finland?</h2>
+                            <p>Because every journey should be as 
+unique as the traveller. With offices in 
+Finland, Sri Lanka, and the Maldives, we 
+bring local expertise and global 
+connections to deliver unforgettable 
+adventures.
+</p>
+                            <p><b>Exclusive Packages:</b> From the crystalclear waters of the Maldives to the serene 
+forests of Finland and Sri Lanka’s vibrant 
+culture, our curated packages offer 
+something extraordinary for everyone.
+</p>
+<p><b>Sustainability First:</b> We’re deeply committed to sustainable tourism, taking every possible step 
+to protect the environment and support the communities we visit.</p>
+<p><b>24/7 Service:</b> Your peace of mind is our priority. With round-the-clock assistance, you can focus 
+on the joy of exploration while we handle the logistics.</p>
+<p class="text-center"><b>Start Your Journey Today</b><br>
+At Simplifly Finland, we don’t just take you places. We take you deeper, helping you connect 
+with the world in ways that inspire, enrich, and endure. Let’s create your next unforgettable 
+story together</p>
                         </div>
                     </div>
                 </div>

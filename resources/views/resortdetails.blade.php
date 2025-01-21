@@ -33,10 +33,7 @@
                                         <a class="btn nav-link btn-primary" href="#pills-overview"
                                             onclick="toggleActive(this)">Overview</a>
                                     </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="btn  nav-link" href="#pills-offers"
-                                            onclick="toggleActive(this)">Offers</a>
-                                    </li>
+                                    
                                     <li class="nav-item" role="presentation">
                                         <a class="btn nav-link" href="#pills-villas" onclick="toggleActive(this)">Villas</a>
                                     </li>
@@ -51,6 +48,10 @@
                                         <a class="btn nav-link" href="#pills-factsheet"
                                             onclick="toggleActive(this)">Fact Sheet</a>
                                     </li> -->
+                                    <li class="nav-item" role="presentation">
+                                        <a class="btn  nav-link" href="#pills-offers"
+                                            onclick="toggleActive(this)">Offers</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

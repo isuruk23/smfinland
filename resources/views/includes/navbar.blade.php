@@ -80,14 +80,14 @@
                             <li class="dropdown has-dropdown"><a href="#"><span>MALDIVES RESORTS</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul class="dd-box-shadow">
-                                    <li><a href="/maldives-resort">View All Resorts</a></li>
+                                    
                                     <li><a href="/honeymoon-resorts">Honeymoon Resort
                                     </a></li>
                                     <li><a href="/family-resorts">Family Resort</a></li>
                                     <li><a href="/couple-resorts">Couple Resort</a></li>
                                     <li><a href="/all-inclusive-resort">All Inclusive Resort
                                     </a></li>
-
+                                    <li><a href="/maldives-resort">View All Resorts</a></li>
                                 </ul>
                             </li>
                             <!--li><a href="placetovisit">Places to Visit</a></li>
