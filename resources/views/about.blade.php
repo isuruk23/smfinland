@@ -23,68 +23,16 @@
   <!-- ================ end banner area ================= -->
   <section id="about">
            
-            <div class="customer-says bg-gray padding-base">
+           
+            <div class="about-more">
                 <div class="container">
-                    <div class="row">
-                        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer>
-                        </script>
-                        <div class="elfsight-app-9f18fa42-ba3d-4dac-85a7-be242db040f2">
-                        </div>
+                    <div class="row text-center">
+                        <p>Welcome to Simplifly Finland, where the spirit of adventure meets the heart of sustainability. Our 
+journey began with a simple yet profound belief. travel has the power to transform lives - not just for 
+those who embark on the journey, but for the communities and natural wonders that host them.</p>
+<p>At Simplifly Finland, we don’t just plan trips. we craft experiences that allow you to explore, dream, and 
+discover the world in a way that leaves it better than we found it.</p>
                     </div>
-                </div>
-            </div>
-            <div class="services-block padding-base">
-                <div class="container">
-                    <div class="row hours text-center g-0">
-                        <div class="col-12 p-4">
-                            <h3> Call or Whatsapp to your Simplifly Advisor <span class="text-green">24/7</span> on
-                                <br>+9476 342 7054, +960 783 4011,
-                                +358
-                                40
-                                819 2758
-                            </h3>
-                        </div>
-                    </div>
-
-                    <div class="row services p-5 g-0">
-                        <div class="col-md-3 text-center mb-3">
-                            <i class="bi bi-browser-safari"></i>
-                            <h4>Explore Maldives</h4>
-                            <p>Simplfly knowledge of the Maldives is second to none. Our team of travel professionals
-                                have
-                                an insider's perspective of the destination, resorts, people and culture - we are
-                                passionate
-                                about the Maldives! </p>
-                        </div>
-                        <div class="col-md-3 text-center mb-3">
-                            <i class="bi bi-clock"></i>
-                            <h4>24/7 Assistance</h4>
-                            <p>We work across several time zones to serve customers around the world. Just drop us a
-                                line,
-                                call our headquarters or have a live-chat - we are available for you.</p>
-                        </div>
-                        <div class="col-md-3 text-center mb-3">
-                            <i class="bi bi-rainbow"></i>
-                            <h4>Personally Tailored To You </h4>
-                            <p>It’s our commitment to deliver a bespoke service for you. We take careful note of your
-                                needs
-                                and ensure all the small details are taken care of, every step of the way.</p>
-                        </div>
-
-                        <div class="col-md-3 text-center mb-3">
-                            <i class="bi bi-pass"></i>
-                            <h4>Best Price Guarantee</h4>
-                            <p>We work closely with all of our resort partners, so we can offer you a Best Price
-                                Guarantee
-                                when you make a reservation, or promise to match your lowest price.</p>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="about-more padding-base">
-                <div class="container">
                     <div class="row py-5 item1">
                         <div class="col-md-6">
                             <h2>A Mission with Meaning </h2>
@@ -143,7 +91,7 @@ exciting, our team ensures your journey remains
 stress-free, no matter what surprises come your way.</p>
                         </div>
                         <div class="col-md-6">
-                            <img src="{{ asset('public/storage/images/about/our_travel_consultants.avif') }}" alt="Our Travel Consultants">
+                            <img src="{{ asset('public/storage/images/about/travel_your_dream.avif') }}" alt="Our Travel Consultants">
                         </div>
                     </div>
                     <div class="row py-5 item4">
@@ -173,8 +121,67 @@ At Simplifly Finland, we don’t just take you places. We take you deeper, helpi
 with the world in ways that inspire, enrich, and endure. Let’s create your next unforgettable 
 story together</p>
                         </div>
+                        
                     </div>
                 </div>
+                <div class="customer-says bg-gray ">
+                <div class="container">
+                    <div class="row">
+                        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer>
+                        </script>
+                        <div class="elfsight-app-9f18fa42-ba3d-4dac-85a7-be242db040f2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="services-block padding-base">
+                <div class="container">
+                    <div class="row hours text-center g-0">
+                        <div class="col-12 p-4">
+                            <h3> Call or Whatsapp to your Simplifly Advisor <span class="text-green">24/7</span> on
+                                <br>+358 40 819 2758, +9476 342 7054, +960 783 4011,
+                                
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="row services p-5 g-0">
+                        <div class="col-md-3 text-center mb-3">
+                            <i class="bi bi-browser-safari"></i>
+                            <h4>Explore Maldives</h4>
+                            <p>Simplfly knowledge of the Maldives is second to none. Our team of travel professionals
+                                have
+                                an insider's perspective of the destination, resorts, people and culture - we are
+                                passionate
+                                about the Maldives! </p>
+                        </div>
+                        <div class="col-md-3 text-center mb-3">
+                            <i class="bi bi-clock"></i>
+                            <h4>24/7 Assistance</h4>
+                            <p>We work across several time zones to serve customers around the world. Just drop us a
+                                line,
+                                call our headquarters or have a live-chat - we are available for you.</p>
+                        </div>
+                        <div class="col-md-3 text-center mb-3">
+                            <i class="bi bi-rainbow"></i>
+                            <h4>Personally Tailored To You </h4>
+                            <p>It’s our commitment to deliver a bespoke service for you. We take careful note of your
+                                needs
+                                and ensure all the small details are taken care of, every step of the way.</p>
+                        </div>
+
+                        <div class="col-md-3 text-center mb-3">
+                            <i class="bi bi-pass"></i>
+                            <h4>Best Price Guarantee</h4>
+                            <p>We work closely with all of our resort partners, so we can offer you a Best Price
+                                Guarantee
+                                when you make a reservation, or promise to match your lowest price.</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
             </div>
         </section>
 

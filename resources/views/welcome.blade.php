@@ -329,26 +329,75 @@ D</div> -->
                     </div>
                 </div>
             </div>
+            <div class="outer-block bg-gray">
+                <div class="container">
 
-            <div class="outer-block travel-experience">
-            <div class="container">
-                    <div class="section-intro text-center pb-20px">
-                    
-                    <h2>Clients Review</h2>
+                    <div class="row align-items-center py-3">
+                        <div class="col-12">
+                            <div class="section-header">
+                            <h2>Clients Review</h2>
                     <p>Simplifly team was available 24/7, ensuring every need was met and every query answered promptly. Even when faced with last-minute changes, they handled everything with professionalism and grace, ensuring our trip continued seamlessly. Simplifly Lanka (Pvt) Ltd doesn’t just plan trips; they create lifelong memories.</p>
+                 
+                            </div>
+
+                            <!-- Slider main container -->
+                            <div class="swiper swiper3">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+
+                                    @foreach($reviews as $review)
+                                    <div class="testi-carousel__item">
+                                        <div class="media">
+                                        <div class="testi-carousel__img">
+                                                @if($review->image)
+                                                <img src="{{ asset('public/storage/'.$review->image) }}" alt="{{ $review->name }}">
+                                                @endif
+                                        </div>
+                                        <div class="media-body">
+                                        <p>
+                                <span class="short-review">
+                                    {!! Str::limit($review->review, 120) !!}
+                                </span>
+                                <span class="full-review d-none">
+                                    {!! $review->review !!}
+                                </span>
+                                <a href="javascript:void(0);" class="read-more">Read more</a>
+                            </p>
+
+                                            <div class="testi-carousel__intro">
+                                            <h3>{{ $review->name }}</h3>
+                                            <p>{{ $review->position }}</p>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
+
+                                    
+                                   
+
+                                    
+                                    
+
+
+                                                                    </div>
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
+
+                                <!-- If we need navigation buttons -->
+                                <!-- <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div> -->
+
+                                <!-- If we need scrollbar -->
+
+                            </div>
+                        </div>
                     </div>
-					
-					  <!-- Slider main container -->
-                            
-                      <div class="row">
-                      <script src="https://static.elfsight.com/platform/platform.js" async></script>
-                      <div class="elfsight-app-14a26058-f8b6-4071-b316-96f7ce3bd49b" data-elfsight-app-lazy></div>
-                    </div>
-					
-					
-                                
                 </div>
-                </div>
+            </div>
+
+           
             </div>
         </section>
 
@@ -428,6 +477,19 @@ var swiper = new Swiper('.swiper1', {
 // JS file of swiper-2
 
 var swiper = new Swiper('.swiper2', {
+    speed: 600,
+    parallax: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    // navigation: {
+    //   nextEl: '.swiper-button-next',
+    //   prevEl: '.swiper-button-prev',
+    // },
+});
+
+var swiper = new Swiper('.swiper3', {
     speed: 600,
     parallax: true,
     pagination: {
