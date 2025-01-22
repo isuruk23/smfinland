@@ -58,7 +58,17 @@
     <div class="container">
         <div class="row">
 
+        <div class=" col-lg-3 col-sm-6 footer-contact mb-4">
+                <h4 class="my-3">Find Us in Europe</h4>
 
+                <div class="address mb-3 d-flex">
+                    <i class="bi bi-house me-3"></i> <span>Frantsinkatu 5 C 27,<br> 20540, Turku,<br>
+                        Finland.</span>
+                </div>
+                <div class="phone mb-3"><i class="bi bi-telephone me-3"></i> <span>+358 40 819 2758</span></div>
+                <div class="email"><i class="bi bi-envelope me-3"></i> <span>sales@simpliflyfinland.fi</span>
+                </div>
+            </div>
             <div class="col-lg-3 col-sm-6 footer-contact mb-4">
                 <h4 class="my-3">Find Us in Maldives</h4>
 
@@ -73,22 +83,6 @@
                 </div>
                 <div class="email"><i class="bi bi-envelope me-3"></i> <span>sales@simpliflymaldives.com</span></div>
             </div>
-
-
-
-
-            <div class=" col-lg-3 col-sm-6 footer-contact mb-4">
-                <h4 class="my-3">Find Us in Europe</h4>
-
-                <div class="address mb-3 d-flex">
-                    <i class="bi bi-house me-3"></i> <span>Frantsinkatu 5 C 27,<br> 20540, Turku,<br>
-                        Finland.</span>
-                </div>
-                <div class="phone mb-3"><i class="bi bi-telephone me-3"></i> <span>+358 40 819 2758</span></div>
-                <div class="email"><i class="bi bi-envelope me-3"></i> <span>sales@simpliflyfinland.fi</span>
-                </div>
-            </div>
-
             <div class="col-lg-3 col-sm-6 footer-contact mb-4">
                 <h4 class="my-3">Find Us in Sri Lanka</h4>
 

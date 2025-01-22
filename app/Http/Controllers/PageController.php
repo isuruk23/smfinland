@@ -99,22 +99,33 @@ class PageController extends Controller
             'meta_description' => 'Sri Lanka is a country with a diverse population of people of many nationalities. Be mesmerized by the infinite miles of beautiful white sandy beaches and gorgeous blue waters. Sip a nice cup of Ceylon Tea while enjoying the varied spices and rice and curries. Simplifly Sri Lanka (Pvt) Ltd believes in an exceptional quality of living, where every journey should be a memorable experience.',
             'meta_keywords' => 'simplifly, simpliflysrilanka, sri lanka tours, family vacations, solo travellers, tropical getaway, island holidays, holiday planning, srilanka',
         ];
-        $countries = collect(CountryLoader::countries())->map(function ($country) {
-            return [
-                'country-code' => $country['iso_3166_1_alpha2'],
-                'name' => $country['name'],
-                'code' => $country['calling_code'] ?? '',
-            ];
-        })->sortBy('name')->values();
+        
+
         $ip = request()->ip();
+
         // Make a request to ipinfo.io API
-     $response = Http::get("https://ipinfo.io/{8.8.8.8}/json");
-    // dd($response->json()['country']);
-     // Debug: dump the response structure 
- 
-     // Extract the country code from the response
-     $visitorCountryCode = substr($response->json()['country'], 0, 2); // Get the country code (e.g., "US")
-   //country-code  dd(CountryLoader::countries());
+        
+        $response = Http::get("https://ipinfo.io/{$ip}/json");
+
+        $visitorCountryCode = $response->json('country', null); // Use null as a fallback if 'country' key is missing
+            if ($visitorCountryCode) {
+                $visitorCountryCode = substr($visitorCountryCode, 0, 2); // Get the first two characters of the country code
+            } else {
+                $visitorCountryCode = 'Unknown'; // Fallback if country code is not available
+            }
+            
+            
+        
+            // Load country data and format it
+            $countries = collect(CountryLoader::countries())->map(function ($country) {
+                return [
+                    'country-code' => $country['iso_3166_1_alpha2'],
+                    'name' => $country['name'],
+                    'code' => $country['calling_code'] ?? '',
+                ];
+            })->sortBy('name')->values();
+
+            
         return view('contact', compact('meta','countries','visitorCountryCode'));
     }
 
@@ -128,7 +139,7 @@ class PageController extends Controller
 
         // Make a request to ipinfo.io API
         
-        $response = Http::get("https://ipinfo.io/{8.8.8.8}/json");
+        $response = Http::get("https://ipinfo.io/{$ip}/json");
 
         $visitorCountryCode = $response->json('country', null); // Use null as a fallback if 'country' key is missing
             if ($visitorCountryCode) {
@@ -269,23 +280,25 @@ $meta = [
         $ip = request()->ip();
 
         // Make a request to ipinfo.io API
-        $response = Http::get("https://ipinfo.io/{$ip}/json");
-        
-        $visitorCountryCode = $response->json('country', null); // Use null as a fallback if 'country' key is missing
-            if ($visitorCountryCode) {
-                $visitorCountryCode = substr($visitorCountryCode, 0, 2); // Get the first two characters of the country code
-            } else {
-                $visitorCountryCode = 'Unknown'; // Fallback if country code is not available
-            }
-        
-            // Load country data and format it
-            $countries = collect(CountryLoader::countries())->map(function ($country) {
-                return [
-                    'country-code' => $country['iso_3166_1_alpha2'],
-                    'name' => $country['name'],
-                    'code' => $country['calling_code'] ?? '',
-                ];
-            })->sortBy('name')->values();
+       $ip = request()->ip(); // Get the user's IP address (you can adjust this as per your setup)
+
+// Use Http::get to fetch data from ip-api.com
+$response = Http::get("http://ip-api.com/json/{$ip}?fields=countryCode");
+
+if ($response->successful()) {
+    $visitorCountryCode = $response->json('countryCode', 'Unknown'); // Get the 'countryCode' key or fallback to 'Unknown'
+} else {
+    $visitorCountryCode = 'Unknown'; // Fallback if the request fails
+}
+
+// Load country data and format it
+$countries = collect(CountryLoader::countries())->map(function ($country) {
+    return [
+        'country-code' => $country['iso_3166_1_alpha2'],
+        'name' => $country['name'],
+        'code' => $country['calling_code'] ?? '',
+    ];
+})->sortBy('name')->values();
 
  $tourid=0;
  $tourtype="quote";

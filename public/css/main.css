@@ -3305,7 +3305,7 @@ section {
 
 .offer-card{
 background-color: #fff;
-  box-shadow: 0 0 22px -5px rgba(0,0,0,.08);
+  /* box-shadow: 0 0 22px -5px rgba(0,0,0,.08); */
   padding: 20px;
 }
 

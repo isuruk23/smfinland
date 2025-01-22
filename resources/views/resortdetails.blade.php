@@ -66,27 +66,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="padding-base" id="pills-offers">
-                                <div class="container Offers">
-                                    <h2 class="heading text-center">Offers</h2>
-                                    <div class="row py-2">
-                                   
-                                   @foreach ($offers as $offer)
-                                            
-                                                <div class="col-lg-3 offer-card p-3">
-                                                    <h4 class="text-center">{{ $offer->title }}</h4>
-                                                    <p>{!! $offer->description !!}</p>
-                                                    <div class="row align-items-center justify-content-center button-container">
-                                                    <div class="col-12 text-center"><a class="btn btn-primary " href="/offer/{{$resort->id}}/{{ $offer->id }}">Book
-                                                            Now
-                                                        </a></div>
-                                                </div>
-                                                </div>
-                                                
-                                                @endforeach
-                                     </div>
-                                </div>
-                            </div>
+                            
                             <div class="padding-base bg-gray" id="pills-villas">
                                 <div class="container">
                                     <h2 class="heading text-center">Villas</h2>
@@ -234,7 +214,27 @@
                             </div>
                         </div> -->
       
-                           
+                        <div class="padding-base" id="pills-offers">
+                                <div class="container Offers">
+                                    <h2 class="heading text-center">Offers</h2>
+                                    <div class="row py-2">
+                                   
+                                   @foreach ($offers as $offer)
+                                            
+                                                <div class="col-lg-3 offer-card p-3">
+                                                    <h4 class="text-center">{{ $offer->title }}</h4>
+                                                    <p>{!! $offer->description !!}</p>
+                                                    <div class="row align-items-center justify-content-center button-container">
+                                                    <div class="col-12 text-center"><a class="btn btn-primary " href="/offer/{{$resort->id}}/{{ $offer->id }}">Book
+                                                            Now
+                                                        </a></div>
+                                                </div>
+                                                </div>
+                                                
+                                                @endforeach
+                                     </div>
+                                </div>
+                            </div>
                   
 
 
