@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('type', 20);
             $table->string('name', 255);
             $table->text('description');
-            $table->integer('roomsize');
+            $table->string('roomsize');
             $table->integer('bed');
             $table->string('view', 100);
             $table->integer('wifi');
