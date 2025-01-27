@@ -48,8 +48,8 @@ class MultiDayTourController extends Controller
             'conditions' => 'string',
             'important' => 'string',
             'tips' => 'string',
-            'image' => 'nullable|mimes:jpg,jpeg,png,avif|max:2048',
-            'banner' => 'nullable|mimes:jpg,jpeg,png,avif|max:2048',
+            'image' => 'nullable|mimes:jpg,jpeg,png,avif,webp|max:2048',
+            'banner' => 'nullable|mimes:jpg,jpeg,png,avif,webp|max:2048',
         ]);
 
         $data = $request->all();
@@ -110,8 +110,8 @@ class MultiDayTourController extends Controller
         'conditions' => 'string',
         'important' => 'string',
         'tips' => 'string',
-        'image' => 'nullable|mimes:jpg,jpeg,png,avif|max:2048',
-        'banner' => 'nullable|mimes:jpg,jpeg,png,avif|max:2048',
+        'image' => 'nullable|mimes:jpg,jpeg,png,avif,webp|max:2048',
+        'banner' => 'nullable|mimes:jpg,jpeg,png,avif,webp|max:2048',
     ]);
     
         $data = $request->all();

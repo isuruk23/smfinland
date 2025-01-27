@@ -58,8 +58,8 @@ class ResortController extends Controller
             'description' => 'required|string',
             'imap' => 'required|string',
             'address' => 'required|string|max:255',
-            'file' => 'required|mimes:jpeg,png,jpg,gif,avif|max:2048',
-            'file2' => 'required|mimes:jpeg,png,jpg,gif,avif|max:2048',
+            'file' => 'required|mimes:jpeg,png,jpg,gif,avif,webp|max:2048',
+            'file2' => 'required|mimes:jpeg,png,jpg,gif,avif,webp|max:2048',
         ]);
 
         $resort = new Resort();
@@ -138,8 +138,8 @@ class ResortController extends Controller
                 'description' => 'required|string',
                 'imap' => 'required|string',
                 'address' => 'required|string|max:255',
-                'file' => 'nullable|file|mimes:jpeg,png,jpg,gif,avif|max:2048',
-                'file2' => 'nullable|file|mimes:jpeg,png,jpg,gif,avif|max:2048',
+                'file' => 'nullable|file|mimes:jpeg,png,jpg,gif,avif,webp|max:2048',
+                'file2' => 'nullable|file|mimes:jpeg,png,jpg,gif,avif,webp|max:2048',
             ]);
           
             $resort = Resort::findOrFail($id);

@@ -33,8 +33,8 @@ class MultiDayTourDetailsController extends Controller
             'day' => 'required|integer',
             'title' => 'required|string',
             'description' => 'required|string',
-            'image1' => 'required|mimes:jpg,jpeg,png,webp,avif',
-            'image2' => 'required|mimes:jpg,jpeg,png,webp,avif',
+            'image1' => 'required|mimes:jpg,jpeg,png,webp,avif,webp',
+            'image2' => 'required|mimes:jpg,jpeg,png,webp,avif,webp',
             'tour_id' => 'required|integer',
             'is_active' => 'boolean',
         ]);
@@ -91,8 +91,8 @@ class MultiDayTourDetailsController extends Controller
             'day' => 'required|integer',
             'title' => 'required|string',
             'description' => 'required|string',
-            'image1' => 'nullable|mimes:jpg,jpeg,png,webp,avif|max:2048',
-            'image2' => 'nullable|mimes:jpg,jpeg,png,webp,avif|max:2048', // Added validation for image2
+            'image1' => 'nullable|mimes:jpg,jpeg,png,webp,avif,webp|max:2048',
+            'image2' => 'nullable|mimes:jpg,jpeg,png,webp,avif,webp|max:2048', // Added validation for image2
             'tour_id' => 'required|integer',
             'is_active' => 'boolean',
         ]);

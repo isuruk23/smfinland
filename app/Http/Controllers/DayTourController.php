@@ -42,8 +42,8 @@ class DayTourController extends Controller
             'price' => 'required|numeric',
             'start_date' => 'date',
             'end_date' => 'date|after_or_equal:start_date',
-            'image' => 'required|mimes:jpg,jpeg,png,webp,avif|max:2048',
-            'banner' => 'required|mimes:jpg,jpeg,png,webp,avif|max:2048',
+            'image' => 'required|mimes:jpg,jpeg,png,webp,avif,webp|max:2048',
+            'banner' => 'required|mimes:jpg,jpeg,png,webp,avif,webp|max:2048',
         ]);
 
         $slugreplace = str_replace(' ', '-', $request->name);
@@ -100,8 +100,8 @@ class DayTourController extends Controller
             'price' => 'required|numeric',
             'start_date' => 'date',
             'end_date' => 'date|after_or_equal:start_date',
-            'image' => 'mimes:jpg,jpeg,png,webp,avif|max:2048',
-            'banner' => 'mimes:jpg,jpeg,png,webp,avif|max:2048',
+            'image' => 'mimes:jpg,jpeg,png,webp,avif,webp|max:2048',
+            'banner' => 'mimes:jpg,jpeg,png,webp,avif,webp|max:2048',
         ]);
 
         $data = $request->all();
