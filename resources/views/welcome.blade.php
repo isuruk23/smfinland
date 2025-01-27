@@ -60,8 +60,8 @@
                 <div class="row align-items-center py-3">
                     <div class="col-12">
                         <div class="section-header">
-                            <h2>Multiday Tours <span class="line-sep">-</span> <span class="text-green">Sri
-                                    Lanka</span></h2>
+                            <h2>Multiday Tours <span class="text-green">Sri Lanka</span></h2>
+                            <p>Discover the enchanting beauty of Sri Lanka with our expertly crafted multi-day tours. From lush hill country and ancient cultural wonders to vibrant coastal towns, every journey is a blend of adventure and serenity. Explore, unwind, and create unforgettable memories on this emerald isle!</p>
                         </div>
 
 
@@ -152,8 +152,8 @@
                     <div class="row align-items-center py-3">
                         <div class="col-12">
                             <div class="section-header">
-                                <h2>Day Tours <span class="line-sep">-</span> <span class="text-green">Sri
-                                        Lanka</span></h2>
+                                <h2>Day Tours <span class="text-green">Sri Lanka</span></h2>
+                                <p>Uncover the magic of Sri Lanka with our captivating day tours! From the vibrant streets of Colombo to the lush Hill Country, ancient cultural treasures, and sun-kissed southern beaches, Simplifly Finland Oy crafts unforgettable experiences for every traveler</p>
                             </div>
 
 
@@ -251,8 +251,8 @@ D</div> -->
                     <div class="row align-items-center py-3">
                         <div class="col-12">
                             <div class="section-header">
-                                <h2> Resorts <span class="line-sep">-</span> <span
-                                        class="text-green">Maldives</span></h2>
+                                <h2> Resorts <span class="text-green">Maldives</span></h2>
+                                <p>Escape to the Maldives, where turquoise waters meet pristine white sands and luxury knows no bounds. we’ve handpicked the finest resorts offering exceptional packages for families, couples, and honeymooners alike. Discover your perfect paradise and let us turn your dream vacation into reality</p>
                             </div>
 
                             <!-- Slider main container -->
@@ -294,7 +294,7 @@ D</div> -->
                                                     </div>
                                                 </div>
                                                 <div class="row justify-content-around align-items-center">
-                                                    <div class="col-6 text-end"><a href="/quote"
+                                                    <div class="col-6 text-end"><a href="/resort/{{ $resort->resort_alias }}/{{$resort->id}}/quote"
                                                             class="btn btn-primary">Get a
                                                             Quote</a>
                                                     </div>
@@ -336,7 +336,7 @@ D</div> -->
                         <div class="col-12">
                             <div class="section-header">
                             <h2>Clients Review</h2>
-                    <p>Simplifly team was available 24/7, ensuring every need was met and every query answered promptly. Even when faced with last-minute changes, they handled everything with professionalism and grace, ensuring our trip continued seamlessly. Simplifly Lanka (Pvt) Ltd doesn’t just plan trips; they create lifelong memories.</p>
+                            <p>"Our clients say it best! Simplifly is proud to be trusted by travelers worldwide, with exceptional reviews highlighting our personalized service and seamless planning. From dream destinations to unforgettable experiences, we’re here to make every journey extraordinary."</p>
                  
                             </div>
 

@@ -60,7 +60,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="row justify-content-around align-items-center">
-                                                    <div class="col-6 text-end"><a href="/quote" class="btn btn-primary">Get a
+                                                    <div class="col-6 text-end"><a href="/resort/{{ $resort->resort_alias }}/{{$resort->id}}/quote" class="btn btn-primary">Get a
                                                             Quote</a>
                                                     </div>
                                                     <div class="col-6 text-start"><a class="btn btn-outline-primary" href="/resort-details/{{ $resort->resort_alias }}/{{ $resort->id }}">Explore
