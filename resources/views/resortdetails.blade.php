@@ -102,7 +102,7 @@
                                                                         @if($villa->roomsize)  <p>  <i class="bi bi-house"></i> {{$villa->roomsize}} sqm </p>@endif 
                                                                         </div>
                                                                         <div class="col-6 col-sm-6 col-md-4 col-lg-3 mt-3">
-                                                                        @if($villa->bed)     <p><i class="bi bi-grid-3x2-gap"></i> {{$villa->bed}} Bed</p>@endif                                                                             </div>
+                                                                        @if($villa->bed)     <p><i class="bi bi-people"></i> {{$villa->bed}} </p>@endif                                                                             </div>
                                                                         <div class="col-6 col-sm-6 col-md-4 col-lg-3 mt-3">
                                                                         @if($villa->view)     <p>  <i class="bi bi-eye"></i> {{$villa->view}} </p> @endif
                                                                         </div>
