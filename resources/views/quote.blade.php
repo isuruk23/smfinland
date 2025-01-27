@@ -174,6 +174,9 @@
                                 <input type="hidden" class="form-control" id="offerid" name="offerid" value="{{$offerid}}">
                                 <input type="hidden" class="form-control" id="resortid" name="resortid" value="{{$resortid}}">
                                 @endif
+                                @if(isset($resortid))
+                                <input type="hidden" class="form-control" id="resortid" name="resortid" value="{{$resortid}}">
+                                @endif
                                 <button type="submit" value="submit" class="button-contact"><span>Quote</span></button>
                             </div>
                         </form>

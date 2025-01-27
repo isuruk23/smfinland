@@ -67,6 +67,7 @@ Route::get('/family-resorts', [PageController::class, 'familyresorts']);
 Route::get('/couple-resorts', [PageController::class, 'coupleresorts']);
 Route::get('/all-inclusive-resort', [PageController::class, 'allinclusiveresort']);
 Route::get('/maldives-resort', [PageController::class, 'resorts']);
+Route::get('/resort/{slug}/{id}/quote', [App\Http\Controllers\PageController::class, 'resortquote']);
 Route::get('/resort-details/{slug}/{id}', [App\Http\Controllers\PageController::class, 'resortdetails']);
 Route::get('/villaquote/{villaid}/{resortid}', [App\Http\Controllers\PageController::class, 'resortvillaquote']);
 Route::get('/offer/{resortid}/{offerid}', [App\Http\Controllers\PageController::class, 'offerquote']);

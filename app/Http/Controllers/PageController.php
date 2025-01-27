@@ -239,6 +239,48 @@ class PageController extends Controller
     $date= now()->toDateString();
         return view('quote', compact('countries','tourid','tourtype', 'visitorCountryCode','meta','date'));
     }
+
+    public function resortquote($slug,$id){
+        $resort = Resort::where('id',$id)->first();
+        
+        $resortid=$resort->id;
+        $tourtype='resort';
+       
+        $ip = request()->ip();
+
+        // Make a request to ipinfo.io API
+        $response = Http::get("https://ipinfo.io/{$ip}/json");
+        
+        $visitorCountryCode = $response->json('country', null); // Use null as a fallback if 'country' key is missing
+            if ($visitorCountryCode) {
+                $visitorCountryCode = substr($visitorCountryCode, 0, 2); // Get the first two characters of the country code
+            } else {
+                $visitorCountryCode = 'Unknown'; // Fallback if country code is not available
+            }
+        
+            // Load country data and format it
+            $countries = collect(CountryLoader::countries())->map(function ($country) {
+                return [
+                    'country-code' => $country['iso_3166_1_alpha2'],
+                    'name' => $country['name'],
+                    'code' => $country['calling_code'] ?? '',
+                ];
+            })->sortBy('name')->values();
+
+
+
+$meta = [
+        'title' => 'Get a Quote',
+        'meta_description' => 'Find out exciting travel offers Sri Lanka online to book your guided tour with us. Get a special quote from the leading tour agents, Simplify Sri Lanka!',
+        'meta_keywords' => 'Travel Offers Sri Lanka, Get a Quote',
+    ];
+    $date= now()->toDateString();
+
+        return view('quote', compact('countries','resortid','tourtype', 'visitorCountryCode','meta','date'));
+  
+    }
+
+
     public function daytourquote($slug,$id){
         $tour = DayTour::where('id',$id)->first();
         $tourid=$tour->id;
@@ -276,6 +318,10 @@ $meta = [
 
         return view('quote', compact('countries','tourid','tourtype', 'visitorCountryCode','meta','date'));
     }
+
+
+
+
     public function quote(){
         $ip = request()->ip();
 
