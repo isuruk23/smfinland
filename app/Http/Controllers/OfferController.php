@@ -37,7 +37,7 @@ class OfferController extends Controller
             'type' => 'required',
             'meal' => 'required',
             'description' => 'required|string', // assuming you have a resorts table
-            'file' => 'nullable|file|mimes:jpg,png,jpeg,gif,avif|max:2048',
+            'file' => 'nullable|file|mimes:jpg,png,jpeg,gif,avif,webp|max:2048',
         ]);
 
         
@@ -106,7 +106,7 @@ class OfferController extends Controller
             'type' => 'required',
             'meal' => 'required',
             'description' => 'required|string', // assuming you have a resorts table
-            'file' => 'nullable|file|mimes:jpg,png,jpeg,gif,avif|max:2048',
+            'file' => 'nullable|file|mimes:jpg,png,jpeg,gif,avif,webp|max:2048',
         ]);
       
       

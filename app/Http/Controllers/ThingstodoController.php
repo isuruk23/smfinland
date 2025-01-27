@@ -33,7 +33,7 @@ class ThingstodoController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|mimes:jpg,jpeg,png,avif',
+            'image' => 'nullable|mimes:jpg,jpeg,png,avif,webp',
             'city' => 'required|integer',
         ]);
         $data = $request->all();
@@ -82,7 +82,7 @@ class ThingstodoController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|mimes:jpg,jpeg,png,avif',
+            'image' => 'nullable|mimes:jpg,jpeg,png,avif,webp',
             'city' => 'required|integer',
         ]);
 

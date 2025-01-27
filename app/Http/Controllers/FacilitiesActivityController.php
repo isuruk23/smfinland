@@ -33,7 +33,7 @@ class FacilitiesActivityController extends Controller
         $request->validate([
             'facilities_activities' => 'required|string|max:255',
             'description' => 'required|string|max:255', // assuming you have a resorts table
-            'file' => 'required|file|mimes:jpg,png,jpeg,gif,avif|max:2048',
+            'file' => 'required|file|mimes:jpg,png,jpeg,gif,avif,webp|max:2048',
         ]);
 
         
@@ -90,7 +90,7 @@ class FacilitiesActivityController extends Controller
         $request->validate([
             'facilities_activities' => 'required|string|max:255',
             'description' => 'required|string|max:255', // assuming you have a resorts table
-            'file' => 'nullable|file|mimes:jpg,png,jpeg,gif,avif|max:2048',
+            'file' => 'nullable|file|mimes:jpg,png,jpeg,gif,avif,webp|max:2048',
         ]);
 
       
