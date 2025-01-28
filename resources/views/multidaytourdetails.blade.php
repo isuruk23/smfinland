@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- ================ start banner area ================= -->	
-<section class="contact-banner-area" id="contact" style="background: url({{ asset('public/storage/'.$tour->banner_image) }}) center center no-repeat;">
+<section class="contact-banner-area" id="contact" style="background: url({{ asset('public/storage/'.$tour->banner_image) }}) center center no-repeat;width: 100vw;">
 		<div class="container h-100">
 			<div class="contact-banner">
 				<div class="text-center">

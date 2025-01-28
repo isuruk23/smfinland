@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- ================ start banner area ================= -->	
-<section class="contact-banner-area" id="contact" style="background: url({{ url('public/storage/'.$resort->bannerimage) }}) center center no-repeat;background-size: auto; background-size: cover;">
+<section class="contact-banner-area" id="contact" style="background: url({{ url('public/storage/'.$resort->bannerimage) }}) center center no-repeat;background-size: auto; background-size: cover;width: 100vw;">
 		<div class="container h-100">
 			<div class="contact-banner">
 				<div class="text-center">
@@ -86,44 +86,27 @@
                                                                         <div class="col-lg-12">
                                                                             <h4>{{ $villa->name }}  </h4>
                                                                             <p class="description @if(strlen($villa->description) > 100) collapsed @endif">
-                                                                            @if(strlen($villa->description) > 100)
-                                                                                {!! substr($villa->description, 0, 100) !!}
-                                                                                <span class="more-text d-none">{!! substr($villa->description, 100) !!}</span>
-                                                                                ...
-                                                                            @else
-                                                                                {!! $villa->description !!}
-                                                                            @endif
-                                                                        </p>
-																											
-																			
-                                                                           
+                                                                            {!! $villa->description !!}
+                                                                            </p>
                                                                         </div>
-                                                                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mt-3">
+                                                                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 mt-3 villa-option">
                                                                         @if($villa->roomsize)  <p>  <i class="bi bi-house"></i> {{$villa->roomsize}} sqm </p>@endif 
                                                                         </div>
-                                                                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mt-3">
+                                                                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 mt-3 villa-option">
                                                                         @if($villa->bed)     <p><i class="bi bi-people"></i> {{$villa->bed}} </p>@endif                                                                             </div>
-                                                                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mt-3">
+                                                                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 mt-3 villa-option">
                                                                         @if($villa->view)     <p>  <i class="bi bi-eye"></i> {{$villa->view}} </p> @endif
                                                                         </div>
-                                                                        <div class="col-6 col-sm-6 col-md-6 col-lg-4 mt-3">
+                                                                        <div class="col-6 col-sm-6 col-md-6 col-lg-4 mt-3 villa-option">
                                                                             <p>  @if($villa->wifi == 1) <i class='bi bi-wifi'></i> Wifi  @endif </p>
                                                                         </div>
-                                                                        <div class="col-6 col-sm-6 col-md-6 col-lg-4 mt-3">
+                                                                        <div class="col-6 col-sm-6 col-md-6 col-lg-4 mt-3 villa-option">
                                                                             <p> @if($villa->ac == 1)  <i class="bi bi-snow2"></i> AC @endif  </p>
                                                                         </div>
-                                                                        <div class="col-6 col-sm-6 col-md-6 col-lg-4 mt-3">
+                                                                        <div class="col-6 col-sm-6 col-md-6 col-lg-4 mt-3 villa-option">
                                                                             <p>  @if($villa->barthroom == 1) <i class='bi bi-textarea-resize'></i> Barthroom @endif </p>
                                                                         </div>
-																		<div class="col-lg-12">
-																			<div class="text-start py-5">
-																											<a villa-id="{{ $villa->id }}" class='villa-more link' ><span>Read More</span> <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-																								 <path d='M9.29 6.71002C9.1973 6.80254 9.12375 6.91242 9.07357 7.0334C9.02339 7.15437 8.99756 7.28405 8.99756 7.41502C8.99756 7.54599 9.02339 7.67567 9.07357 7.79665C9.12375 7.91762 9.1973 8.02751 9.29 8.12002L13.17 12L9.29 15.88C9.19742 15.9726 9.12398 16.0825 9.07388 16.2035C9.02377 16.3244 8.99798 16.4541 8.99798 16.585C8.99798 16.716 9.02377 16.8456 9.07388 16.9666C9.12398 17.0875 9.19742 17.1974 9.29 17.29C9.38258 17.3826 9.4925 17.456 9.61346 17.5061C9.73442 17.5563 9.86407 17.582 9.995 17.582C10.1259 17.582 10.2556 17.5563 10.3765 17.5061C10.4975 17.456 10.6074 17.3826 10.7 17.29L15.29 12.7C15.3827 12.6075 15.4563 12.4976 15.5064 12.3766C15.5566 12.2557 15.5824 12.126 15.5824 11.995C15.5824 11.8641 15.5566 11.7344 15.5064 11.6134C15.4563 11.4924 15.3827 11.3825 15.29 11.29L10.7 6.70002C10.32 6.32002 9.68 6.32002 9.29 6.71002Z' fill='#198754'/>
-																								 </svg>
-																								  </a>
-																													</div>
-																													
-																						</div>		
+																			
                                                                     </div>
 																						
                                                                 </div>
@@ -160,8 +143,9 @@
                             <div class="padding-base  bg-gray" id="pills-dining">
                                 <div class="container">
                                     <h2 class="heading text-center">Restaurants</h2>
+                                    <div class="villa-container">
                                     <div class="row py-2" data-masonry='{"percentPosition": true }'>
-                                    @foreach ($restaurants as $restaurant)
+                                     @foreach ($restaurants as $restaurant)
                                                 <div class="col-lg-3 mb-4 offer-card dine">
                                                     <div class="img-div">
                                                         <img src="{{ asset('public/storage/' . $restaurant->image) }}" alt="{{$restaurant->title}}"
@@ -173,6 +157,7 @@
                                                     </div>
                                                 </div>
                                         @endforeach
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -217,8 +202,8 @@
                         <div class="padding-base" id="pills-offers">
                                 <div class="container Offers">
                                     <h2 class="heading text-center">Offers</h2>
-                                    <div class="row py-2">
-                                   
+                                    <div class="villa-container">
+                                    <div class="row py-2">                                    
                                    @foreach ($offers as $offer)
                                             
                                                 <div class="col-lg-3 offer-card p-3">
@@ -232,6 +217,7 @@
                                                 </div>
                                                 
                                                 @endforeach
+                                        </div>
                                      </div>
                                 </div>
                             </div>
@@ -371,7 +357,7 @@
 
             // Add sleep if it's not empty
             if (sleep) {
-                villaBodyHtml += `<div class="col-6 col-sm-6 col-md-6 col-lg-4"><p><i class="bi bi-people"></i> ${sleep} Bed</p></div>`;
+                villaBodyHtml += `<div class="col-6 col-sm-6 col-md-6 col-lg-4"><p><i class="bi bi-people"></i> ${sleep} </p></div>`;
             }
 
             // Add view if it's not empty

@@ -77,11 +77,11 @@ button {
 
 .button {
   display: inline-block;
-  font-family: "Playfair Display", serif;
+  /* font-family: "Playfair Display", serif; */
   font-weight: 500;
   transition: all .3s ease;
   cursor: pointer;
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: #fff; }
   .button--active {
     padding: 10px 32px !important;
@@ -835,7 +835,7 @@ border-bottom: var(--lightgray) solid 1px;
   height: 70px;
   }
 
-.testi-carousel__intro h3 {
+.testi-carousel__intro h5 {
   font-size: 24px;
   font-weight: 400;
   margin-bottom: 5px; }
@@ -2355,7 +2355,7 @@ margin: 0px 50px;
   border: none;
 }
 .tourdetails .date{
-  background: var(--primary);
+  background: var(--green);
   width: 75px;
   height: 75px;
   color: #fff;
@@ -2506,6 +2506,9 @@ min-height: 500px;
   border-bottom: 16px solid transparent;
   z-index: 1;
 }
+article h3 ,.resort .title{
+  font-size: 1.125rem;
+}
 
 .package .discount-tag span {
   color: #fff;
@@ -2535,6 +2538,9 @@ align-items: end;
   border-radius: 0;
   box-shadow: 0px 10px 30px 0px rgba(153, 153, 153, 0.2);
   transition: all .4s ease;
+}
+.about-more .img-border{
+  border-radius: 10px 10px 0 0;
 }
 .owl-carousel{
   padding: 0px;
@@ -2578,7 +2584,7 @@ color: var(--primary);
   font-size: 22px; /* Bullet size */
   position: absolute;
   left: 0;
-  top: -15px;
+  top: -10px;
 }
 
 
@@ -2592,7 +2598,19 @@ color: var(--primary);
   text-decoration: underline;
 }
 
-
+.villa-container .villa {
+  background-color: var(--white);
+  margin: 20px auto;
+}
+.villa-option p{
+  font-size: 12px;
+}
+.villa-img{
+  border-radius: 10px 10px 0 0;
+}
+.villa .description{
+  text-align: justify;
+}
 
 
  /* Small devices (landscape phones, 576px and up) */
