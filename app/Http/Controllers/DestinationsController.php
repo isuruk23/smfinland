@@ -35,8 +35,8 @@ class DestinationsController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image1' => 'required|mimes:jpg,jpeg,png,avif',
-            'image2' => 'required|mimes:jpg,jpeg,png,avif',
+            'image1' => 'required|mimes:jpg,jpeg,png,avif,webp',
+            'image2' => 'required|mimes:jpg,jpeg,png,avif,webp',
             'city' => 'required|integer',
             'type' => 'required|integer',
         ]);
@@ -88,8 +88,8 @@ class DestinationsController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image1' => 'required|mimes:jpg,jpeg,png,avif',
-            'image2' => 'required|mimes:jpg,jpeg,png,avif',
+            'image1' => 'required|mimes:jpg,jpeg,png,avif,webp',
+            'image2' => 'required|mimes:jpg,jpeg,png,avif,webp',
             'city' => 'required|integer',
             'type' => 'required|integer',
         ]);

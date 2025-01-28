@@ -968,8 +968,9 @@ section {
   overflow: hidden; }
 
 .testi-carousel__item {
-  background: #f7f9f9;
-  padding: 30px 25px;
+  background-color: #fff;
+  padding: 25px;
+  margin: 10px;
   transition: all .3s ease; 
   box-shadow: -4px 4px 20px 0px rgba(0, 0, 0, 0.1), 4px -4px 20px 0px rgba(0, 0, 0, 0.1);
 }
@@ -986,9 +987,10 @@ section {
     border-left: 500px solid rgba(255, 255, 255, 0.13);
     /* Maintain smooth edge of triangle in FF */
     -moz-transform: scale(0.9999); }
+    
   .testi-carousel__item:hover {
-    box-shadow: 0px 10px 20px 0px rgba(153, 153, 153, 0.2);
-    background: #fff; }
+    /* box-shadow: 0px 10px 20px 0px rgba(153, 153, 153, 0.2); */
+    background-color: #fff; }
 
 .testi-carousel__img {
   width: 70px;
@@ -3305,7 +3307,7 @@ section {
 
 .offer-card{
 background-color: #fff;
-  /* box-shadow: 0 0 22px -5px rgba(0,0,0,.08); */
+  box-shadow: 0 0 22px -5px rgba(0,0,0,.08);
   padding: 20px;
 }
 

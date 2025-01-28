@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- ================ start banner area ================= -->	
-<section class="contact-banner-area" id="contact" style='background: url("public/storage/images/maldives_holiday_packages.avif") center center no-repeat;background-size: auto; background-size: cover;'>
+<section class="contact-banner-area" id="contact" style='background: url("public/storage/images/maldives_holiday_packages.avif") center center no-repeat;background-size: auto; background-size: cover;width: 100vw;'>
 		<div class="container h-100">
 			<div class="contact-banner">
 				<div class="text-center">
@@ -43,10 +43,10 @@
                                                 <div class="star-rating rates">
                                                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>                                                </div>
                                                 <div class="resort">
-                                                    <h5 class="title mb-2 mt-2">
+                                                    <h3 class="title mb-2 mt-2">
                                                         <a class="text-dark" href="/resort-details/{{ $resort->resort_alias }}/{{ $resort->id }}">
                                                         {{ $resort->resort }}</a>
-                                                    </h5>
+                                                    </h3>
                                                 </div>
                                                 <div class="row mb-3">
                                                     <div class="col-12 text-start">
@@ -60,8 +60,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="row justify-content-around align-items-center">
-                                                    <div class="col-6 text-end"><a href="/resort/{{ $resort->resort_alias }}/{{$resort->id}}/quote" class="btn btn-primary">Get a
-                                                            Quote</a>
+                                                    <div class="col-6 text-end"><a href="/resort/{{ $resort->resort_alias }}/{{$resort->id}}/quote" class="btn btn-primary">Book Now</a>
                                                     </div>
                                                     <div class="col-6 text-start"><a class="btn btn-outline-primary" href="/resort-details/{{ $resort->resort_alias }}/{{ $resort->id }}">Explore
                                                             More</a></div>

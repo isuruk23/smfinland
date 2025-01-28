@@ -47,12 +47,12 @@ Northern Lights while supporting local Sami communities.
 with cultural authenticity. Every adventure we curate prioritizes the 
 preservation of natural ecosystems and uplifts the communities we cherish.</p>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 img-border">
                             <img src="{{ asset('public/storage/images/about/why_simplifly_maldives.avif') }}" alt="image-1">
                         </div>
                     </div>
                     <div class="row py-5 item2">
-                        <div class="col-md-6 order-2 order-md-1">
+                        <div class="col-md-6 order-2 order-md-1 img-border">
                             <img src="{{ asset('public/storage/images/about/how_we_can_help_you.avif') }}" alt="How we can help you ">
                         </div>
                         <div class="col-md-6 order-1 order-md-2 text-center text-md-start">
@@ -90,12 +90,12 @@ way. And because travel is as unpredictable as it is
 exciting, our team ensures your journey remains 
 stress-free, no matter what surprises come your way.</p>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 img-border">
                             <img src="{{ asset('public/storage/images/about/travel_your_dream.avif') }}" alt="Our Travel Consultants">
                         </div>
                     </div>
-                    <div class="row py-5 item4">
-                        <div class="col-md-6 order-2 order-md-1">
+                    <div class="row py-5 item4 ">
+                        <div class="col-md-6 order-2 order-md-1 img-border">
                             <img src="{{ asset('public/storage/images/about/why_simplifly_finland.avif') }}" alt="image-1">
                         </div>
                         <div class="col-md-6 order-1 order-md-2 text-center text-md-start">

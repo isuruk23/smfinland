@@ -35,7 +35,7 @@ class VillaRoomController extends Controller
         $request->validate([
             'type' => 'required|string',
             'name' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'required|string',
             'roomsize' => 'required|string|max:255',
             'bed' => 'required|string|max:255',
             'view' => 'required|string|max:255',

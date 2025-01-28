@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- ================ start banner area ================= -->	
-<section class="contact-banner-area" id="contact" style='background: url("public/storage/images/sri_lankan_vacation.avif") center center no-repeat;background-size: auto; background-size: cover;'>
+<section class="contact-banner-area" id="contact" style='background: url("public/storage/images/sri_lankan_vacation.avif") center center no-repeat;background-size: auto; background-size: cover;width: 100vw;'>
 		<div class="container h-100">
 			<div class="contact-banner">
 				<div class="text-center">
@@ -52,9 +52,9 @@ vacation into a delight</p>
 									15 % OFF
 								</div> -->
 								<div class="resort">
-									<h5 class="title mb-2 mt-2">
-                  {{ $tour->name }}
-									</h5>
+									<h3 class="title mb-2 mt-2">
+                 					 {{ $tour->name }}
+									</h3>
 								</div>
 								<div class="row align-items-end mb-3">
 									<div class="col-6 text-start">

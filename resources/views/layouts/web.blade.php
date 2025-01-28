@@ -65,7 +65,7 @@
                     <i class="bi bi-house me-3"></i> <span>Frantsinkatu 5 C 27,<br> 20540, Turku,<br>
                         Finland.</span>
                 </div>
-                <div class="phone mb-3"><i class="bi bi-telephone me-3"></i> <span>+358 40 819 2758</span></div>
+                <div class="phone mb-3"><i class="bi bi-telephone me-3"></i> <span><a href="tel:+358408192758">+358 40 819 2758</a></span></div>
                 <div class="email"><i class="bi bi-envelope me-3"></i> <span>sales@simpliflyfinland.fi</span>
                 </div>
             </div>

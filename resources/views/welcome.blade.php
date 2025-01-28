@@ -90,9 +90,9 @@
                                             {{$tour->discount}} % OFF
                                             </div> -->
                                             <div class="resort">
-                                                <h5 class="title mb-2 mt-2">
+                                                <h3 class="title mb-2 mt-2">
                                                 {{ $tour->name }}</a>
-                                                </h5>
+                                                </h3>
                                             </div>
                                             <div class="row align-items-end mb-3">
                                                 <div class="col-6 text-start">
@@ -145,7 +145,7 @@
                 </div>
             </div>
             </div>
-            <div class="outer-block bg-gray">
+            <div class="outer-block bg-white">
 
                 <div class="container">
 
@@ -158,7 +158,7 @@
 
 
                             <!-- Slider main container -->
-                            <div class="swiper swiper1">
+                            <div class="swiper swiper2">
                                 <!-- Additional required wrapper -->
                                 <div class="swiper-wrapper">
                                     <!-- Slides -->
@@ -185,9 +185,9 @@ D</div> -->
                                                 {{$tour->discount}}% OFF
                                                 </div> -->
                                                 <div class="resort">
-                                                    <h5 class="title mb-2 mt-2">
+                                                    <h3 class="title mb-2 mt-2">
                                                     {{ $tour->name }}</a>
-                                                    </h5>
+                                                    </h3>
                                                 </div>
                                                 <div class="row align-items-end mb-3">
                                                     <div class="col-6 text-start">
@@ -256,7 +256,7 @@ D</div> -->
                             </div>
 
                             <!-- Slider main container -->
-                            <div class="swiper swiper1">
+                            <div class="swiper swiper3">
                                 <!-- Additional required wrapper -->
                                 <div class="swiper-wrapper">
                                     <!-- Slides -->
@@ -276,11 +276,11 @@ D</div> -->
                                                 <div class="star-rating rates">
                                                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>                                                </div>
                                                 <div class="resort">
-                                                    <h5 class="title mb-2 mt-2">
+                                                    <h3 class="title mb-2 mt-2">
                                                         <a class="text-dark"
                                                             href="/resort-details/{{ $resort->resort_alias }}/{{ $resort->id }}">
                                                             {{ $resort->resort }}</a>
-                                                    </h5>
+                                                    </h3>
                                                 </div>
                                                 <div class="row mb-3">
                                                     <div class="col-12 text-start">
@@ -295,8 +295,7 @@ D</div> -->
                                                 </div>
                                                 <div class="row justify-content-around align-items-center">
                                                     <div class="col-6 text-end"><a href="/resort/{{ $resort->resort_alias }}/{{$resort->id}}/quote"
-                                                            class="btn btn-primary">Get a
-                                                            Quote</a>
+                                                            class="btn btn-primary">Book Now</a>
                                                     </div>
                                                     <div class="col-6 text-start"><a class="btn btn-outline-primary"
                                                             href="/resort-details/{{ $resort->resort_alias }}/{{ $resort->id }}">Explore
@@ -329,7 +328,7 @@ D</div> -->
                     </div>
                 </div>
             </div>
-            <div class="outer-block bg-gray">
+            <div class="outer-block bg-white">
                 <div class="container">
 
                     <div class="row align-items-center py-3">
@@ -366,7 +365,7 @@ D</div> -->
                             </p>
 
                                             <div class="testi-carousel__intro">
-                                            <h3>{{ $review->name }}</h3>
+                                            <h5>{{ $review->name }}</h5>
                                             <p>{{ $review->position }}</p>
                                             </div>
                                         </div>
@@ -432,35 +431,40 @@ $(document).ready(function() {
 <script>
 var swiper = new Swiper('.swiper1', {
     speed: 600,
-    slidesPerView: 3,
+    slidesPerView: 4,
     slidesPerColumn: 1,
     spaceBetween: 30,
     parallax: true,
     breakpoints: {
         320: {
             slidesPerView: 1,
+            slidesPerGroup: 1,
             spaceBetween: 15
         },
         // when window width is >= 480px
         480: {
             slidesPerView: 2,
+            slidesPerGroup: 2,
             spaceBetween: 30
         },
         // when window width is >= 640px
         640: {
             slidesPerView: 2,
+            slidesPerGroup: 2,
             spaceBetween: 30
         },
 
         // when window width is >= 768px
         768: {
             slidesPerView: 3,
+            slidesPerGroup: 3,
             spaceBetween: 30
         },
 
         // when window width is >= 992px
         1100: {
             slidesPerView: 4,
+            slidesPerGroup: 4,
             spaceBetween: 30
         }
     },
@@ -478,27 +482,99 @@ var swiper = new Swiper('.swiper1', {
 
 var swiper = new Swiper('.swiper2', {
     speed: 600,
+    slidesPerView: 4,
+    slidesPerColumn: 1,
+    spaceBetween: 30,
     parallax: true,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 15
+        },
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 30
+        },
+        // when window width is >= 640px
+        640: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 30
+        },
+
+        // when window width is >= 768px
+        768: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 30
+        },
+
+        // when window width is >= 992px
+        1100: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+            spaceBetween: 30
+        }
+    },
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
     },
     // navigation: {
-    //   nextEl: '.swiper-button-next',
-    //   prevEl: '.swiper-button-prev',
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
     // },
 });
 
 var swiper = new Swiper('.swiper3', {
     speed: 600,
+    slidesPerView: 4,
+    slidesPerColumn: 1,
+    spaceBetween: 30,
     parallax: true,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 15
+        },
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 30
+        },
+        // when window width is >= 640px
+        640: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 30
+        },
+
+        // when window width is >= 768px
+        768: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 30
+        },
+
+        // when window width is >= 992px
+        1100: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+            spaceBetween: 30
+        }
+    },
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
     },
     // navigation: {
-    //   nextEl: '.swiper-button-next',
-    //   prevEl: '.swiper-button-prev',
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
     // },
 });
 </script>
