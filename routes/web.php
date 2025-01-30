@@ -74,6 +74,7 @@ Route::get('/offer/{resortid}/{offerid}', [App\Http\Controllers\PageController::
 Route::post('/experiencesmore', [FacilitiesActivityController::class, 'getExperienceDetails']);
 Route::post('/villamore', [VillaRoomController::class, 'getVillaDetails']);
 
+Route::get('/get-resorts', [PageController::class, 'getResorts']);
 
 Route::get('/blog', [PageController::class, 'blogs']);
 Route::get('/blog-page/{id}/{slug}', [App\Http\Controllers\PageController::class, 'blogpage']);

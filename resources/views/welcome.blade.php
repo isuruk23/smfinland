@@ -255,56 +255,13 @@ D</div> -->
                                 <p>Escape to the Maldives, where turquoise waters meet pristine white sands and luxury knows no bounds. we’ve handpicked the finest resorts offering exceptional packages for families, couples, and honeymooners alike. Discover your perfect paradise and let us turn your dream vacation into reality</p>
                             </div>
 
-                            <!-- Slider main container -->
-                            <div class="swiper swiper3">
-                                <!-- Additional required wrapper -->
-                                <div class="swiper-wrapper">
-                                    <!-- Slides -->
+                  
+                            <div class="row" id="resorts-container"></div>
 
-                                    @foreach ($resorts as $resort) 
-                                    <div class="swiper-slide">
-                                        <article>
-                                            <div class="post-img-div">
-                                            @if ($resort->image)
-                                                <img class="card-img" src="{{ asset('public/storage/' .$resort->image) }}" alt="{{ $resort->resort }}" class="img-fluid">
-                                                @else            
-                                                  <img class="card-img" src="{{ asset('public/images/sample.png') }}" alt="{{ $resort->resort }}" class="img-fluid">
-                                                @endif
-                                            </div>
-                                            <div class="description_content p-3 position-relative">
-                                                <div class="type position-absolute">{{ $resort->category }}</div>
-                                                <div class="star-rating rates">
-                                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>                                                </div>
-                                                <div class="resort">
-                                                    <h3 class="title mb-2 mt-2">
-                                                        <a class="text-dark"
-                                                            href="/resort-details/{{ $resort->resort_alias }}/{{ $resort->id }}">
-                                                            {{ $resort->resort }}</a>
-                                                    </h3>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <div class="col-12 text-start">
-                                                        <div class="d-flex flex-column">
-                                                            <div class="start">Starting From</div>
-                                                            <div class="price"><span class="text-big">
-                                                            € {{ $resort->price }}</span>
-                                                                <span>Per Person</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row justify-content-around align-items-center">
-                                                    <div class="col-6 text-end"><a href="/resort/{{ $resort->resort_alias }}/{{$resort->id}}/quote"
-                                                            class="btn btn-primary">Book Now</a>
-                                                    </div>
-                                                    <div class="col-6 text-start"><a class="btn btn-outline-primary"
-                                                            href="/resort-details/{{ $resort->resort_alias }}/{{ $resort->id }}">Explore
-                                                            More</a></div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    @endforeach
+                            <div class="text-center mt-3">
+                                <button id="load-more" class="btn btn-primary" data-page="1">Load More</button>
+                            </div>
+
 
                                     
                                    
@@ -313,17 +270,6 @@ D</div> -->
                                     
 
 
-                                                                    </div>
-                                <!-- If we need pagination -->
-                                <div class="swiper-pagination"></div>
-
-                                <!-- If we need navigation buttons -->
-                                <!-- <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div> -->
-
-                                <!-- If we need scrollbar -->
-
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -577,5 +523,47 @@ var swiper = new Swiper('.swiper3', {
     //     prevEl: '.swiper-button-prev',
     // },
 });
+
+
+
+$(document).ready(function () {
+    function loadResorts(page, append = false) {
+        $.ajax({
+            url: "/get-resorts?page=" + page, // Fetch resorts
+            type: "GET",
+            beforeSend: function () {
+                $("#load-more").text("Loading...").prop("disabled", true);
+            },
+            success: function (data) {
+                if (data.trim() === "") {
+                    $("#load-more").hide(); // Hide button if no more resorts
+                } else {
+                    if (append) {
+                        $("#resorts-container").append(data); // Append new resorts
+                    } else {
+                        $("#resorts-container").html(data); // First load replaces content
+                    }
+                    $("#load-more").text("Load More").prop("disabled", false).data("page", page);
+                }
+            },
+            error: function () {
+                $("#load-more").text("Load More").prop("disabled", false);
+            }
+        });
+    }
+
+    // Automatically load first set of resorts when the page loads
+    loadResorts(1);
+
+    // Load more resorts on button click
+    $("#load-more").on("click", function () {
+        let page = $(this).data("page"); // Get current page
+        page++; // Increment page count
+        loadResorts(page, true); // Append new resorts
+    });
+});
+
+
 </script>
+
 @endsection
