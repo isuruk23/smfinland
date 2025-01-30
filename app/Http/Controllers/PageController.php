@@ -41,6 +41,7 @@ class PageController extends Controller
         ->join('resort_categories', 'resorts.category', '=', 'resort_categories.id')
         ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
         ->select('resorts.*', 'resort_types.type AS category', 'resort_types.type')
+        ->limit(4)
         ->get();
         $blogs = Blog::where('is_active',1)->limit(3)->get();
         $multitours = MultiDayTour::all();
@@ -684,6 +685,26 @@ public function offerquote($resortid,$offerid){
   }
 
 
+  public function getResorts(Request $request)
+{
+ 
+    //$resorts = Resort::paginate(4); // Fetch resorts 4 at a time
+    $resorts =DB::table('resorts')
+        ->join('resort_categories', 'resorts.category', '=', 'resort_categories.id')
+        ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
+        ->select('resorts.*', 'resort_types.type AS category', 'resort_types.type')
+        ->paginate(4);
+
+    if ($request->ajax()) {
+        return view('partials.resorts', compact('resorts'))->render(); // Return only the resort items
+    }
+
+    return view('welcome', compact('resorts')); // Initial load
 }
+
+
+
+}
+
 
 
