@@ -21,6 +21,8 @@ use App\Models\WineDine;
 use Rinvex\Country\CountryLoader;
 use App\Models\Blog;
 use App\Models\Review;
+use App\Models\ResortCategory;
+use App\Models\ResortType;
 
 
 use App\Models\Thingstodo;
@@ -572,26 +574,101 @@ public function allinclusiveresort(){
     return view('allinclusiveresorts', compact('resorts','meta'));
 }
 
-public function resorts(){
+public function resorts(Request $request){
+    //dd($request);
     $meta = [
         'title' => 'Simplifly Finland - Honeymoon Resort',
-        'meta_description' => 'Discover the top-rated All-inclusive holiday packages, luxury honeymoon packages, birthday celebration, family holiday and early bird offers. Maldives is waiting for you! Seize the best deals & offers and get ready to create a bunch of unforgettable experiences.',
-        'meta_keywords' => 'simplifly Offers,simpliflymaldives Offers,Maldives resorts Offers, Maldives hotels Offers, resorts Offers in Maldives , hotels Offers in Maldives, holidays Offers in Maldives, honeymoon Offers in Maldives, travel Offers to Maldives, Maldives atolls Offers, vacation Offers in Maldives,top resorts Offers in Maldives, family resorts Offers, family resorts Offers in Maldives, budget resorts Offers, budget resorts Offers in Maldives, top luxurious resorts Offers, top luxurious resorts Offers in Maldives, vacation, vacations, vacation packages, vacation package, travel package, travel packages,Holiday in Maldives,Honeymoon in Maldives, 	Hotels in Maldives, Visit Maldives, Book Maldives, Maldives Holiday offers, Maldives Holiday deals, Maldives all inclusive, 	Cheap deals for Maldives, Diving resort in Maldives, Surfing resorts in Maldives, Couple resorts in Maldives, Honeymoon resorts in Maldives, Family resorts in Maldives, Budget resorts in Maldives, Weddings in Maldives, Top luxury resorts in Maldives, Vacation packages in Maldives,Travel packages in Maldives, Best Maldives resorts, Top 10 Maldives resorts, Hotels and resorts in Maldives, 	Travel agents in Maldives, Resorts in Maldives, Maldives holiday packages, Tours and travels in Maldives',
+        'meta_description' => 'Discover the top-rated all-inclusive holiday packages...',
+        'meta_keywords' => 'simplifly Offers, Maldives resorts Offers, honeymoon Offers...',
     ];
-   
-    $resorts =DB::table('resorts')
-    ->join('resort_categories', 'resorts.category', '=', 'resort_categories.id')
-    ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
-    ->select('resorts.*', 'resort_types.type AS category', 'resort_types.type')
-    ->where('resorts.status',1)
-    ->orderby('resorts.resort' ,'ASC')
-    ->get();
 
+    $query = DB::table('resorts')
+        ->join('resort_categories', 'resorts.category', '=', 'resort_categories.id')
+        ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
+        ->select('resorts.*', 'resort_categories.type AS category', 'resort_types.type AS type')
+        ->where('resorts.status', 1);
 
+    // Filtering
+    if ($request->has('name') && !empty($request->name)) {
+        $query->where('resorts.resort', 'like', '%' . $request->name . '%');
+    }
+    if ($request->has('category') && !empty($request->category)) {
+        $query->where('resorts.category', $request->category);
+    }
+    if ($request->has('resorttype') && !empty($request->resorttype)) {
+        $query->where('resorts.resorttype', $request->resorttype);
+    }
+    if ($request->has('min_price') && $request->has('max_price')) {
+        $query->whereBetween('resorts.price', [$request->min_price, $request->max_price]);
+    }
+    if ($request->has('rates')) {
+        $query->where('resorts.rates', '>=', $request->rates);
+    }
 
-    return view('resorts', compact('resorts','meta'));
+    $resorts = $query->orderby('resorts.resort', 'ASC')->get();
+    $categories= ResortCategory::all();
+    
+    $types= ResortType::all();
+
+    if ($request->ajax()) {
+        return response()->json(['resorts' => view('partials.resort-list', compact('resorts'))->render()]);
+    }
+
+    return view('resorts', compact('resorts', 'meta','categories','types'));
 }
 
+public function getfilterdresorts(Request $request){
+  
+   // dd($request);
+    $meta = [
+        'title' => 'Simplifly Finland - Honeymoon Resort',
+        'meta_description' => 'Discover the top-rated all-inclusive holiday packages...',
+        'meta_keywords' => 'simplifly Offers, Maldives resorts Offers, honeymoon Offers...',
+    ];
+
+    $query = DB::table('resorts')
+        ->join('resort_categories', 'resorts.category', '=', 'resort_categories.id')
+        ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
+        ->select('resorts.*', 'resort_categories.type AS category', 'resort_types.type AS type')
+        ->where('resorts.status', 1);
+
+    // Filtering
+    if ($request->has('name') && !empty($request->name)) {
+        $query->where('resorts.resort', 'like', '%' . $request->name . '%');
+    }
+    if ($request->has('category') && !empty($request->category)) {
+        $query->where('resorts.category', $request->category);
+    }
+    if ($request->has('resorttype') && !empty($request->resorttype)) {
+        $query->where('resorts.resorttype', $request->resorttype);
+    }
+    if ($request->filled('min_price') && $request->filled('max_price')) {
+        $query->whereBetween('resorts.price', [$request->min_price, $request->max_price]);
+    } else {
+        if ($request->filled('min_price')) {
+            $query->where('resorts.price', '>=', $request->min_price);
+        }
+        if ($request->filled('max_price')) {
+            $query->where('resorts.price', '<=', $request->max_price);
+        }
+    }
+    // if ($request->has('rates')) {
+    //     $query->where('resorts.rates', '>=', $request->rates);
+    // }
+   
+    $resorts = $query->orderby('resorts.resort', 'ASC')->get();
+
+ 
+    $categories= ResortCategory::all();
+    
+    $types= ResortType::all();
+
+    if ($request->ajax()) {
+        return response()->json(['resorts' => view('partials.resort-list', compact('resorts'))->render()]);
+    }
+
+    return view('resorts', compact('resorts', 'meta','categories','types'));
+}
 
 public function resortdetails($slug,$id){
 

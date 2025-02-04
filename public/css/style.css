@@ -2510,6 +2510,11 @@ article h3 ,.resort .title{
   font-size: 1.125rem;
 }
 
+.filter-form{
+  padding: 30px;
+  background-color:var(--lightgray);
+}
+
 .package .discount-tag span {
   color: #fff;
   font: 18px/1.4em 'Open Sans',sans-serif;
@@ -2607,6 +2612,7 @@ color: var(--primary);
 }
 .villa-img{
   border-radius: 10px 10px 0 0;
+  display: flex;
 }
 .villa .description{
   text-align: justify;
