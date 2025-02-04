@@ -1,17 +1,16 @@
-@extends('layouts.web')   
- 
-@section('content')
+@extends('layouts.web')
 
+@section('content')
 <!-- ================ start banner area ================= -->	
-<section class="contact-banner-area" id="contact" style='background: url("public/storage/images/maldives_holiday_packages.avif") center center no-repeat;background-size: auto; background-size: cover;'>
+<section class="contact-banner-area" id="contact" style="background: url({{ asset('public/storage/images/maldives_holiday_packages.avif') }}) center center no-repeat;background-size: auto; background-size: cover;width: 100vw;">
 		<div class="container h-100">
 			<div class="contact-banner">
 				<div class="text-center">
-					<h1>Maldives Resorts</h1>
+					<h1>All Inclusive Resorts</h1>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
                         <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Maldives Resorts</li>
+                        <li class="breadcrumb-item active" aria-current="page">All Inclusive Resorts</li>
                         </ol>
                     </nav>
                    
@@ -20,66 +19,87 @@
     </div>
 	</section>
   <!-- ================ end banner area ================= -->
+<div class="container">
+    <div class="row">
+        <!-- Filter Section (Inline) -->
+        <div class="col-12 mb-4 filter-form">
+            <form id="filter-form" class="d-flex flex-wrap align-items-center gap-2">
+            <div class="container mt-3">
+    <div class="row g-3">
+        <div class="col-12 col-md-6 col-lg-4">
+            <input type="text" id="search-name" class="form-control" placeholder="Resort Name">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <select id="search-category" class="form-select">
+                <option value="">Category</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->type }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <select id="search-type" class="form-select">
+                <option value="">Type</option>
+                @foreach($types as $type)
+                    <option value="{{ $type->id }}">{{ $type->type }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <input type="number" id="min-price" class="form-control" placeholder="Min Price">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <input type="number" id="max-price" class="form-control" placeholder="Max Price">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 d-grid">
+            <button id="filter-btn" type="button" class="btn btn-primary">Apply</button>
+        </div>
+    </div>
+</div>
 
-  <!-- ================ Explore section start ================= -->
-  <section id="offers">
-           
-            <div class="offer-card-container padding-base">
-                <div class="container">
+            </form>
+        </div>
 
-                    <div class="row">
-                    @foreach ($resorts as $resort)
-                                                        <div class="col-lg-3 mb-4 offer-card">
-                                   <div class="post-img-div">
-                                                 @if ($resort->image)
-                                                <img class="card-img" src="{{ asset('public/storage/' .$resort->image) }}" alt="{{ $resort->resort }}" class="img-fluid">
-                                                @else            
-                                                  <img class="card-img" src="{{ asset('public/images/sample.png') }}" alt="" class="img-fluid">
-                                                @endif
-                                               
-                                            </div>
-                                            <div class="description_content p-3 position-relative">
-                                                <div class="type position-absolute">{{ $resort->category }}</div>
-                                                <div class="star-rating rates">
-                                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>                                                </div>
-                                                <div class="resort">
-                                                    <h5 class="title mb-2 mt-2">
-                                                        <a class="text-dark" href="/resort-details/{{ $resort->resort_alias }}/{{ $resort->id }}">
-                                                        {{ $resort->resort }}</a>
-                                                    </h5>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <div class="col-12 text-start">
-                                                        <div class="d-flex flex-column">
-                                                            <div class="start">Starting From</div>
-                                                            <div class="price"><span class="text-big">€ 
-                                                            {{ $resort->price }}</span>
-                                                                <span>Per Person</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row justify-content-around align-items-center">
-                                                    <div class="col-6 text-end"><a href="/quote" class="btn btn-primary">Get a
-                                                            Quote</a>
-                                                    </div>
-                                                    <div class="col-6 text-start"><a class="btn btn-outline-primary" href="/resort-details/{{ $resort->resort_alias }}/{{ $resort->id }}">Explore
-                                                            More</a></div>
-                                                </div>
-                                            </div>
-
-                                </div>
-                                @endforeach
-                    </div>
-                </div>
+        <!-- Resorts List -->
+        <div class="col-12">
+            <div class="row" id="resort-list">
+                @include('partials.resort-list')
             </div>
+        </div>
+    </div>
+</div>
 
-        </section>
+@endsection
+
+@section('script')
+<script>
+   $(document).ready(function () {
+    $('#filter-btn').click(function () {
+        let name = $('#search-name').val();
+        let category = $('#search-category').val();
+        let resorttype = $('#search-type').val();
+        let min_price = $('#min-price').val();
+        let max_price = $('#max-price').val();
+        let rates = $('#search-rates').val();
+
+        $.ajax({
+            url: "{{ route('filter-resorts') }}",
+            method: "GET",
+            data: {
+                name: name,
+                category: category,
+                resorttype: resorttype,
+                min_price: min_price,
+                max_price: max_price,
+                rates: rates
+            },
+            success: function (response) {
+                $('#resort-list').html(response.resorts);
+            }
+        });
+    });
+});
 
 
-  
-
-
-
-
+    </script>
 @endsection
