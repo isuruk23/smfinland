@@ -12,14 +12,10 @@
     <meta name="robots" content="index, follow">
     
     <title>Simplifly Finland | @yield('title', $meta['title'])</title>
-    <meta name="author" content="Simplifly finland" />
-    <link rel="canonical" href="{{ url()->current() }}">
-    <meta
-        content="Discover luxury travel with Simplifly Finland. Specializing in Maldives holidays packages and global destinations, we offer curated packages for ultimate relaxation and adventure."
-        name="description">
-    <meta name="keywords"
-        content="simplifly,simpliflyfinland,Maldives resorts, Maldives hotels, resorts in Maldives, hotels in Maldives, holidays in Maldives, honeymoon in Maldives, travel to Maldives, Maldives atolls, vacation in Maldives,top resorts in Maldives, family resorts, family resorts in Maldives, budget resorts, budget resorts in Maldives, top luxurious resorts, top luxurious resorts in Maldives, vacation, vacations, vacation packages, vacation package, travel package, travel packages,Holiday in Maldives,Honeymoon in Maldives, 	Hotels in Maldives, Visit Maldives, Book Maldives, Maldives Holiday offers, Maldives Holiday deals, Maldives all inclusive, 	Cheap deals for Maldives, Diving resort in Maldives, Surfing resorts in Maldives, Couple resorts in Maldives, Honeymoon resorts in Maldives, Family resorts in Maldives, Budget resorts in Maldives, Weddings in Maldives, Top luxury resorts in Maldives, Vacation packages in Maldives,Travel packages in Maldives, Best Maldives resorts, Top 10 Maldives resorts, Hotels and resorts in Maldives, 	Travel agents in Maldives, Resorts in Maldives, Maldives holiday packages, Tours and travels in Maldives" />
- 
+<meta name="author" content="Simplifly Finland" />
+<link rel="canonical" href="{{ url()->current() }}">
+<meta name="description" content="@yield('description', $meta['meta_description'])">
+<meta name="keywords" content="@yield('keywords', $meta['meta_keywords'])">
 
 <link href="{{ asset('public/storage/images/favicon.png') }}" rel="apple-touch-icon">
 <link rel="icon" type="image/x-icon" href="{{ asset('public/storage/images/favicon.png') }}">
