@@ -508,8 +508,10 @@ public function honeymoonresorts(){
     ->where('resorts.status',1)
     ->orderby('resorts.resort' ,'ASC')
     ->get();
-
-    return view('honeymoonresorts', compact('resorts','meta'));
+    $categories= ResortCategory::all();
+    
+    $types= ResortType::all();
+    return view('honeymoonresorts', compact('resorts','meta','categories','types'));
 }
 
 public function familyresorts(){
@@ -553,6 +555,49 @@ public function coupleresorts(){
 
     return view('coupleresorts', compact('resorts','meta'));
 }
+
+public function getfilterdhoneymoonresorts(Request $request){
+    //dd($request);
+    $meta = [
+        'title' => 'Simplifly Finland - Honeymoon Resort',
+        'meta_description' => 'Discover the top-rated all-inclusive holiday packages...',
+        'meta_keywords' => 'simplifly Offers, Maldives resorts Offers, honeymoon Offers...',
+    ];
+
+    $query = DB::table('resorts')
+        ->join('resort_categories', 'resorts.category', '=', 'resort_categories.id')
+        ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
+        ->select('resorts.*', 'resort_categories.type AS category', 'resort_types.type AS type')
+        ->where('resorts.status', 1)
+        ->where('resorts.category',3);
+    // Filtering
+    if ($request->has('name') && !empty($request->name)) {
+        $query->where('resorts.resort', 'like', '%' . $request->name . '%');
+    }
+    if ($request->has('category') && !empty($request->category)) {
+        $query->where('resorts.category', $request->category);
+    }
+    if ($request->has('resorttype') && !empty($request->resorttype)) {
+        $query->where('resorts.resorttype', $request->resorttype);
+    }
+    if ($request->has('min_price') && $request->has('max_price')) {
+        $query->whereBetween('resorts.price', [$request->min_price, $request->max_price]);
+    }
+    if ($request->has('rates')) {
+        $query->where('resorts.rates', '>=', $request->rates);
+    }
+
+    $resorts = $query->orderby('resorts.resort', 'ASC')->get();
+    $categories= ResortCategory::all();
+    
+    $types= ResortType::all();
+
+    if ($request->ajax()) {
+        return response()->json(['resorts' => view('partials.resort-list', compact('resorts'))->render()]);
+    }
+
+    return view('honeymoonresorts', compact('resorts', 'meta','categories','types'));
+}
 public function allinclusiveresort(){
     $meta = [
         'title' => 'Simplifly Finland - Honeymoon Resort',
@@ -572,6 +617,48 @@ public function allinclusiveresort(){
 
 
     return view('allinclusiveresorts', compact('resorts','meta'));
+}
+public function getfilterdcoupleresorts(Request $request){
+    //dd($request);
+    $meta = [
+        'title' => 'Simplifly Finland - Honeymoon Resort',
+        'meta_description' => 'Discover the top-rated all-inclusive holiday packages...',
+        'meta_keywords' => 'simplifly Offers, Maldives resorts Offers, honeymoon Offers...',
+    ];
+
+    $query = DB::table('resorts')
+        ->join('resort_categories', 'resorts.category', '=', 'resort_categories.id')
+        ->join('resort_types', 'resorts.resorttype', '=', 'resort_types.id')
+        ->select('resorts.*', 'resort_categories.type AS category', 'resort_types.type AS type')
+        ->where('resorts.status', 1)
+        ->where('resorts.category',3);
+    // Filtering
+    if ($request->has('name') && !empty($request->name)) {
+        $query->where('resorts.resort', 'like', '%' . $request->name . '%');
+    }
+    if ($request->has('category') && !empty($request->category)) {
+        $query->where('resorts.category', $request->category);
+    }
+    if ($request->has('resorttype') && !empty($request->resorttype)) {
+        $query->where('resorts.resorttype', $request->resorttype);
+    }
+    if ($request->has('min_price') && $request->has('max_price')) {
+        $query->whereBetween('resorts.price', [$request->min_price, $request->max_price]);
+    }
+    if ($request->has('rates')) {
+        $query->where('resorts.rates', '>=', $request->rates);
+    }
+
+    $resorts = $query->orderby('resorts.resort', 'ASC')->get();
+    $categories= ResortCategory::all();
+    
+    $types= ResortType::all();
+
+    if ($request->ajax()) {
+        return response()->json(['resorts' => view('partials.resort-list', compact('resorts'))->render()]);
+    }
+
+    return view('coupleresorts', compact('resorts', 'meta','categories','types'));
 }
 
 public function resorts(Request $request){

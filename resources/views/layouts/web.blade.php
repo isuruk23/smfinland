@@ -13,6 +13,7 @@
     
     <title>Simplifly Finland | @yield('title', $meta['title'])</title>
     <meta name="author" content="Simplifly finland" />
+    <link rel="canonical" href="{{ url()->current() }}">
     <meta
         content="Discover luxury travel with Simplifly Finland. Specializing in Maldives holidays packages and global destinations, we offer curated packages for ultimate relaxation and adventure."
         name="description">

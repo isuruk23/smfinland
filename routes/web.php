@@ -76,6 +76,8 @@ Route::post('/villamore', [VillaRoomController::class, 'getVillaDetails']);
 
 Route::get('/get-resorts', [PageController::class, 'getResorts']);
 Route::get('/filter-resorts', [PageController::class, 'getfilterdresorts'])->name('filter-resorts');
+Route::get('/filter-honeymoon-resorts', [PageController::class, 'getfilterdhoneymoonresorts'])->name('filter-honeymoon-resorts');
+Route::get('/filter-couple-resorts', [PageController::class, 'getfilterdcoupleresorts'])->name('filter-couple-resorts');
 
 
 Route::get('/blog', [PageController::class, 'blogs']);
