@@ -170,6 +170,20 @@
 
   gtag('config', 'G-EYCEWM799T');
 </script>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en', 
+    includedLanguages: 'en,sv,da,fi,de,no,el', // UK (English), Sweden (Swedish), Denmark (Danish), Finland (Finnish), Switzerland (German), Norway (Norwegian), Greece (Greek)
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
 </body>
 
 </html>
