@@ -24,17 +24,22 @@
             
             <div class="map-form pb-5">
                 <div class="container">
+                       <div class="row text-center">
+                        <p>Come join <b>Simplifly Finland Oy</b>, we believe every journey should be effortless, enriching, and
+unforgettable. Whether you're dreaming of a <b> tropical escape to the Maldives, an adventurous cultural
+tour of Sri Lanka, or a magical Arctic experience in Finland</b>, our travel experts are here to bring your vision to life.</p>
+                    </div>
                     <div class="row contact-info mt-5">
                         <div class="col-md-7 text-center">
-                            <h2>Location</h2>
+                            <h2>Our Offices</h2>
                             <img src="{{ asset('public/storage/images/map.png') }}" alt="World map" class="img-fluid">
                         </div>
                         <div class="col-md-5">
                             <div class="text-center">
                                 <h2>Contact Us</h2>
 
-                                <p>+358 40 819 2758, +94 76 342 7054</p>
-                                <p>Email: sales@simpliflymaldives.com</p>
+                                <p>+358 40 819 2758, +358 40 819 303)</p>
+                                <p>Email: sales@simpliflyfinland.fi</p>
                             </div>
 
 

@@ -37,9 +37,9 @@
                                     <li class="nav-item" role="presentation">
                                         <a class="btn nav-link" href="#pills-villas" onclick="toggleActive(this)">Villas</a>
                                     </li>
-                                    <li class="nav-item" role="presentation">
+                                    <!-- <li class="nav-item" role="presentation">
                                         <a class="btn nav-link" href="#pills-dining" onclick="toggleActive(this)">Restaurants</a>
-                                    </li>
+                                    </li> -->
                                     <!-- <li class="nav-item" role="presentation">
                                         <a class="btn nav-link" href="#pills-experiences"
                                             onclick="toggleActive(this)">Experiences</a>
@@ -140,7 +140,7 @@
                                     </div>
                                 </div>
                             </div> -->
-                            <div class="padding-base  bg-gray" id="pills-dining">
+                            <!-- <div class="padding-base  bg-gray" id="pills-dining">
                                 <div class="container">
                                     <h2 class="heading text-center">Restaurants</h2>
                                     <div class="villa-container">
@@ -160,7 +160,7 @@
                                     </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- <div class="padding-base" id="pills-experiences">
                                 <div class="container">
                                     <h2 class="heading text-center">Experiences</h2>
