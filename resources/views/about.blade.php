@@ -27,11 +27,12 @@
             <div class="about-more">
                 <div class="container">
                     <div class="row text-center">
-                        <p>Welcome to Simplifly Finland, where the spirit of adventure meets the heart of sustainability. Our 
-journey began with a simple yet profound belief. travel has the power to transform lives - not just for 
-those who embark on the journey, but for the communities and natural wonders that host them.</p>
-<p>At Simplifly Finland, we don’t just plan trips. we craft experiences that allow you to explore, dream, and 
-discover the world in a way that leaves it better than we found it.</p>
+                        <p>At  <b>Simplifly Finland Oy</b>, we believe that travel is more than just a journey—it’s an experience that
+connects cultures, preserves nature, and creates lasting memories. We are a premier travel agency
+based in Finland, specializing in curated travel experiences to<b> Sri Lanka, the Maldives</b>, and Finland. Our
+mission is to blend <b> luxury, sustainability, and cultural authenticity</b>, offering tailor-made holidays for
+
+discerning travelers worldwide.</p>
                     </div>
                     <div class="row py-5 item1">
                         <div class="col-md-6">
@@ -145,16 +146,8 @@ story together</p>
                         </div>
                     </div>
 
-                    <div class="row services p-5 g-0">
-                        <div class="col-md-3 text-center mb-3">
-                            <i class="bi bi-browser-safari"></i>
-                            <h4>Explore Maldives</h4>
-                            <p>Simplfly knowledge of the Maldives is second to none. Our team of travel professionals
-                                have
-                                an insider's perspective of the destination, resorts, people and culture - we are
-                                passionate
-                                about the Maldives! </p>
-                        </div>
+                    <div class="row services d-flex justify-content-between p-5 g-0">
+                    
                         <div class="col-md-3 text-center mb-3">
                             <i class="bi bi-clock"></i>
                             <h4>24/7 Assistance</h4>
