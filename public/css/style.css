@@ -1201,7 +1201,7 @@ border-bottom: var(--lightgray) solid 1px;
   }
 
 
-    .contact-banner-area::after {
+    /* .contact-banner-area::after {
       width: 0;
   height: 0;
   border-style: solid;
@@ -1224,7 +1224,7 @@ border-bottom: var(--lightgray) solid 1px;
   bottom: -1px;
   right: 0;
   z-index: 1;
-    }
+    } */
     .contact-banner-area p{
       color:var(--white);
     }
@@ -2642,4 +2642,7 @@ color: var(--primary);
   
   .header_area .navbar .nav .nav-item.active .nav-link {
     color: var(--primary); }
+}
+.translate{
+  width: 100px;
 }

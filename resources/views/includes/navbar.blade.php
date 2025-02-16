@@ -20,7 +20,7 @@
                                     <li><a href="#googtrans(en|nb)" class="lang-nb lang-select" data-lang="nb"><img src="/public/images/flags/no-square-01.png" style="height:18px;" alt="Norwegian Bokmål"></a></li>
                                     <li><a href="#googtrans(en|de)" class="lang-de lang-select" data-lang="de"><img src="/public/images/flags/ch-square-01.png" style="height:18px;" alt="Switzerland"></a></li>
                                     <li><a href="#googtrans(en|fr)" class="lang-fr lang-select" data-lang="fr"><img src="/public/images/flags/fr-square-01.png" style="height:18px;" alt="French"></a></li>
-                                    <li><a href="#googtrans(en|ar)" class="lang-ar lang-select" data-lang="ar"><img src="/public/images/flags/sa-square-01.png" style="height:18px;" alt="Saudi Arabia"></a></li>
+                                    <!-- <li><a href="#googtrans(en|ar)" class="lang-ar lang-select" data-lang="ar"><img src="/public/images/flags/sa-square-01.png" style="height:18px;" alt="Saudi Arabia"></a></li> -->
                                 </ul>
                                 <div id="google_translate_element"></div>
                     </div>
