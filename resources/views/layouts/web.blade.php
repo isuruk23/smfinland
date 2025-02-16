@@ -29,10 +29,110 @@
   <link rel="stylesheet" href="{{ asset('public/css/main.css') }}">
   <link rel="stylesheet" href="{{ asset('public/css/styles.min.css') }}">
   <style>
+    .skiptranslate {
+        display:none !important;
+    }
+    body {
+      top:0 !important;  
+    }
+    .lbar-for-desktop {
+      margin-right:40px;
+    }
+    .lbar-for-mobile ul li a,
+    .lbar-for-desktop ul li a {
+padding:0 2px !important;
+display:flex;
+    }
     .es-widget-title-container{
         display:none !important;
     }
+    @media (max-width: 767px) {
+      .lbar-for-mobile ul {
+        width: 198px;
+  margin: 0 auto;
+      }
+
+      .lbar-for-desktop {
+        display: none !important;
+      }
+      .lbar-for-mobile {
+        position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    background:#fff;
+    height:24px;
+    align-items:center;
+    transition:all 0.3s ease;
+    -webkit-transition:all 0.3s ease;
+      }
+      .header-scrolled .lbar-for-mobile {
+        top:56px;
+        box-shadow: 2px 3px 6px rgba(0,0,0,0.05);
+      }
+    }
+    @media (min-width: 768px) {
+    .lbar-for-mobile {
+      display: none !important;
+    }
+   }
+
   </style>
+  
+	<!-- <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+	<!-- <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&hl=en"></script> -->
+	<style>
+.custom-translate {
+  position: relative;
+  display: inline-block;
+}
+
+.translate-btn {
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.language-list {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  width: 160px;
+  z-index: 1000;
+}
+
+.language-option {
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.language-option:hover {
+  background: #f5f5f5;
+}
+
+.flag {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Hide Google's default widget */
+#google_translate_element {
+  display: none !important;
+}
+
+/* Optional: Hide Google's banner */
+.goog-te-banner-frame {
+  display: none !important;
+}
+</style>
 </head>
 
 <body class="home-page">
@@ -170,7 +270,7 @@
 
   gtag('config', 'G-EYCEWM799T');
 </script>
-
+<!-- 
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
@@ -181,8 +281,42 @@ function googleTranslateElementInit() {
 }
 </script>
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fi,de,da,sv,nb,de,fr,ar',
+        layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT
+      }, 'google_translate_element');
+    }
+
+    function triggerHtmlEvent(element, eventName) {
+      var event;
+      if (document.createEvent) {
+        event = document.createEvent('HTMLEvents');
+        event.initEvent(eventName, true, true);
+        element.dispatchEvent(event);
+      } else {
+        event = document.createEventObject();
+        event.eventType = eventName;
+        element.fireEvent('on' + event.eventType, event);
+      }
+    }
+
+    jQuery('.lang-select').click(function(e) {
+      e.preventDefault(); // Prevent default anchor behavior
+      var theLang = jQuery(this).attr('data-lang');
+      var combo = jQuery('.goog-te-combo')[0];
+      
+      // Change language and trigger translation
+      jQuery('.goog-te-combo').val(theLang);
+      triggerHtmlEvent(combo, 'change');
+    });
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&hl=en"></script>
 
 </body>
 
