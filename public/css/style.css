@@ -2643,3 +2643,6 @@ color: var(--primary);
   .header_area .navbar .nav .nav-item.active .nav-link {
     color: var(--primary); }
 }
+.translate{
+  width: 100px;
+}

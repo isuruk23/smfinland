@@ -40,7 +40,7 @@
                                             fill="#3CB371" />
                                     </svg>
                                 </a>
-                                <div id="google_translate_element"></div>
+                                <div class="translate" id="google_translate_element"></div>
                             </div>
                         </li>
                     </ul>
